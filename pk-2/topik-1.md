@@ -1,23 +1,18 @@
 ---
 layout: default
-title: Topik 1 - Perencanaan
+title: Topik 1 - PK II
 ---
 
-[← Kembali ke Beranda](index.md)
+# Jurnal Refleksi - Topik 1
+**Mata Kuliah:** Proyek Kepemimpinan II
 
-# Refleksi Topik 1
-*Proyek Kepemimpinan II*
-
-### 💡 Deskripsi Kegiatan
-Pada tahap ini, saya dan kelompok menyusun rencana tindakan untuk...
+### 💡 Fakta (Facts)
+Tuliskan apa yang Anda lakukan pada topik ini...
 
 ### 🖼️ Artefak Pembelajaran
-Klik tombol di bawah ini untuk melihat dokumen pendukung:
-
-| Jenis Dokumen | Tautan |
-| :--- | :--- |
-| **Laporan Fase 3** | [📥 Lihat PDF](LINK_GOOGLE_DRIVE) |
-| **Dokumentasi** | [📸 Lihat Foto](LINK_FOTO) |
+Silakan klik tautan di bawah ini untuk melihat dokumen pendukung:
+* [📥 Laporan Perencanaan (PDF)](https://google.com)
+* [📥 Slide Presentasi](https://google.com)
 
 ---
-*Dibuat dengan ❤️ oleh [Nama Anda]*
+[🏠 Kembali ke Beranda](../index.md)
