@@ -1,21 +1,19 @@
 ---
 layout: default
-title: Profil Saya
+title: Profil
 ---
 
-# Profil Mahasiswa
+# 👤 Profil Mahasiswa
 
-![Foto Profil](assets/images/foto-anda.jpg) 
-*(Tips: Masukkan foto Anda ke folder assets/images dan samakan namanya)*
+![Foto Profil](assets/images/foto-anda.jpg)
 
-### Identitas
-* **Nama Lengkap:** [Nama Anda]
-* **NIM:** [Nomor Induk Mahasiswa]
+### Identitas Diri
+* **Nama Lengkap:** [Isi Nama Anda]
+* **NIM:** [Isi NIM Anda]
 * **Bidang Studi:** PGSD (Pendidikan Guru Sekolah Dasar)
 * **LPTK:** Universitas Negeri Yogyakarta
 
-### Tentang Saya
-Tuliskan deskripsi singkat mengenai visi Anda sebagai calon guru profesional atau motivasi Anda mengikuti PPG Prajabatan.
+> **Visi Pendidikan:** "Menjadi pendidik yang inspiratif dan adaptif terhadap perkembangan teknologi untuk mencerdaskan generasi bangsa."
 
 ---
-[ Kembali ke Halaman Muka ](index.md)
+[🏠 Kembali ke Beranda](./index.md)
