@@ -1,6 +1,5 @@
-title: Jurnal Refleksi [Nama Anda]
-description: Portofolio Digital PPG Prajabatan UNY
+title: E-Portofolio Rifqi
+description: Jurnal Refleksi PPG Prajabatan UNY
 theme: jekyll-theme-minimal
-# Agar link gambar tidak rusak
-baseurl: "" 
-url: ""
+baseurl: "/E-Portofolio" 
+url: "https://rifqia48.github.io"
