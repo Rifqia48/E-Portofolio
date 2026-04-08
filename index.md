@@ -1,21 +1,26 @@
 ---
 layout: default
+title: Home
 ---
 
-# 🌿 Jurnal Refleksi Digital
-Selamat datang di ruang belajar saya. Situs ini mendokumentasikan proses refleksi dan artefak pembelajaran selama program PPG Prajabatan.
-
----
-
-### 📂 Navigasi Cepat
-
-| [Profil Saya](./profil.md) | [Proyek Kepemimpinan](./pk-2.md) | [PPL II](./ppl-2.md) |
-| :--- | :--- | :--- |
+# 🌿 Selamat Datang di E-Portofolio
+Situs ini merupakan ruang digital untuk mendokumentasikan refleksi dan artefak pembelajaran saya selama program PPG Prajabatan.
 
 ---
 
-### 📝 Catatan Terbaru
-* **Topik 1:** [Perencanaan Proyek Kepemimpinan](./pk-2/topik-1.md)
-* **Topik 2:** [Laporan Kemajuan Kelompok](./pk-2/topik-2.md)
+### 📂 Navigasi Portofolio
 
-> "Pendidikan adalah senjata paling mematikan di dunia, karena dengan pendidikan, Anda dapat mengubah dunia." — Nelson Mandelaindx.md
+| Menu Utama | Deskripsi |
+| :--- | :--- |
+| [👤 Profil Saya](./profil.md) | Biodata dan visi pendidikan |
+| [📖 Proyek Kepemimpinan II](./pk-2/topik-1.md) | Kumpulan jurnal & artefak PK II |
+| [🏫 PPL II](./ppl-ii.md) | Dokumentasi praktik lapangan |
+
+---
+
+### 📝 Jurnal Terbaru
+* **Topik 1:** [Refleksi Perencanaan Proyek](./pk-2/topik-1.md)
+* **Laporan:** [📥 Download Laporan Fase 3](https://google.com) *(Ganti dengan link Drive)*
+
+---
+*Dibuat dengan ❤️ menggunakan GitHub Pages*
