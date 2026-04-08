@@ -1,0 +1,6 @@
+title: Jurnal Refleksi [Nama Anda]
+description: Portofolio Digital PPG Prajabatan UNY
+theme: jekyll-theme-minimal
+# Agar link gambar tidak rusak
+baseurl: "" 
+url: ""
