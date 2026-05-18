@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 
     <style>
         /* === PALET WARNA === */
@@ -40,7 +40,7 @@
             display: flex; justify-content: space-between; align-items: center;
             padding: 20px 5%; background-color: var(--cream);
             border-bottom: 3px solid var(--charcoal);
-            position: relative; z-index: 100;
+            position: relative; z-index: 1000;
         }
 
         .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
@@ -69,7 +69,7 @@
         /* === HERO SECTION (KIRI-KANAN) === */
         .hero {
             display: flex; align-items: center; justify-content: space-between;
-            padding: 80px 5% 60px 5%; max-width: 1200px; margin: 0 auto; gap: 50px;
+            padding: 100px 5% 80px 5%; max-width: 1200px; margin: 0 auto; gap: 50px;
             position: relative;
         }
 
@@ -82,36 +82,65 @@
             box-shadow: 4px 4px 0px var(--charcoal); margin-bottom: 30px; text-transform: uppercase;
         }
 
-        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; }
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1.5px; font-weight: 900; }
         
         .highlight { position: relative; display: inline-block; z-index: 1; }
         .highlight::after {
-            content: ''; position: absolute; bottom: 8px; left: 0; width: 100%; height: 15px;
-            background-color: var(--green); opacity: 0.5; z-index: -1; transform: rotate(-1deg);
+            content: ''; position: absolute; bottom: 8px; left: 0; width: 100%; height: 20px;
+            background-color: var(--green); opacity: 0.6; z-index: -1; transform: rotate(-1.5deg);
         }
 
-        .hero p { color: var(--dark-brown); font-size: 1.15rem; margin-bottom: 40px; font-weight: 500; }
+        .hero p { color: var(--dark-brown); font-size: 1.15rem; margin-bottom: 45px; font-weight: 500; }
         .hero-buttons { display: flex; gap: 20px; }
 
-        .hero-image { flex: 1; display: flex; justify-content: center; position: relative; }
-        
-        .image-box {
-            width: 100%; max-width: 400px; aspect-ratio: 1/1;
-            background-color: var(--green); border: 4px solid var(--charcoal);
-            border-radius: 40px; box-shadow: 15px 15px 0px var(--charcoal);
-            position: relative; overflow: visible;
+        /* ========================================= */
+        /* === KOMPOSISI FOTO POP-UP (KANAN) === */
+        /* ========================================= */
+        .hero-image {
+            flex: 1; display: flex; justify-content: center; position: relative;
         }
 
-        .image-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 36px; }
+        /* Wadah utama komposisi */
+        .pop-up-wrapper {
+            position: relative; width: 100%; max-width: 420px; aspect-ratio: 1/1;
+        }
 
+        /* Lapisan 1: Kotak Latar Belakang Hijau */
+        .pop-up-background-box {
+            position: absolute; width: 100%; height: 100%;
+            background-color: var(--green); border: 4px solid var(--charcoal);
+            border-radius: 40px; box-shadow: 15px 15px 0px var(--charcoal);
+            z-index: 1;
+        }
+
+        /* Lapisan 2: Bingkai & Foto di Depan yang Melangkah Keluar */
+        .pop-up-foreground-image {
+            position: absolute; width: 100%; height: 100%;
+            border: 4px solid var(--charcoal); border-radius: 40px;
+            background-color: var(--white); 
+            overflow: hidden; 
+            z-index: 2; 
+            
+            /* Trik Pop-Up: Geser bingkai ke atas dan kiri */
+            transform: translate(-10px, -15px);
+            
+            /* Berikan bayangan solid yang sama agar serasi */
+            box-shadow: 15px 15px 0px var(--charcoal);
+        }
+
+        .pop-up-foreground-image img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        /* Badge melayang */
         .float-badge {
             position: absolute; background: var(--white); border: 3px solid var(--charcoal);
             padding: 10px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem;
             box-shadow: 5px 5px 0px var(--charcoal); display: flex; align-items: center; gap: 10px; z-index: 10;
         }
         
-        .badge-1 { top: 20px; left: -40px; }
-        .badge-2 { bottom: 30px; right: -30px; }
+        .badge-1 { top: 10px; left: -60px; z-index: 11; }
+        .badge-2 { bottom: 40px; right: -40px; z-index: 11; }
 
         /* === MOCKUP UI CARD (COURSE PATH) === */
         .course-section { padding: 40px 5% 100px 5%; }
@@ -168,12 +197,14 @@
 
         /* Responsif untuk HP */
         @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
+            .hero { flex-direction: column; text-align: center; padding: 40px 5%; gap: 60px;}
             .hero-content { align-items: center; display: flex; flex-direction: column; }
             .hero h1 { font-size: 3rem; }
             .hero-buttons { justify-content: center; flex-wrap: wrap; }
-            .badge-1 { top: -20px; left: 0; }
-            .badge-2 { bottom: -20px; right: 0; }
+            .hero-image { width: 100%; }
+            .pop-up-wrapper { max-width: 300px; }
+            .badge-1 { top: -30px; left: 0; }
+            .badge-2 { bottom: -30px; right: 0; }
             .mockup-body { padding: 20px; }
             .module-item { padding: 15px; }
             .module-info { flex-direction: column; align-items: flex-start; gap: 10px; }
@@ -214,17 +245,21 @@
         </div>
 
         <div class="hero-image">
-            <div class="float-badge badge-1">
-                <span style="background: var(--purple); width: 12px; height: 12px; border-radius: 50%;"></span>
-                Matematika Angkatan 2026
-            </div>
-            
-            <div class="image-box">
-                <img src="assets/images/foto-anda.png" alt="Foto Rifqi">
-            </div>
+            <div class="pop-up-wrapper">
+                <div class="pop-up-background-box"></div>
+                
+                <div class="pop-up-foreground-image">
+                    <img src="assets/images/foto-anda.png" alt="Foto Rifqi">
+                </div>
 
-            <div class="float-badge badge-2">
-                🎓 Universitas Sanata Dharma
+                <div class="float-badge badge-1">
+                    <span style="background: var(--purple); width: 12px; height: 12px; border-radius: 50%;"></span>
+                    Matematika Angkatan 2026
+                </div>
+
+                <div class="float-badge badge-2">
+                    🎓 Universitas Sanata Dharma
+                </div>
             </div>
         </div>
     </section>
@@ -237,53 +272,3 @@
                 </div>
                 <div class="mockup-url">rifqi.github.io / ppl-terbimbing</div>
             </div>
-            
-            <div class="mockup-body">
-                <h3 class="mockup-title">📑 Kurikulum PPL Terbimbing</h3>
-                
-                <div class="module-list">
-                    <a href="profil.html" style="text-decoration: none;">
-                        <div class="module-item">
-                            <div class="module-info">
-                                <div class="module-icon icon-1">👤</div>
-                                <div class="module-text">
-                                    <h4>Bagian 1 — Profil & Karakter Guru</h4>
-                                    <p>Identitas, Inspirasi & Visi Misi</p>
-                                </div>
-                            </div>
-                            <div class="arrow">></div>
-                        </div>
-                    </a>
-
-                    <a href="e-portofolio-1.html" style="text-decoration: none;">
-                        <div class="module-item">
-                            <div class="module-info">
-                                <div class="module-icon icon-2">📊</div>
-                                <div class="module-text">
-                                    <h4>Bagian 2 — E-Portfolio 1</h4>
-                                    <p>Analisis Artefak & Lampiran Siklus</p>
-                                </div>
-                            </div>
-                            <div class="arrow">></div>
-                        </div>
-                    </a>
-
-                    <a href="e-portofolio-2.html" style="text-decoration: none;">
-                        <div class="module-item">
-                            <div class="module-info">
-                                <div class="module-icon icon-3">🧠</div>
-                                <div class="module-text">
-                                    <h4>Bagian 3 — E-Portfolio 2</h4>
-                                    <p>Refleksi Akhir & Filosofi Mengajar</p>
-                                </div>
-                            </div>
-                            <div class="arrow">></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</body>
-</html>
