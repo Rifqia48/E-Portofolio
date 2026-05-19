@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio 2 - Rifqi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brown: #9D6236;
+            --purple: #48369E;
+            --green: #379E36;
+            --dark-brown: #493C31;
+            --charcoal: #2C2B33;
+            --cream: #FDFBF7;
+            --white: #FFFFFF;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--cream);
+            border-bottom: 3px solid var(--charcoal);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .logo-icon { background-color: var(--brown); color: var(--white); width: 35px; height: 35px; border-radius: 50%; border: 3px solid var(--charcoal); display: flex; justify-content: center; align-items: center; }
+        .nav-links { display: flex; gap: 30px; list-style: none; padding: 0; margin: 0; font-weight: 600; }
+        .nav-links a { color: var(--charcoal); text-decoration: none; }
+        .nav-links a:hover { color: var(--purple); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+        .page-header { text-align: center; padding: 60px 20px 20px 20px; }
+        .page-header h1 { font-size: 3.5rem; margin-bottom: 12px; }
+        .page-header p { font-size: 1.2rem; line-height: 1.75; color: var(--dark-brown); }
+        .content { max-width: 1000px; margin: 0 auto; padding: 20px 5% 80px 5%; }
+        .section-card { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; padding: 30px; margin-bottom: 24px; box-shadow: 10px 10px 0px var(--charcoal); }
+        .section-card h2 { margin-bottom: 20px; }
+        .section-card p, .section-card ul { margin: 0 0 16px 0; color: var(--dark-brown); line-height: 1.75; }
+        .section-card ul { padding-left: 20px; }
+        .section-card a { color: var(--purple); }
+        .footer { text-align: center; padding: 30px 20px 40px 20px; color: var(--dark-brown); border-top: 3px solid var(--charcoal); }
+        @media (max-width: 900px) { .nav-links { flex-direction: column; align-items: flex-start; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><div class="logo-icon">R</div>E-Portofolio</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="e-portofolio-1.html">E-Portfolio 1</a></li>
+            <li><a href="e-portofolio-2.html">E-Portfolio 2</a></li>
+        </ul>
+    </nav>
+    <header class="page-header">
+        <h1>E-Portfolio 2</h1>
+        <p>Refleksi akhir dan dokumentasi final untuk tahap PPL Terbimbing.</p>
+    </header>
+    <main class="content">
+        <section class="section-card">
+            <h2>🎯 Bagian 1: Refleksi Akhir Praktik Pengalaman Lapangan Terbimbing</h2>
+            
+            <p><strong>1. Pembelajaran Selama PPL Terbimbing:</strong></p>
+            <p>Selama menjalani program PPL Terbimbing dari awal hingga akhir, saya telah belajar banyak tentang apa itu menjadi seorang guru profesional. Pembelajaran ini meliputi:</p>
+            <ul>
+                <li>Pentingnya perencanaan pembelajaran yang matang dan fleksibel</li>
+                <li>Cara mengelola kelas yang heterogen dengan berbagai kebutuhan belajar</li>
+                <li>Penggunaan berbagai strategi dan media pembelajaran untuk meningkatkan keterlibatan siswa</li>
+                <li>Pentingnya komunikasi efektif dengan siswa, orang tua, dan rekan sejawat</li>
+                <li>Refleksi berkelanjutan untuk perbaikan dan pengembangan diri</li>
+            </ul>
+
+            <p><strong>2. Pengalaman yang Menantang dan Solusi:</strong></p>
+            <p>Saya menghadapi berbagai tantangan selama PPL, seperti:</p>
+            <ul>
+                <li><strong>Tantangan:</strong> Kesulitan mengelola waktu pembelajaran yang efisien<br>
+                    <strong>Solusi:</strong> Mengembangkan strategi pengelolaan waktu yang lebih baik dengan prioritas aktivitas dan penggunaan media pembelajaran yang efisien</li>
+                <li><strong>Tantangan:</strong> Siswa dengan motivasi rendah dalam pembelajaran Matematika<br>
+                    <strong>Solusi:</strong> Menggunakan pendekatan kontekstual dan game-based learning untuk meningkatkan minat dan keterlibatan siswa</li>
+                <li><strong>Tantangan:</strong> Kesenjangan pemahaman antara siswa<br>
+                    <strong>Solusi:</strong> Menerapkan diferensiasi pembelajaran dan pemberian tugas yang disesuaikan dengan tingkat kemampuan</li>
+            </ul>
+
+            <p><strong>3. Umpan Balik dan Saran Konstruktif untuk Perbaikan:</strong></p>
+            <p>Dari diskusi refleksi akhir dengan pembimbing, saya menerima masukan berharga untuk perbaikan ke tahap PPL Mandiri:</p>
+            <ul>
+                <li>Terus meningkatkan kreativitas dalam mengembangkan media pembelajaran yang menarik</li>
+                <li>Memperdalam penguasaan konten Matematika untuk menjelaskan konsep dengan lebih mendalam</li>
+                <li>Mengembangkan keterampilan asesmen formatif yang lebih sophisticated</li>
+                <li>Memperkuat kolaborasi dengan orang tua untuk mendukung pembelajaran siswa di rumah</li>
+            </ul>
+        </section>
+
+        <section class="section-card">
+            <h2>💭 Bagian 2: Filosofi Mengajar</h2>
+            <p>Filosofi mengajar saya dibangun atas prinsip, keyakinan, dan nilai-nilai yang telah saya kembangkan selama perjalanan PPL Terbimbing:</p>
+
+            <p><strong>Paragraf 1 - Prinsip Pendidikan Inklusif:</strong><br>
+Saya percaya bahwa pendidikan Matematika harus accessible dan bermakna bagi semua siswa, tanpa memandang latar belakang, kemampuan awal, atau gaya belajar mereka. Setiap siswa memiliki hak untuk mendapatkan pembelajaran berkualitas dan kesempatan yang sama untuk berkembang. Filosofi ini didukung oleh teori konstruktivisme Piaget dan teori pembelajaran sosial Vygotsky, yang menekankan bahwa pengetahuan dibangun melalui interaksi dan pengalaman aktif siswa dengan lingkungan belajar mereka.</p>
+
+            <p><strong>Paragraf 2 - Pembelajaran Bermakna dan Kontekstual:</strong><br>
+Saya mengedepankan pembelajaran yang bermakna dan relevan dengan kehidupan siswa. Matematika bukan hanya tentang menghafal rumus, tetapi tentang memahami konsep dan aplikasinya dalam kehidupan sehari-hari. Pendekatan kontekstual ini membantu siswa melihat relevansi pembelajaran, meningkatkan motivasi, dan mengembangkan kemampuan berpikir kritis. Seperti yang dikemukakan Freire dalam pedagoginya, pendidikan haruslah liberating dan memberdayakan siswa untuk menjadi agen perubahan dalam masyarakat mereka.</p>
+
+            <p><strong>Paragraf 3 - Komitmen terhadap Pengembangan Diri dan Refleksi Berkelanjutan:</strong><br>
+Sebagai guru, saya berkomitmen untuk terus belajar dan mengembangkan diri secara profesional. Refleksi atas praktik mengajar adalah bagian integral dari filosofi saya, memungkinkan saya untuk mengidentifikasi kekuatan dan area pengembangan, serta mengadaptasi strategi pembelajaran berdasarkan umpan balik dan hasil pembelajaran siswa. Filosofi reflektif ini sejalan dengan konsep Schön tentang reflective practice, di mana guru tidak hanya mengimplementasikan strategi tetapi juga berpikir kritis tentang praktik mereka untuk perbaikan berkelanjutan.</p>
+        </section>
+
+        <section class="section-card">
+            <h2>✅ Kriteria Penilaian E-Portfolio 2</h2>
+            <ul>
+                <li>Kedalaman dan autentisitas refleksi akhir praktik mengajar</li>
+                <li>Filosofi mengajar yang jelas, well-articulated, dan didukung oleh literatur teori</li>
+                <li>Kualitas analisis diri dan pembelajaran profesional</li>
+                <li>Navigasi dan tampilan portal yang profesional dan mudah digunakan</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2026 Rifqi — E-Portofolio PPG</p>
+    </footer>
+</body>
+</html>
