@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Portfolio 2 - Rifqi</title>
+    <title>Refleksi - E-Portofolio Rifqi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
@@ -50,6 +50,76 @@
         .section-card p, .section-card ul { margin: 0 0 16px 0; color: var(--dark-brown); line-height: 1.75; }
         .section-card ul { padding-left: 20px; }
         .section-card a { color: var(--purple); }
+
+        .refleksi-grid { display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); gap: 20px; }
+        .grid-card {
+            background: var(--purple);
+            border: 4px solid var(--purple);
+            border-radius: 24px;
+            padding: 30px 28px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+            box-shadow: 10px 10px 0px var(--charcoal);
+            position: relative;
+        }
+        .grid-card:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--charcoal);
+            background-color: var(--purple);
+            border-color: var(--purple);
+        }
+        .grid-card h3,
+        .grid-card p {
+            color: var(--white);
+            transition: color 0.2s ease;
+        }
+        .grid-card h3 { margin-bottom: 14px; font-size: 1.4rem; }
+        .grid-card p { margin: 0; font-weight: 600; }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(44, 43, 51, 0.72);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 2000;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: var(--white);
+            border: 4px solid var(--charcoal);
+            border-radius: 28px;
+            max-width: 800px;
+            width: 100%;
+            padding: 32px;
+            box-shadow: 12px 12px 0px var(--charcoal);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 42px;
+            height: 42px;
+            border: 3px solid var(--charcoal);
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--charcoal);
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-body p { margin-bottom: 16px; }
+        .modal-body ul { padding-left: 20px; margin: 0 0 16px 0; }
+        .modal-body li { margin-bottom: 10px; }
         .footer { text-align: center; padding: 30px 20px 40px 20px; color: var(--dark-brown); border-top: 3px solid var(--charcoal); }
         @media (max-width: 900px) { .nav-links { flex-direction: column; align-items: flex-start; } }
     </style>
@@ -60,75 +130,127 @@
         <ul class="nav-links">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="profil.html">Profil</a></li>
-            <li><a href="e-portofolio-1.html">E-Portfolio 1</a></li>
-            <li><a href="e-portofolio-2.html">E-Portfolio 2</a></li>
+            <li><a href="e-portofolio-1.html">Artefak</a></li>
+            <li><a href="e-portofolio-2.html">Refleksi</a></li>
         </ul>
     </nav>
     <header class="page-header">
-        <h1>E-Portfolio 2</h1>
-        <p>Refleksi akhir dan dokumentasi final untuk tahap PPL Terbimbing.</p>
+        <h1>Refleksi</h1>
+        <p>Analisis mendalam, pembelajaran, dan filosofi mengajar dari pengalaman PPL Terbimbing.</p>
     </header>
     <main class="content">
         <section class="section-card">
-            <h2>🎯 Bagian 1: Refleksi Akhir Praktik Pengalaman Lapangan Terbimbing</h2>
-            
-            <p><strong>1. Pembelajaran Selama PPL Terbimbing:</strong></p>
-            <p>Selama menjalani program PPL Terbimbing dari awal hingga akhir, saya telah belajar banyak tentang apa itu menjadi seorang guru profesional. Pembelajaran ini meliputi:</p>
-            <ul>
-                <li>Pentingnya perencanaan pembelajaran yang matang dan fleksibel</li>
-                <li>Cara mengelola kelas yang heterogen dengan berbagai kebutuhan belajar</li>
-                <li>Penggunaan berbagai strategi dan media pembelajaran untuk meningkatkan keterlibatan siswa</li>
-                <li>Pentingnya komunikasi efektif dengan siswa, orang tua, dan rekan sejawat</li>
-                <li>Refleksi berkelanjutan untuk perbaikan dan pengembangan diri</li>
-            </ul>
+            <h2>💭 Refleksi Siklus PPL</h2>
+            <p>Refleksi ini dibagi dalam tiga siklus untuk menunjukkan perkembangan pengalaman mengajar dan pembelajaran profesional. Klik salah satu kotak di bawah untuk membaca refleksi lengkapnya.</p>
+        </section>
 
-            <p><strong>2. Pengalaman yang Menantang dan Solusi:</strong></p>
-            <p>Saya menghadapi berbagai tantangan selama PPL, seperti:</p>
-            <ul>
-                <li><strong>Tantangan:</strong> Kesulitan mengelola waktu pembelajaran yang efisien<br>
-                    <strong>Solusi:</strong> Mengembangkan strategi pengelolaan waktu yang lebih baik dengan prioritas aktivitas dan penggunaan media pembelajaran yang efisien</li>
-                <li><strong>Tantangan:</strong> Siswa dengan motivasi rendah dalam pembelajaran Matematika<br>
-                    <strong>Solusi:</strong> Menggunakan pendekatan kontekstual dan game-based learning untuk meningkatkan minat dan keterlibatan siswa</li>
-                <li><strong>Tantangan:</strong> Kesenjangan pemahaman antara siswa<br>
-                    <strong>Solusi:</strong> Menerapkan diferensiasi pembelajaran dan pemberian tugas yang disesuaikan dengan tingkat kemampuan</li>
-            </ul>
-
-            <p><strong>3. Umpan Balik dan Saran Konstruktif untuk Perbaikan:</strong></p>
-            <p>Dari diskusi refleksi akhir dengan pembimbing, saya menerima masukan berharga untuk perbaikan ke tahap PPL Mandiri:</p>
-            <ul>
-                <li>Terus meningkatkan kreativitas dalam mengembangkan media pembelajaran yang menarik</li>
-                <li>Memperdalam penguasaan konten Matematika untuk menjelaskan konsep dengan lebih mendalam</li>
-                <li>Mengembangkan keterampilan asesmen formatif yang lebih sophisticated</li>
-                <li>Memperkuat kolaborasi dengan orang tua untuk mendukung pembelajaran siswa di rumah</li>
-            </ul>
+        <section class="section-card refleksi-grid">
+            <article class="grid-card" data-modal="siklus1">
+                <h3>REFLEKSI SIKLUS 1</h3>
+                <p>Observasi awal kelas, hubungan siswa-guru, dan pelajaran pertama di lapangan.</p>
+            </article>
+            <article class="grid-card" data-modal="siklus2">
+                <h3>REFLEKSI SIKLUS 2</h3>
+                <p>Strategi mengelola kelas, diferensiasi, dan menjaga motivasi siswa.</p>
+            </article>
+            <article class="grid-card" data-modal="siklus3">
+                <h3>REFLEKSI SIKLUS 3</h3>
+                <p>Filosofi mengajar, growth mindset, dan rencana pembelajaran berkelanjutan.</p>
+            </article>
         </section>
 
         <section class="section-card">
-            <h2>💭 Bagian 2: Filosofi Mengajar</h2>
-            <p>Filosofi mengajar saya dibangun atas prinsip, keyakinan, dan nilai-nilai yang telah saya kembangkan selama perjalanan PPL Terbimbing:</p>
-
-            <p><strong>Paragraf 1 - Prinsip Pendidikan Inklusif:</strong><br>
-Saya percaya bahwa pendidikan Matematika harus accessible dan bermakna bagi semua siswa, tanpa memandang latar belakang, kemampuan awal, atau gaya belajar mereka. Setiap siswa memiliki hak untuk mendapatkan pembelajaran berkualitas dan kesempatan yang sama untuk berkembang. Filosofi ini didukung oleh teori konstruktivisme Piaget dan teori pembelajaran sosial Vygotsky, yang menekankan bahwa pengetahuan dibangun melalui interaksi dan pengalaman aktif siswa dengan lingkungan belajar mereka.</p>
-
-            <p><strong>Paragraf 2 - Pembelajaran Bermakna dan Kontekstual:</strong><br>
-Saya mengedepankan pembelajaran yang bermakna dan relevan dengan kehidupan siswa. Matematika bukan hanya tentang menghafal rumus, tetapi tentang memahami konsep dan aplikasinya dalam kehidupan sehari-hari. Pendekatan kontekstual ini membantu siswa melihat relevansi pembelajaran, meningkatkan motivasi, dan mengembangkan kemampuan berpikir kritis. Seperti yang dikemukakan Freire dalam pedagoginya, pendidikan haruslah liberating dan memberdayakan siswa untuk menjadi agen perubahan dalam masyarakat mereka.</p>
-
-            <p><strong>Paragraf 3 - Komitmen terhadap Pengembangan Diri dan Refleksi Berkelanjutan:</strong><br>
-Sebagai guru, saya berkomitmen untuk terus belajar dan mengembangkan diri secara profesional. Refleksi atas praktik mengajar adalah bagian integral dari filosofi saya, memungkinkan saya untuk mengidentifikasi kekuatan dan area pengembangan, serta mengadaptasi strategi pembelajaran berdasarkan umpan balik dan hasil pembelajaran siswa. Filosofi reflektif ini sejalan dengan konsep Schön tentang reflective practice, di mana guru tidak hanya mengimplementasikan strategi tetapi juga berpikir kritis tentang praktik mereka untuk perbaikan berkelanjutan.</p>
-        </section>
-
-        <section class="section-card">
-            <h2>✅ Kriteria Penilaian E-Portfolio 2</h2>
-            <ul>
-                <li>Kedalaman dan autentisitas refleksi akhir praktik mengajar</li>
-                <li>Filosofi mengajar yang jelas, well-articulated, dan didukung oleh literatur teori</li>
-                <li>Kualitas analisis diri dan pembelajaran profesional</li>
-                <li>Navigasi dan tampilan portal yang profesional dan mudah digunakan</li>
-            </ul>
+            <h2>Catatan</h2>
+            <p>Gunakan tombol di atas untuk membuka refleksi setiap siklus. Konten refleksi telah disusun berdasarkan pengalaman PPL Terbimbing dan pembelajaran yang saya dapatkan di kelas.</p>
         </section>
     </main>
+    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="close-btn" id="closeModal" aria-label="Tutup">×</button>
+            <h2 id="modalTitle"></h2>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
     <footer class="footer">
         <p>&copy; 2026 Rifqi — E-Portofolio PPG</p>
     </footer>
+    <script>
+        const reflections = {
+            siklus1: {
+                title: 'Refleksi Siklus 1',
+                content: `
+                    <p>Pada pelaksanaan Siklus 1, fokus utama di awal pembelajaran adalah memberikan kegiatan apersepsi sebagai scaffolding untuk membangun pemahaman intuitif murid. Langkah ini terbukti penting untuk memantik pemikiran kritis sekaligus mencegah miskonsepsi dasar, khususnya agar murid tidak tertukar dalam menentukan variabel independen dan variabel dependen.</p>
+                    <p>Dalam proses pelaksanaannya, terdapat dinamika yang menjadi pembelajaran berharga. Salah satu keberhasilan yang menonjol adalah pada pertemuan kedua yang terpaksa dialihkan secara daring, namun proses belajar tetap berjalan terkendali dan seluruh murid sukses mengumpulkan tugas tepat waktu.</p>
+                    <p>Meski demikian, saya menyadari adanya kendala dalam manajemen alokasi waktu pada pertemuan pertama, di mana penyampaian materi selesai lebih cepat dari perkiraan sehingga menuntut saya untuk berimprovisasi secara spontan di kelas.</p>
+                    <p>Penggunaan variasi media pembelajaran menjadi kunci tingginya partisipasi aktif di kelas. Pada pertemuan pertama, penggunaan kertas berpetak untuk menggambar diagram pencar secara manual sukses memicu diskusi dinamis di dalam kelompok. Sementara itu, pada pertemuan kedua, penggunaan LKPD digital berhasil mempertahankan fokus murid meski dalam moda daring.</p>
+                    <p>Variasi kegiatan ini membuahkan respons positif, di mana murid tampil lebih percaya diri, berani bertanya, dan tidak merasa bosan. Evaluasi dari siklus ini semakin diperkuat oleh umpan balik konstruktif dari Guru Pamong.</p>
+                    <p>Beliau secara khusus menyoroti perlunya peningkatan kemampuan manajemen waktu di kelas. Selain itu, beliau memberikan masukan strategis terkait asesmen, yaitu menyarankan agar pelaksanaan evaluasi ditunda dan dilakukan secara luring agar hasilnya lebih optimal dan valid.</p>
+                    <p><strong>Pelajaran Utama & Tindak Lanjut:</strong> Berdasarkan antusiasme murid selama siklus ini, saya berencana untuk mengintegrasikan media digital secara lebih maksimal. Ke depannya, saya akan merancang penugasan berbasis platform digital interaktif agar pembelajaran menjadi lebih relevan dan menyenangkan sesuai dengan gaya belajar murid.</p>
+                `
+            },
+            siklus2: {
+                title: 'Refleksi Siklus 2',
+                content: `
+                    <p>Pada Siklus 2, kegiatan pembelajaran diawali dengan apersepsi berupa kilas balik terhadap kesalahan hitung atau input dari pertemuan sebelumnya. Melalui apersepsi ini, murid disadarkan betapa fatalnya akibat jika posisi variabel X dan Y tertukar dalam menghasilkan persamaan regresi.</p>
+                    <p>Hal ini sangat efektif membantu murid memahami bahwa tujuan pembelajaran bukan sekadar memasukkan angka, melainkan melatih ketelitian tinggi, ketepatan prosedural, dan mematangkan konsep variabel independen-dependen sebelum melakukan perhitungan lanjutan.</p>
+                    <p>Pencapaian terbesar pada siklus ini adalah keberhasilan murid dalam menguasai keterampilan analitis, di mana mereka mampu menginterpretasikan makna dari persamaan regresi dengan tepat. Namun, terdapat tantangan pada aspek keterampilan komputasi akibat pembiasaan penggunaan software (Excel/Spreadsheet) di kelas.</p>
+                    <p>Penggunaan aplikasi ini ternyata memunculkan ketergantungan, sehingga murid mengalami kesulitan dan kebingungan ketika dihadapkan pada asesmen manual berbasis kertas.</p>
+                    <p>Meskipun demikian, penggunaan media berbasis software terbukti sangat memantik partisipasi aktif dan dinamika kolaborasi yang luar biasa. Setiap anggota kelompok memiliki andil yang nyata, seperti membagi tugas siapa yang melakukan input data, menghitung variabel x^2, y^2, dan xy, hingga mencari nilai komponen regresi.</p>
+                    <p>Respons murid pun sangat dinamis; mereka jauh lebih aktif bertanya dibandingkan siklus pertama guna memastikan setiap langkah prosedur yang mereka kerjakan sudah benar.</p>
+                    <p>Evaluasi pembelajaran pada siklus ini diperkuat oleh umpan balik konstruktif dari Guru Pamong. Beliau menyarankan agar murid dibiasakan untuk menguasai perhitungan secara manual di atas kertas terlebih dahulu sebelum menggunakan software.</p>
+                    <p>Hal ini tidak hanya selaras dengan kondisi asesmen yang melarang penggunaan kalkulator dan software, tetapi juga membantu memperkuat retensi memori dan pemahaman murid terhadap langkah-langkah penyelesaian.</p>
+                    <p><strong>Pelajaran Utama & Tindak Lanjut:</strong> Berdasarkan hasil evaluasi dan umpan balik tersebut, unsur utama yang akan saya ubah adalah tahapan pengerjaan tugas (scaffolding) pada metode pembelajaran.</p>
+                `
+            },
+            siklus3: {
+                title: 'Refleksi Siklus 3',
+                content: `
+                    <p>Pada Siklus 3, kegiatan apersepsi terbukti efektif membantu murid memahami tujuan pembelajaran. Hal ini diawali dengan membangun pemahaman intuitif mereka melalui contoh kontekstual, seperti hubungan antara penggunaan WhatsApp dan sisa baterai, serta mengingatkan kembali memori murid mengenai langkah-langkah mencari nilai koefisien korelasi.</p>
+                    <p>Dalam pelaksanaan kegiatan inti, terdapat dinamika keberhasilan dan tantangan yang menjadi pembelajaran berharga. Penggunaan media evaluasi digital berupa kuis interaktif Kahoot berjalan sangat efektif dalam memicu fokus dan antusiasme siswa.</p>
+                    <p>Di sisi lain, penerapan metode kooperatif Two Stay Two Stray belum berjalan maksimal karena kurang terkoordinasi secara teknis pada saat alur perpindahan peran, sehingga suasana diskusi sempat menjadi kurang kondusif.</p>
+                    <p>Meskipun terdapat kendala koordinasi, secara keseluruhan partisipasi dan respons murid sangat positif serta dinamis dari awal hingga akhir. Murid tampil proaktif saat mencari dan mempresentasikan temuan nilai koefisien korelasi kepada kelompok lain.</p>
+                    <p>Puncak dari partisipasi aktif ini terlihat jelas saat seluruh murid berkompetisi secara sehat dan berhasil menyelesaikan kuis Kahoot. Evaluasi praktik mengajar ini dilengkapi dengan umpan balik konstruktif dari Guru Pamong yang menyoroti perlunya pengawasan dan instruksi yang lebih terstruktur dari sisi manajemen kelas, terutama saat menerapkan metode Two Stay Two Stray.</p>
+                    <p>Beliau juga menyarankan agar saya memperbanyak intensitas latihan soal agar keterampilan berhitung dan pemahaman analitis siswa semakin mendalam.</p>
+                    <p><strong>Pelajaran Utama & Tindak Lanjut:</strong> Merespons evaluasi tersebut, saya akan memperbanyak porsi pengerjaan tugas secara manual di kertas dibandingkan langsung menggunakan software. Melalui kegiatan menulis secara langsung, murid dapat lebih memahami proses, sekaligus melatih keterampilan motorik dan literasi mereka.</p>
+                `
+            }
+        };
+
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const closeModal = document.getElementById('closeModal');
+
+        document.querySelectorAll('.grid-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const key = card.dataset.modal;
+                const reflection = reflections[key];
+                if (!reflection) return;
+                modalTitle.textContent = reflection.title;
+                modalBody.innerHTML = reflection.content;
+                modalOverlay.classList.add('active');
+                modalOverlay.setAttribute('aria-hidden', 'false');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+            modalOverlay.setAttribute('aria-hidden', 'true');
+        });
+
+        modalOverlay.addEventListener('click', event => {
+            if (event.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+                modalOverlay.setAttribute('aria-hidden', 'true');
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                modalOverlay.classList.remove('active');
+                modalOverlay.setAttribute('aria-hidden', 'true');
+            }
+        });
+    </script>
 </body>
 </html>
