@@ -50,6 +50,9 @@
         .section-card p, .section-card ul { margin: 0 0 16px 0; color: var(--dark-brown); line-height: 1.75; }
         .section-card ul { padding-left: 20px; }
         .section-card a { color: var(--purple); }
+        .embed-container { position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 24px; }
+        .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 16px; }
+        .pdf-viewer { padding-bottom: 75%; }
         .footer { text-align: center; padding: 30px 20px 40px 20px; color: var(--dark-brown); border-top: 3px solid var(--charcoal); }
         @media (max-width: 900px) { .nav-links { flex-direction: column; align-items: flex-start; } }
     </style>
@@ -70,72 +73,50 @@
     </header>
     <main class="content">
         <section class="section-card">
-            <h2>🎯 Ringkasan Artefak Pembelajaran</h2>
-            <p>Halaman ini menampilkan dokumentasi produk pembelajaran yang telah saya buat dan implementasikan selama PPL Terbimbing. Artefak ini mencerminkan usaha untuk merancang pembelajaran yang bermakna, interaktif, dan sesuai dengan kebutuhan siswa.</p>
+            <h2>🎯 Ringkasan Progress Siklus</h2>
+            <p>Dokumentasi berikut menampilkan progress setiap siklus pembelajaran dari Siklus 1 sampai Siklus 3. Setiap siklus memuat dua video pembelajaran yang dapat diputar langsung, serta satu modul ajar PDF yang dapat dibaca di web.</p>
         </section>
 
         <section class="section-card">
-            <h2>📄 Rencana Pelaksanaan Pembelajaran (RPP)</h2>
-            <p><strong>Deskripsi:</strong> RPP dirancang untuk topik [topik Matematika] dengan fokus pada pembelajaran konstruktivistik dan diferensiasi. Setiap RPP memuat identitas sekolah, kompetensi dasar, indikator, tujuan pembelajaran, materi pokok, metode/strategi, kegiatan pembelajaran, media/alat, dan penilaian.</p>
-            <p><strong>Fitur Utama:</strong></p>
-            <ul>
-                <li>Pembelajaran berpusat pada siswa dengan aktivitas eksplorasi</li>
-                <li>Integrasi teknologi dan media digital</li>
-                <li>Asesmen formatif di setiap tahap pembelajaran</li>
-                <li>Diferensiasi untuk siswa dengan kemampuan berbeda</li>
-            </ul>
-            <p><strong>File:</strong> RPP_[Topik]_Rifqi.pdf | <a href="#">Unduh</a></p>
+            <h2>🟠 Siklus 1</h2>
+            <p><strong>Fokus:</strong> Perencanaan pembelajaran dan pengenalan konsep utama.</p>
+            <div class="embed-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Siklus 1 - Materi 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-container">
+                <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="Video Siklus 1 - Materi 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-container pdf-viewer">
+                <iframe src="https://drive.google.com/file/d/1A2B3C4D5E6F7G8H9I0J/preview" title="Modul Ajar Siklus 1" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
 
         <section class="section-card">
-            <h2>📋 Lembar Kerja Peserta Didik (LKPD)</h2>
-            <p><strong>Deskripsi:</strong> LKPD dirancang untuk memfasilitasi keterlibatan siswa dalam pembelajaran aktif dan membangun konsep melalui eksplorasi. LKPD berisi pertanyaan penggali, aktivitas kelompok, dan tugas refleksi.</p>
-            <p><strong>Fitur Utama:</strong></p>
-            <ul>
-                <li>Pertanyaan terbuka yang mendorong berpikir kritis</li>
-                <li>Aktivitas kolaboratif dan diskusi kelompok</li>
-                <li>Koneksi dengan kehidupan nyata dan konteks lokal</li>
-                <li>Scaffolding untuk mendukung pembelajaran mandiri siswa</li>
-            </ul>
-            <p><strong>File:</strong> LKPD_[Topik]_Rifqi.pdf | <a href="#">Unduh</a></p>
+            <h2>🟡 Siklus 2</h2>
+            <p><strong>Fokus:</strong> Implementasi kegiatan pembelajaran dan evaluasi awal.</p>
+            <div class="embed-container">
+                <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Video Siklus 2 - Materi 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-container">
+                <iframe src="https://www.youtube.com/embed/l482T0yNkeo" title="Video Siklus 2 - Materi 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-container pdf-viewer">
+                <iframe src="https://drive.google.com/file/d/1K2L3M4N5O6P7Q8R9S0T/preview" title="Modul Ajar Siklus 2" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
 
         <section class="section-card">
-            <h2>🎨 Bahan Ajar Digital dan Media Pembelajaran</h2>
-            <p><strong>Deskripsi:</strong> Media pembelajaran mencakup presentasi interaktif, video pembelajaran, animasi, dan infografis yang dirancang untuk meningkatkan keterlibatan dan pemahaman siswa terhadap konsep abstrak.</p>
-            <p><strong>Jenis Media:</strong></p>
-            <ul>
-                <li>Presentasi PowerPoint dengan animasi dan visualisasi</li>
-                <li>Video pembelajaran singkat (3-5 menit) untuk penjelasan konsep</li>
-                <li>Infografis untuk merangkum poin-poin penting</li>
-                <li>GeoGebra atau aplikasi interaktif untuk eksperimen matematika</li>
-            </ul>
-            <p><strong>File:</strong> Media_[Topik]_Rifqi | <a href="#">Akses</a></p>
-        </section>
-
-        <section class="section-card">
-            <h2>✅ Instrumen Asesmen Formatif</h2>
-            <p><strong>Deskripsi:</strong> Instrumen asesmen dirancang untuk memantau pemahaman siswa secara berkala dan memberikan umpan balik konstruktif. Asesmen mencakup kuis, soal esai, dan tugas proyek.</p>
-            <p><strong>Bentuk Asesmen:</strong></p>
-            <ul>
-                <li>Kuis formatif untuk mengecek pemahaman konsep dasar</li>
-                <li>Soal esai untuk mengukur kemampuan analisis dan reasoning</li>
-                <li>Tugas proyek untuk aplikasi konsep dalam konteks nyata</li>
-                <li>Observasi dan self-assessment dari siswa</li>
-            </ul>
-            <p><strong>File:</strong> Instrumen_Asesmen_[Topik]_Rifqi.pdf | <a href="#">Unduh</a></p>
-        </section>
-
-        <section class="section-card">
-            <h2>📊 Dokumentasi Implementasi</h2>
-            <p><strong>Catatan Pembelajaran:</strong> Setiap artefak telah diimplementasikan di kelas dengan hasil dan pembelajaran yang tercatat. Dokumentasi ini membantu refleksi dan perbaikan berkelanjutan.</p>
-            <ul>
-                <li>Tanggal Implementasi: [tanggal]</li>
-                <li>Kelas/Tingkat: [tingkat]</li>
-                <li>Jumlah Siswa: [jumlah]</li>
-                <li>Respons Siswa: [deskripsi singkat]</li>
-                <li>Tantangan & Solusi: [catatan]</li>
-            </ul>
+            <h2>🟢 Siklus 3</h2>
+            <p><strong>Fokus:</strong> Refleksi, perbaikan, dan kesimpulan pembelajaran.</p>
+            <div class="embed-container">
+                <iframe src="https://www.youtube.com/embed/fRh_vgS2dFE" title="Video Siklus 3 - Materi 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-container">
+                <iframe src="https://www.youtube.com/embed/e-ORhEE9VVg" title="Video Siklus 3 - Materi 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-container pdf-viewer">
+                <iframe src="https://drive.google.com/file/d/1U2V3W4X5Y6Z7A8B9C0D/preview" title="Modul Ajar Siklus 3" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
     </main>
     <footer class="footer">
