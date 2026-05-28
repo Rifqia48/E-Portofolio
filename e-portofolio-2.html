@@ -121,12 +121,18 @@
         .modal-body ul { padding-left: 20px; margin: 0 0 16px 0; }
         .modal-body li { margin-bottom: 10px; }
         .footer { text-align: center; padding: 30px 20px 40px 20px; color: var(--dark-brown); border-top: 3px solid var(--charcoal); }
-        @media (max-width: 900px) { .nav-links { flex-direction: column; align-items: flex-start; } }
+
+        @media (max-width: 768px) {
+            .refleksi-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo"><div class="logo-icon">R</div>E-Portofolio</div>
+        <div class="logo">
+            <div class="logo-icon">R</div>
+            E-Portofolio
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="profil.html">Profil</a></li>
