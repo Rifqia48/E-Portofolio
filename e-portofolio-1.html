@@ -17,6 +17,9 @@
             --cream: #FDFBF7;
             --white: #FFFFFF;
         }
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--cream);
@@ -29,6 +32,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
             padding: 20px 5%;
             background-color: var(--cream);
             border-bottom: 3px solid var(--charcoal);
@@ -36,25 +41,162 @@
             top: 0;
             z-index: 1000;
         }
-        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-        .logo-icon { background-color: var(--brown); color: var(--white); width: 35px; height: 35px; border-radius: 50%; border: 3px solid var(--charcoal); display: flex; justify-content: center; align-items: center; }
-        .nav-links { display: flex; gap: 30px; list-style: none; padding: 0; margin: 0; font-weight: 600; }
-        .nav-links a { color: var(--charcoal); text-decoration: none; }
-        .nav-links a:hover { color: var(--purple); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
-        .page-header { text-align: center; padding: 60px 20px 20px 20px; }
-        .page-header h1 { font-size: 3.5rem; margin-bottom: 12px; }
-        .page-header p { font-size: 1.2rem; line-height: 1.75; color: var(--dark-brown); }
-        .content { max-width: 1000px; margin: 0 auto; padding: 20px 5% 80px 5%; }
-        .section-card { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; padding: 30px; margin-bottom: 24px; box-shadow: 10px 10px 0px var(--charcoal); }
-        .section-card h2 { margin-bottom: 20px; }
-        .section-card p, .section-card ul { margin: 0 0 16px 0; color: var(--dark-brown); line-height: 1.75; }
-        .section-card ul { padding-left: 20px; }
-        .section-card a { color: var(--purple); }
-        .embed-container { position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 24px; }
-        .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 16px; }
-        .pdf-viewer { padding-bottom: 75%; }
-        .footer { text-align: center; padding: 30px 20px 40px 20px; color: var(--dark-brown); border-top: 3px solid var(--charcoal); }
-        @media (max-width: 900px) { .nav-links { flex-direction: column; align-items: flex-start; } }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            background-color: var(--brown);
+            color: var(--white);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 3px solid var(--charcoal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-weight: 600;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            padding: 8px 0;
+            display: inline-block;
+        }
+        .nav-links a:hover {
+            color: var(--purple);
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 4px;
+        }
+        .page-header {
+            text-align: center;
+            padding: clamp(36px, 6vw, 60px) 20px 20px;
+        }
+        .page-header h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            line-height: 1.75;
+            color: var(--dark-brown);
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .content {
+            width: min(1100px, 100%);
+            margin: 0 auto;
+            padding: 20px 5% 80px;
+        }
+        .section-card {
+            background: var(--white);
+            border: 4px solid var(--charcoal);
+            border-radius: 24px;
+            padding: clamp(24px, 2.5vw, 30px);
+            margin-bottom: 24px;
+            box-shadow: 10px 10px 0px var(--charcoal);
+        }
+        .section-card h2 {
+            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 2.2vw, 2rem);
+        }
+        .section-card p,
+        .section-card ul {
+            margin: 0 0 16px 0;
+            color: var(--dark-brown);
+            line-height: 1.75;
+        }
+        .section-card ul {
+            padding-left: 20px;
+        }
+        .section-card a {
+            color: var(--purple);
+        }
+        .embed-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 24px;
+            min-height: 200px;
+        }
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 16px;
+        }
+        .pdf-viewer {
+            padding-bottom: 75%;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 20px 40px 20px;
+            color: var(--dark-brown);
+            border-top: 3px solid var(--charcoal);
+        }
+        @media (max-width: 900px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                gap: 14px;
+            }
+        }
+        @media (max-width: 768px) {
+            nav {
+                padding: 18px 4%;
+            }
+            .content {
+                padding: 18px 4% 60px;
+            }
+            .section-card {
+                border-radius: 20px;
+            }
+        }
+        @media (max-width: 640px) {
+            nav {
+                justify-content: flex-start;
+            }
+            .page-header {
+                text-align: left;
+                padding-top: 28px;
+            }
+            .page-header p {
+                margin: 0;
+            }
+            .nav-links a {
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+            .nav-links {
+                gap: 10px;
+            }
+            .section-card {
+                padding: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -98,7 +240,7 @@
                 <iframe src="https://www.youtube.com/embed/3v-cGs70_FM" title="Video Siklus 2 - Materi 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="embed-container">
-                <iframe src="hhttps://www.youtube.com/embed/DOBXXgQ0tl0" title="Video Siklus 2 - Materi 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/DOBXXgQ0tl0" title="Video Siklus 2 - Materi 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="embed-container pdf-viewer">
                 <iframe src="https://drive.google.com/file/d/11k9wxID76kIpslzvJzPDMp6MxGge0x7m/preview" title="Modul Ajar Siklus 2" frameborder="0" allowfullscreen></iframe>
