@@ -4,253 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artefak - E-Portofolio Rifqi</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+
     <style>
-        /* === PALET WARNA (Sesuai Identitas) === */
+        *, *::before, *::after { box-sizing: border-box; }
+
         :root {
             --brown: #9D6236;
             --purple: #48369E;
             --green: #379E36;
             --dark-brown: #493C31;
-            --charcoal: #2C2B33;
-            --cream: #FDFBF7;
+            --charcoal: #1A1A1A; 
+            --cream: #FDFBF7; 
             --white: #FFFFFF;
         }
 
-        /* === GLOBAL STYLES === */
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--cream);
             color: var(--charcoal);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            margin: 0; padding: 0; line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; margin: 0; color: var(--charcoal); }
-        a { text-decoration: none; color: var(--charcoal); }
+        h1, h2, h3, h4 { 
+            font-family: 'Space Grotesk', sans-serif; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            margin: 0; 
+            color: var(--charcoal);
+            letter-spacing: -1px;
+        }
+        
+        a { text-decoration: none; color: var(--charcoal); font-weight: 700; }
 
         /* === NAVBAR === */
         nav {
             display: flex; justify-content: space-between; align-items: center;
             padding: 20px 5%; background-color: var(--cream);
-            border-bottom: 3px solid var(--charcoal);
+            border-bottom: 4px solid var(--charcoal); 
             position: sticky; top: 0; z-index: 1000;
+            width: 100%;
         }
 
-        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
         .logo-icon {
             background-color: var(--brown); color: var(--white);
-            width: 35px; height: 35px; border-radius: 50%; border: 3px solid var(--charcoal);
-            display: flex; justify-content: center; align-items: center; font-family: 'Inter', sans-serif;
+            width: 40px; height: 40px; border-radius: 0px; 
+            border: 4px solid var(--charcoal);
+            display: flex; justify-content: center; align-items: center; 
+            font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem;
+            box-shadow: 4px 4px 0px var(--charcoal);
         }
 
-        .nav-links { display: flex; gap: 30px; font-weight: 600; list-style: none; padding: 0; margin: 0; }
-        .nav-links a:hover { color: var(--purple); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+        .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; }
+        .nav-links a {
+            padding: 8px 16px;
+            border: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .nav-links a:hover { 
+            background-color: var(--purple); 
+            color: var(--white); 
+            border: 3px solid var(--charcoal);
+            border-radius: 50px;
+            box-shadow: 4px 4px 0px var(--charcoal);
+        }
+
+        /* === HAMBURGER === */
+        .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1003; }
+        .hamburger span { width: 30px; height: 4px; background-color: var(--charcoal); border-radius: 0; transition: all 0.3s ease; }
+        .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
         /* === PAGE HEADER === */
         .page-header {
-            text-align: center;
-            padding: clamp(36px, 6vw, 60px) 20px 20px;
-        }
-
-        .page-header h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            margin-bottom: 12px;
-        }
-
-        .page-header p {
-            font-size: clamp(1rem, 1.8vw, 1.2rem);
-            line-height: 1.75;
-            color: var(--dark-brown);
-            max-width: 760px;
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 80px 5% 40px 5%;
+            text-align: center;
+        }
+        .page-header h1 { font-size: 4rem; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
+        .page-header p { 
+            font-size: 1.25rem; color: var(--charcoal); font-weight: 600; 
+            max-width: 800px; margin: 0 auto; line-height: 1.8;
+            border: 4px solid var(--charcoal);
+            background: var(--white);
+            padding: 20px;
+            box-shadow: 8px 8px 0px var(--charcoal);
+            border-radius: 24px;
         }
 
         /* === CONTENT === */
-        .content {
-            width: min(1100px, 100%);
-            margin: 0 auto;
-            padding: 20px 5% 80px;
+        .content { width: 100%; max-width: 1100px; margin: 0 auto; padding: 20px 5% 100px 5%; }
+        
+        .section-card { 
+            background: var(--white); 
+            border: 4px solid var(--charcoal); 
+            border-radius: 24px; 
+            padding: 40px; 
+            margin-bottom: 40px; 
+            box-shadow: 12px 12px 0px var(--charcoal); 
+            width: 100%;
         }
+        .section-card h2 { margin-bottom: 25px; font-size: 2rem; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px;}
+        .section-card p { font-size: 1.1rem; color: var(--dark-brown); font-weight: 600; margin-bottom: 20px;}
 
-        .section-card {
-            background: var(--white);
-            border: 4px solid var(--charcoal);
-            border-radius: 24px;
-            padding: clamp(24px, 2.5vw, 30px);
-            margin-bottom: 24px;
-            box-shadow: 10px 10px 0px var(--charcoal);
-        }
-
-        .section-card h2 {
-            margin-bottom: 20px;
-            font-size: clamp(1.5rem, 2.2vw, 2rem);
-        }
-
-        .section-card p,
-        .section-card ul {
-            margin: 0 0 16px 0;
-            color: var(--dark-brown);
-            line-height: 1.75;
-        }
-
-        .section-card ul {
-            padding-left: 20px;
-        }
-
-        .section-card a {
-            color: var(--purple);
-        }
-
-        /* === EMBED CONTAINERS === */
+        /* === EMBED CONTAINERS (BRUTALIST STYLE) === */
         .embed-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;
+            padding-bottom: 56.25%; 
             margin-bottom: 24px;
-            min-height: 200px;
-        }
-
-        .embed-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            border: 4px solid var(--charcoal);
             border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 6px 6px 0px var(--charcoal);
         }
-
-        .pdf-viewer {
-            padding-bottom: 75%;
+        .embed-container iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
         }
 
         /* === FOOTER === */
         .footer {
-            text-align: center;
-            padding: 30px 20px 40px 20px;
-            color: var(--dark-brown);
-            border-top: 3px solid var(--charcoal);
+            text-align: center; padding: 40px 20px; color: var(--charcoal);
+            border-top: 4px solid var(--charcoal);
+            background-color: var(--white);
+            font-weight: 900;
+            text-transform: uppercase;
         }
 
         /* === RESPONSIVE === */
-        @media (max-width: 768px) {
-            .page-header {
-                padding: 28px 16px 16px;
-            }
-            .content {
-                padding: 16px 4% 60px;
-            }
-            .section-card {
-                border-radius: 20px;
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            nav {
-                padding: 15px 4%;
-            }
-            .page-header {
-                text-align: left;
-                padding-top: 20px;
-            }
-            .page-header h1 {
-                font-size: 1.8rem;
-                margin-bottom: 10px;
-            }
-            .page-header p {
-                font-size: 0.95rem;
-                margin: 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.2rem;
-            }
+        @media (max-width: 900px) {
+            .hamburger { display: flex; position: absolute; right: 5%; top: 30px; }
             .nav-links {
-                gap: 12px;
-                font-size: 0.9rem;
+                position: absolute; top: 80px; left: 0; right: 0;
+                background-color: var(--white); flex-direction: column;
+                width: 100%; border-top: 4px solid var(--charcoal);
+                display: none; z-index: 1001;
             }
-            .section-card {
-                padding: 16px;
-                margin-bottom: 16px;
-            }
+            .nav-links.active { display: flex; }
+            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); }
+            .nav-links a { display: block; padding: 20px; }
+
+            .page-header h1 { font-size: 2.8rem; }
         }
     </style>
 </head>
 <body>
+
     <nav>
         <div class="logo">
             <div class="logo-icon">R</div>
             E-Portofolio
         </div>
-        <ul class="nav-links">
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="profil.html">Profil</a></li>
             <li><a href="e-portofolio-1.html">Artefak</a></li>
             <li><a href="e-portofolio-2.html">Refleksi</a></li>
         </ul>
     </nav>
+
     <header class="page-header">
-        <h1>Artefak</h1>
-        <p>Dokumentasi produk pembelajaran, RPP, LKPD, dan instrumen asesmen dari pengalaman mengajar.</p>
+        <h1>Artefak Pembelajaran</h1>
+        <p>Kumpulan modul ajar, Lembar Kerja Peserta Didik (LKPD), media interaktif, dan instrumen evaluasi selama PPL Terbimbing.</p>
     </header>
+
     <main class="content">
         <section class="section-card">
-            <h2>🎯 Ringkasan Progress Siklus</h2>
-            <p>Dokumentasi berikut menampilkan progress setiap siklus pembelajaran dari Siklus 1 sampai Siklus 3. Setiap siklus memuat dua video pembelajaran yang dapat diputar langsung, serta satu modul ajar PDF yang dapat dibaca di web.</p>
+            <h2>🗂️ SIKLUS 1</h2>
+            <p>Fokus: Perencanaan pembelajaran, pengenalan konsep utama, dan analisis awal.</p>
+            <div class="embed-container"><iframe src="https://www.youtube.com/embed/-3XixSO98yU"></iframe></div>
+            <div class="embed-container"><iframe src="https://www.youtube.com/embed/mEO9FAZNwQE"></iframe></div>
+            <div class="embed-container"><iframe src="https://drive.google.com/file/d/1wzCaI2hKRO7HCh1buahIcxb68nwk2kZt/preview"></iframe></div>
         </section>
 
         <section class="section-card">
-            <h2>🟠 Siklus 1</h2>
-            <p><strong>Fokus:</strong> Perencanaan pembelajaran dan pengenalan konsep utama.</p>
-            <div class="embed-container">
-                <iframe src="https://www.youtube.com/embed/-3XixSO98yU" title="Video Siklus 1 - Materi 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="embed-container">
-                <iframe src="https://www.youtube.com/embed/mEO9FAZNwQE" title="Video Siklus 1 - Materi 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="embed-container pdf-viewer">
-                <iframe src="https://drive.google.com/file/d/1wzCaI2hKRO7HCh1buahIcxb68nwk2kZt/preview" title="Modul Ajar Siklus 1" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <h2>🗂️ SIKLUS 2</h2>
+            <p>Fokus: Implementasi kegiatan pembelajaran dan evaluasi media digital.</p>
+            <div class="embed-container"><iframe src="https://www.youtube.com/embed/3v-cGs70_FM"></iframe></div>
+            <div class="embed-container"><iframe src="https://www.youtube.com/embed/DOBXXgQ0tl0"></iframe></div>
+            <div class="embed-container"><iframe src="https://drive.google.com/file/d/11k9wxID76kIpslzvJzPDMp6MxGge0x7m/preview"></iframe></div>
         </section>
 
         <section class="section-card">
-            <h2>🟡 Siklus 2</h2>
-            <p><strong>Fokus:</strong> Implementasi kegiatan pembelajaran dan evaluasi awal.</p>
-            <div class="embed-container">
-                <iframe src="https://www.youtube.com/embed/3v-cGs70_FM" title="Video Siklus 2 - Materi 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="embed-container">
-                <iframe src="https://www.youtube.com/embed/DOBXXgQ0tl0" title="Video Siklus 2 - Materi 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="embed-container pdf-viewer">
-                <iframe src="https://drive.google.com/file/d/11k9wxID76kIpslzvJzPDMp6MxGge0x7m/preview" title="Modul Ajar Siklus 2" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <section class="section-card">
-            <h2>🟢 Siklus 3</h2>
-            <p><strong>Fokus:</strong> Refleksi, perbaikan, dan kesimpulan pembelajaran.</p>
-            <div class="embed-container">
-                <iframe src="https://www.youtube.com/embed/2sMGtxxbXZk" title="Video Siklus 3 - Materi 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="embed-container">
-                <iframe src="https://www.youtube.com/embed/sDKc5C81IhU" title="Video Siklus 3 - Materi 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="embed-container pdf-viewer">
-                <iframe src="https://drive.google.com/file/d/1cRyykyVprwYaNloxc8sUHseMrJZx7yyB/preview" title="Modul Ajar Siklus 3" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <h2>🗂️ SIKLUS 3</h2>
+            <p>Fokus: Refleksi akhir, perbaikan, dan kesimpulan pembelajaran.</p>
+            <div class="embed-container"><iframe src="https://www.youtube.com/embed/2sMGtxxbXZk"></iframe></div>
+            <div class="embed-container"><iframe src="https://www.youtube.com/embed/sDKc5C81IhU"></iframe></div>
+            <div class="embed-container"><iframe src="https://drive.google.com/file/d/1cRyykyVprwYaNloxc8sUHseMrJZx7yyB/preview"></iframe></div>
         </section>
     </main>
+
     <footer class="footer">
         <p>&copy; 2026 Rifqi — E-Portofolio PPG</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

@@ -7,21 +7,23 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* === PALET WARNA (Sesuai Identitas) === */
+        *, *::before, *::after {
+            box-sizing: border-box; 
+        }
+
         :root {
             --brown: #9D6236;
             --purple: #48369E;
             --green: #379E36;
             --dark-brown: #493C31;
-            --charcoal: #2C2B33;
-            --cream: #FDFBF7;
+            --charcoal: #1A1A1A; 
+            --cream: #FDFBF7; 
             --white: #FFFFFF;
         }
 
-        /* === GLOBAL STYLES === */
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--cream);
@@ -29,42 +31,81 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; 
         }
 
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; margin: 0; color: var(--charcoal); }
-        a { text-decoration: none; color: var(--charcoal); }
+        h1, h2, h3, h4 { 
+            font-family: 'Space Grotesk', sans-serif; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            margin: 0; 
+            color: var(--charcoal);
+            letter-spacing: -1px;
+        }
+        
+        a { text-decoration: none; color: var(--charcoal); font-weight: 700; }
 
         /* === NAVBAR === */
         nav {
             display: flex; justify-content: space-between; align-items: center;
             padding: 20px 5%; background-color: var(--cream);
-            border-bottom: 3px solid var(--charcoal);
+            border-bottom: 4px solid var(--charcoal); 
             position: sticky; top: 0; z-index: 1000;
+            width: 100%;
         }
 
-        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002;}
         .logo-icon {
             background-color: var(--brown); color: var(--white);
-            width: 35px; height: 35px; border-radius: 50%; border: 3px solid var(--charcoal);
-            display: flex; justify-content: center; align-items: center; font-family: 'Inter', sans-serif;
+            width: 40px; height: 40px; border-radius: 0px; 
+            border: 4px solid var(--charcoal);
+            display: flex; justify-content: center; align-items: center; 
+            font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem;
+            box-shadow: 4px 4px 0px var(--charcoal);
         }
 
-        .nav-links { display: flex; gap: 30px; font-weight: 600; list-style: none; padding: 0; margin: 0; }
-        .nav-links a:hover { color: var(--purple); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+        .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; }
+        .nav-links a {
+            padding: 8px 16px;
+            border: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .nav-links a:hover { 
+            background-color: var(--purple); 
+            color: var(--white); 
+            border: 3px solid var(--charcoal);
+            border-radius: 50px;
+            box-shadow: 4px 4px 0px var(--charcoal);
+        }
 
-        /* === TOMBOL NEOBRUTALISM === */
+        .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1003; }
+        .hamburger span { width: 30px; height: 4px; background-color: var(--charcoal); border-radius: 0; transition: all 0.3s ease; }
+        .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+        /* === TOMBOL === */
         .btn {
-            font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1rem;
-            padding: 12px 24px; border-radius: 50px; border: 3px solid var(--charcoal);
-            cursor: pointer; transition: all 0.2s ease; display: inline-block;
+            font-family: 'Space Grotesk', sans-serif; 
+            font-weight: 900; 
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 14px 28px; 
+            border-radius: 50px; 
+            border: 4px solid var(--charcoal); 
+            cursor: pointer; 
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+            text-align: center;
         }
         
-        .btn-primary { background-color: var(--purple); color: var(--white); box-shadow: 4px 4px 0px var(--charcoal); }
-        .btn-primary:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); color: var(--white); }
+        .btn-primary { background-color: var(--purple); color: var(--white); box-shadow: 6px 6px 0px var(--charcoal); }
+        .btn-primary:hover { transform: translate(4px, 4px); box-shadow: 2px 2px 0px var(--charcoal); color: var(--white); }
         
-        .btn-secondary { background-color: var(--white); color: var(--charcoal); box-shadow: 4px 4px 0px var(--charcoal); }
-        .btn-secondary:hover { background-color: #eee; transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); }
+        .btn-secondary { background-color: var(--white); color: var(--charcoal); box-shadow: 6px 6px 0px var(--charcoal); }
+        .btn-secondary:hover { background-color: #eee; transform: translate(4px, 4px); box-shadow: 2px 2px 0px var(--charcoal); }
 
         /* === HERO SECTION === */
         .hero {
@@ -77,25 +118,43 @@
         
         .pill-badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background-color: var(--white); border: 3px solid var(--charcoal);
-            padding: 8px 20px; border-radius: 50px; font-weight: 800; font-size: 0.8rem;
-            box-shadow: 4px 4px 0px var(--charcoal); margin-bottom: 30px; text-transform: uppercase;
+            background-color: var(--white); border: 4px solid var(--charcoal); 
+            padding: 8px 20px; border-radius: 50px; font-weight: 900; font-size: 0.9rem;
+            box-shadow: 6px 6px 0px var(--charcoal); margin-bottom: 30px; 
+            text-transform: uppercase; font-family: 'Space Grotesk', sans-serif;
         }
 
-        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1.5px; font-weight: 900; }
+        .hero h1 { font-size: 4.5rem; line-height: 1.15; margin-bottom: 25px; letter-spacing: -2px; }
         
-        .highlight { position: relative; display: inline-block; z-index: 1; }
-        .highlight::after {
-            content: ''; position: absolute; bottom: 8px; left: 0; width: 100%; height: 20px;
-            background-color: var(--green); opacity: 0.6; z-index: -1; transform: rotate(-1.5deg);
+        .highlight { 
+            position: relative; 
+            display: inline-block; 
+            z-index: 1; 
+            background-color: var(--green);
+            color: var(--charcoal);
+            padding: 4px 16px;
+            border: 4px solid var(--charcoal);
+            transform: rotate(-2deg); 
+            box-shadow: 6px 6px 0px var(--charcoal);
+            margin: 5px 5px;
+            line-height: 1.1;
         }
 
-        .hero p { color: var(--dark-brown); font-size: 1.15rem; margin-bottom: 45px; font-weight: 500; }
+        .hero p { 
+            color: var(--charcoal); 
+            font-size: 1.2rem; 
+            margin-bottom: 45px; 
+            font-weight: 600; 
+            line-height: 1.7;
+            padding: 20px;
+            background: var(--white);
+            border: 4px solid var(--charcoal);
+            border-radius: 16px;
+            box-shadow: 6px 6px 0px var(--charcoal);
+        }
         .hero-buttons { display: flex; gap: 20px; }
 
-        /* ========================================= */
-        /* === PERBAIKAN FOTO POP-UP (KANAN) === */
-        /* ========================================= */
+        /* === FOTO POP-UP === */
         .hero-image {
             flex: 1; display: flex; justify-content: center; position: relative;
         }
@@ -103,94 +162,87 @@
         .pop-up-wrapper {
             position: relative; 
             width: 100%; 
-            max-width: 400px; /* Ukuran wadah sedikit diperbesar untuk mendukung foto yang melayang keluar */
-            aspect-ratio: 1/1; /* Tetap kotak */
-            margin-top: 100px; /* Jarak atas ditambah agar kepala yang melayang punya ruang kosong */
+            max-width: 400px; 
+            aspect-ratio: 1/1; 
+            margin-top: 100px; 
         }
 
-        /* 1. Kotak Hijau di belakang (Pondasi) */
         .pop-up-background-box {
             position: absolute; 
             top: 0; left: 0; width: 100%; height: 100%;
             background-color: var(--green); border: 4px solid var(--charcoal);
-            border-radius: 40px; box-shadow: 15px 15px 0px var(--charcoal);
-            z-index: 1; /* Lapis bawah */
+            border-radius: 24px; box-shadow: 12px 12px 0px var(--charcoal); 
+            z-index: 1; 
         }
 
-        /* 2. Foto Anda (Langsung dimasukkan, melayang di atas kotak) */
         .pop-up-person {
             position: absolute;
-            bottom: -5px; /* Jas bagian bawah tetap diam di dasar kotak */
+            bottom: -5px; 
             left: 50%;
-            transform: translateX(-50%); /* Menjaga foto tepat di tengah secara horizontal */
-            
-            /* Trik Pop-Up: Foto dibuat LEBIH TINGGI dari wadah kotaknya */
-            width: 120%;  /* Lebih lebar dari kotak */
-            height: 130%; /* Lebih tinggi dari kotak (Bagian kepala melampaui garis atas kotak hijau) */
-            
-            object-fit: contain; /* Menjaga proporsi agar tidak gepeng */
-            object-position: bottom center; /* Dasar foto jas menempel di dasar wadah */
-            z-index: 2; /* Lapis atas, menutupi kotak hijau */
-            pointer-events: none; /* Klik tembus ke elemen di bawahnya */
+            transform: translateX(-50%); 
+            width: 120%;  
+            height: 130%; 
+            object-fit: contain; 
+            object-position: bottom center; 
+            z-index: 2; 
+            pointer-events: none; 
         }
 
-        /* Lencana melayang (Badge) */
         .float-badge {
-            position: absolute; background: var(--white); border: 3px solid var(--charcoal);
-            padding: 10px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem;
-            box-shadow: 5px 5px 0px var(--charcoal); display: flex; align-items: center; gap: 10px; z-index: 10;
+            position: absolute; background: var(--white); border: 4px solid var(--charcoal);
+            padding: 12px 20px; border-radius: 50px; font-weight: 900; font-size: 0.9rem;
+            box-shadow: 6px 6px 0px var(--charcoal); display: flex; align-items: center; gap: 10px; z-index: 10;
+            font-family: 'Space Grotesk', sans-serif; text-transform: uppercase;
         }
         
-        /* === PERBAIKAN LENCANA 'MATEMATIKA' (badge-1) === */
-        .badge-1 { 
-            top: 230px;  /* DITURUNKAN: dari -20px menjadi 100px (di area bahu/dada) */
-            left: -60px; 
-            z-index: 11; /* Agar berada di depan jas */
-        }
-        
-        .badge-2 { bottom: 40px; right: -50px; z-index: 11; }
+        /* === PERBAIKAN LENCANA DENGAN PERSENTASE === */
+        /* Menggunakan bottom dan persentase agar lengket proporsional */
+        .badge-1 { bottom: 20%; left: -8%; z-index: 11; }
+        .badge-2 { bottom: 0%; right: -8%; z-index: 11; }
 
-        /* === COURSE PATH SECTION (TETAP SAMA) === */
-        .course-section { padding: 40px 5% 100px 5%; }
+        /* === COURSE PATH SECTION === */
+        .course-section { padding: 40px 5% 100px 5%; width: 100%; max-width: 1100px; margin: 0 auto; }
         
         .mockup-container {
-            background-color: var(--green); border: 4px solid var(--charcoal);
-            border-radius: 20px; max-width: 800px; margin: 0 auto;
+            background-color: var(--charcoal); 
+            border: 4px solid var(--charcoal);
+            border-radius: 24px; max-width: 800px; margin: 0 auto;
             box-shadow: 12px 12px 0px var(--charcoal); overflow: hidden; text-align: left;
+            width: 100%;
         }
 
         .mockup-header {
             background-color: #E8E5DF; border-bottom: 4px solid var(--charcoal);
-            padding: 12px 20px; display: flex; align-items: center; gap: 10px;
+            padding: 16px 20px; display: flex; align-items: center; gap: 10px;
         }
 
-        .dots { display: flex; gap: 6px; }
-        .dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--charcoal); }
+        .dots { display: flex; gap: 8px; }
+        .dot { width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--charcoal); }
         .dot:nth-child(1) { background-color: #ff5f56; }
         .dot:nth-child(2) { background-color: #ffbd2e; }
         .dot:nth-child(3) { background-color: #27c93f; }
 
-        .mockup-url { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; margin-left: 10px; color: var(--dark-brown); }
+        .mockup-url { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700; margin-left: 10px; color: var(--charcoal); }
 
-        .mockup-body { padding: 40px; }
+        .mockup-body { padding: 40px; background-color: var(--green); }
 
-        .mockup-title { font-size: 2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; color: var(--white); text-shadow: 2px 2px 0px var(--charcoal); }
+        .mockup-title { font-size: 2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; color: var(--charcoal); }
 
         .module-list { display: flex; flex-direction: column; gap: 20px; }
 
         .module-item {
-            background-color: var(--white); border: 3px solid var(--charcoal);
-            border-radius: 12px; padding: 20px 25px; display: flex; align-items: center;
-            justify-content: space-between; box-shadow: 5px 5px 0px var(--charcoal);
-            transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+            background-color: var(--white); border: 4px solid var(--charcoal);
+            border-radius: 16px; padding: 20px 25px; display: flex; align-items: center;
+            justify-content: space-between; box-shadow: 8px 8px 0px var(--charcoal);
+            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; cursor: pointer;
         }
 
-        .module-item:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0px var(--charcoal); }
+        .module-item:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px var(--charcoal); }
 
         .module-info { display: flex; align-items: center; gap: 20px; }
         
         .module-icon {
-            width: 50px; height: 50px; border-radius: 50%; border: 3px solid var(--charcoal);
+            width: 50px; height: 50px; border-radius: 50%; border: 4px solid var(--charcoal);
             display: flex; justify-content: center; align-items: center; font-size: 1.5rem;
         }
 
@@ -198,24 +250,70 @@
         .icon-2 { background-color: var(--purple); color: white; }
         .icon-3 { background-color: #ffbd2e; color: var(--charcoal); }
 
-        .module-text h4 { font-family: 'Inter', sans-serif; margin: 0 0 5px 0; font-size: 1.1rem; color: var(--charcoal); }
-        .module-text p { margin: 0; font-size: 0.85rem; color: var(--dark-brown); font-weight: 600; }
+        .module-text h4 { font-family: 'Space Grotesk', sans-serif; margin: 0 0 5px 0; font-size: 1.2rem; color: var(--charcoal); text-transform: uppercase; }
+        .module-text p { margin: 0; font-size: 0.9rem; color: var(--charcoal); font-weight: 600; }
         
-        .arrow { font-size: 1.5rem; font-weight: bold; color: var(--charcoal); }
+        .arrow { font-size: 1.8rem; font-weight: 900; color: var(--charcoal); }
 
-        /* Responsif untuk HP */
-        @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; padding: 40px 5%; gap: 60px;}
-            .hero-content { align-items: center; display: flex; flex-direction: column; }
-            .hero h1 { font-size: 3rem; }
-            .hero-buttons { justify-content: center; flex-wrap: wrap; }
+        .footer {
+            text-align: center; padding: 40px 20px; color: var(--charcoal);
+            border-top: 4px solid var(--charcoal);
+            background-color: var(--white);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* ========================================= */
+        /* === RESPONSIF UNTUK TABLET & HP (MAX 1024px) === */
+        /* ========================================= */
+        @media (max-width: 1024px) { /* Diubah dari 900px ke 1024px agar tablet aman */
+            .hamburger { display: flex; position: absolute; right: 5%; top: 30px; } 
+            
+            .nav-links {
+                position: absolute; top: 80px; left: 0; right: 0;
+                background-color: var(--white); flex-direction: column;
+                width: 100%; border-top: 4px solid var(--charcoal);
+                border-bottom: 4px solid var(--charcoal);
+                display: none; z-index: 1001;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); }
+            .nav-links li:last-child { border-bottom: none; }
+            .nav-links a { display: block; padding: 20px; border: none;}
+            .nav-links a:hover { border-radius: 0; border: none; box-shadow: none; background-color: var(--purple); color: var(--white);}
+
+            .hero { flex-direction: column; text-align: center; padding: 40px 5% 60px; gap: 40px;}
+            .hero-content { align-items: center; display: flex; flex-direction: column; width: 100%;}
+            
+            .hero h1 { font-size: 2.8rem; line-height: 1.25; }
+            .highlight { padding: 2px 12px; margin: 0 4px; }
+            .hero p { font-size: 1.05rem; padding: 15px; margin-bottom: 30px; max-width: 600px; }
+            
+            .hero-buttons { flex-direction: column; width: 100%; align-items: center; gap: 16px; margin: 0 auto;}
+            .hero-buttons .btn { width: 100%; max-width: 320px; margin-left: -6px; } 
+
             .hero-image { width: 100%; }
-            .pop-up-wrapper { max-width: 300px; }
-            .badge-1 { top: -30px; left: 0; }
-            .badge-2 { bottom: -30px; right: 0; }
+            .pop-up-wrapper { max-width: 320px; margin-top: 40px; }
+            
+            /* Lencana ditarik masuk sedikit di layar kecil */
+            .badge-1 { bottom: 20%; left: -10px; font-size: 0.75rem; padding: 8px 12px;}
+            .badge-2 { bottom: -10px; right: -10px; font-size: 0.75rem; padding: 8px 12px;}
+            
             .mockup-body { padding: 20px; }
-            .module-item { padding: 15px; }
-            .module-info { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .mockup-title { font-size: 1.5rem; }
+            .module-item { flex-direction: column; text-align: center; padding: 20px; gap: 15px; }
+            .module-info { flex-direction: column; align-items: center; gap: 10px; }
+            .arrow { display: none; } 
+        }
+
+        /* === PERBAIKAN EXTRA UNTUK HP KECIL (Seperti iPhone SE) === */
+        @media (max-width: 400px) {
+            .hero h1 { font-size: 1.8rem; } 
+            .highlight { padding: 0px 8px; border-width: 3px; box-shadow: 4px 4px 0px var(--charcoal); }
+            
+            .pill-badge { font-size: 0.75rem; padding: 6px 16px; }
+            .hero-buttons .btn { font-size: 0.9rem; padding: 12px 20px; max-width: 280px; }
+            .pop-up-wrapper { max-width: 260px; }
         }
     </style>
 </head>
@@ -226,7 +324,14 @@
             <div class="logo-icon">R</div>
             E-Portofolio
         </div>
-        <ul class="nav-links">
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="profil.html">Profil</a></li>
             <li><a href="e-portofolio-1.html">Artefak</a></li>
@@ -240,13 +345,11 @@
                 <span style="color: var(--brown);">⭐</span> Mahasiswa PPG Prajabatan
             </div>
             
-            <h1>Halo, saya <span class="highlight">Rifqi</span>. Calon Guru Profesional.</h1>
-            
-            <p>Selamat datang di ruang belajar digital saya. Di sini, saya mendokumentasikan proses, jurnal refleksi, dan artefak pembelajaran selama menempuh PPL Terbimbing di Universitas Sanata Dharma.</p>
+            <h1>Halo, saya <span class="highlight">Rifqi</span><br>Calon Guru Profesional.</h1>
             
             <div class="hero-buttons">
-                <a href="#kurikulum" class="btn btn-primary">Lihat Jurnal Saya ➔</a>
-                <a href="profil.html" class="btn btn-secondary">📄 Baca Profil Lengkap</a>
+                <a href="#kurikulum" class="btn btn-primary">Jurnal Saya ➔</a>
+                <a href="profil.html" class="btn btn-secondary">📄 Profil Lengkap</a>
             </div>
         </div>
 
@@ -258,7 +361,7 @@
                 <img src="assets/images/foto-anda.png" class="pop-up-person" alt="Foto Rifqi">
 
                 <div class="float-badge badge-1">
-                    <span style="background: var(--purple); width: 12px; height: 12px; border-radius: 50%;"></span>
+                    <span style="background: var(--purple); width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--charcoal);"></span>
                     Matematika Angkatan 2026
                 </div>
 
@@ -275,11 +378,11 @@
                 <div class="dots">
                     <div class="dot"></div><div class="dot"></div><div class="dot"></div>
                 </div>
-                <div class="mockup-url">rifqi.github.io / ppl-terbimbing</div>
+                <div class="mockup-url">E - Portofolio PPG - Rifqi</div>
             </div>
             
             <div class="mockup-body">
-                <h3 class="mockup-title">📑 Kurikulum PPL Terbimbing</h3>
+                <h3 class="mockup-title">📑 PPL PROFESSIONAL JOURNEY</h3>
                 
                 <div class="module-list">
                     <a href="profil.html" style="text-decoration: none;">
@@ -287,8 +390,8 @@
                             <div class="module-info">
                                 <div class="module-icon icon-1">👤</div>
                                 <div class="module-text">
-                                    <h4>Bagian 1 — Profil & Karakter Guru</h4>
-                                    <p>Identitas, Inspirasi & Visi Misi</p>
+                                    <h4>Bagian 1: Profil & Filosofi</h4>
+                                    <p>Profil Lengkap Saya</p>
                                 </div>
                             </div>
                             <div class="arrow">></div>
@@ -300,8 +403,8 @@
                             <div class="module-info">
                                 <div class="module-icon icon-2">📊</div>
                                 <div class="module-text">
-                                    <h4>Bagian 2 — E-Portfolio 1</h4>
-                                    <p>Analisis Artefak & Lampiran Siklus</p>
+                                    <h4>Bagian 2: Artefak PPL</h4>
+                                    <p>Dokumentasi PPL</p>
                                 </div>
                             </div>
                             <div class="arrow">></div>
@@ -313,8 +416,8 @@
                             <div class="module-info">
                                 <div class="module-icon icon-3">🧠</div>
                                 <div class="module-text">
-                                    <h4>Bagian 3 — E-Portfolio 2</h4>
-                                    <p>Refleksi Akhir & Filosofi Mengajar</p>
+                                    <h4>Bagian 3: Jurnal Refleksi</h4>
+                                    <p>Refleksi, Evaluasi, & Rencana Aksi</p>
                                 </div>
                             </div>
                             <div class="arrow">></div>
@@ -325,5 +428,18 @@
         </div>
     </section>
 
+    <footer class="footer">
+        <p>&copy; 2026 Rifqi — E-Portofolio PPG</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

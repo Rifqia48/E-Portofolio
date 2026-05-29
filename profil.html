@@ -7,17 +7,18 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* === PALET WARNA === */
+        *, *::before, *::after { box-sizing: border-box; }
+
         :root {
             --brown: #9D6236;
             --purple: #48369E;
             --green: #379E36;
             --dark-brown: #493C31;
-            --charcoal: #2C2B33;
-            --cream: #FDFBF7;
+            --charcoal: #1A1A1A; 
+            --cream: #FDFBF7; 
             --white: #FFFFFF;
         }
 
@@ -26,81 +27,187 @@
             background-color: var(--cream);
             color: var(--charcoal);
             margin: 0; padding: 0; line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; margin: 0; color: var(--charcoal); }
-        a { text-decoration: none; color: var(--charcoal); }
+        h1, h2, h3, h4 { 
+            font-family: 'Space Grotesk', sans-serif; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            margin: 0; 
+            color: var(--charcoal);
+            letter-spacing: -1px;
+        }
+        
+        a { text-decoration: none; color: var(--charcoal); font-weight: 700; }
 
         nav {
             display: flex; justify-content: space-between; align-items: center;
             padding: 20px 5%; background-color: var(--cream);
-            border-bottom: 3px solid var(--charcoal);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border-bottom: 4px solid var(--charcoal); 
+            position: sticky; top: 0; z-index: 1000;
         }
-        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
         .logo-icon {
             background-color: var(--brown); color: var(--white);
-            width: 35px; height: 35px; border-radius: 50%; border: 3px solid var(--charcoal);
-            display: flex; justify-content: center; align-items: center; font-family: 'Inter', sans-serif;
+            width: 40px; height: 40px; border-radius: 0px; 
+            border: 4px solid var(--charcoal);
+            display: flex; justify-content: center; align-items: center; 
+            font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem;
+            box-shadow: 4px 4px 0px var(--charcoal);
         }
-        .nav-links { display: flex; gap: 30px; font-weight: 600; list-style: none; padding: 0; margin: 0; }
-        .nav-links a:hover { color: var(--purple); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+        
+        .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; }
+        .nav-links a {
+            padding: 8px 16px;
+            border: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .nav-links a:hover { 
+            background-color: var(--purple); 
+            color: var(--white); 
+            border: 3px solid var(--charcoal);
+            border-radius: 50px;
+            box-shadow: 4px 4px 0px var(--charcoal);
+        }
 
-        .btn {
-            font-family: 'Inter', sans-serif; font-weight: 700;
-            padding: 10px 20px; border-radius: 50px; border: 3px solid var(--charcoal); cursor: pointer;
-        }
-        .btn-outline { background: var(--white); box-shadow: 3px 3px 0px var(--charcoal); }
-        .btn-outline:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--charcoal); }
+        .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001; }
+        .hamburger span { width: 30px; height: 4px; background-color: var(--charcoal); border-radius: 0; transition: all 0.3s ease; }
+        .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
         .page-header {
-            text-align: center; padding: 60px 20px 20px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 5% 40px 5%;
+            text-align: center;
         }
-        .page-header h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 15px; }
-        .page-header p { font-size: 1.2rem; color: var(--dark-brown); font-weight: 500; }
+        .page-header h1 { font-size: 4rem; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
+        .page-header p { 
+            font-size: 1.25rem; color: var(--charcoal); font-weight: 600; 
+            max-width: 800px; margin: 0 auto; line-height: 1.8;
+            border: 4px solid var(--charcoal);
+            background: var(--white);
+            padding: 20px;
+            box-shadow: 8px 8px 0px var(--charcoal);
+            border-radius: 24px;
+        }
 
         .bento-container {
-            max-width: 1100px; margin: 0 auto; padding: 20px 5% 80px 5%;
+            max-width: 1100px; margin: 0 auto; padding: 20px 5% 100px 5%;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(6, 1fr); 
+            gap: 32px; 
         }
 
         .bento-card {
             background: var(--white);
             border: 4px solid var(--charcoal);
-            border-radius: 24px;
-            padding: 35px;
-            box-shadow: 10px 10px 0px var(--charcoal);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 24px; 
+            padding: 40px;
+            box-shadow: 12px 12px 0px var(--charcoal); 
+            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            cursor: default;
         }
         .bento-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 14px 14px 0px var(--charcoal);
+            transform: translate(4px, 4px);
+            box-shadow: 8px 8px 0px var(--charcoal);
         }
 
-        .span-2 { grid-column: span 2; }
-        .span-3 { grid-column: span 3; }
+        .span-6 { grid-column: span 6; }
+        .span-3 { grid-column: span 3; } 
+        .span-2 { grid-column: span 2; } 
 
         .card-purple { background-color: var(--purple); color: var(--white); }
         .card-green { background-color: var(--green); color: var(--white); }
+        .card-brown { background-color: var(--brown); color: var(--white); }
+        .card-charcoal { background-color: var(--charcoal); color: var(--white); }
 
-        .bento-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
-        .bento-card p { margin: 0; color: var(--dark-brown); font-weight: 500; }
+        .bento-card h3 { font-size: 2rem; margin-bottom: 20px; }
+        .bento-card p { margin: 0; font-weight: 600; line-height: 1.7; font-size: 1.05rem; }
+        .card-white p { color: var(--dark-brown); }
 
-        .card-purple h3, .card-purple p,
-        .card-green h3, .card-green p { color: var(--white); }
+        /* Override warna teks untuk kotak gelap */
+        .card-purple h3, .card-purple p, .card-purple ul,
+        .card-green h3, .card-green p, .card-green ul,
+        .card-brown h3, .card-brown p, .card-brown ul,
+        .card-charcoal h3, .card-charcoal p, .card-charcoal ul { color: var(--white); }
+        
+        .card-brown a, .card-charcoal a, .card-purple a, .card-green a { 
+            color: var(--white); 
+            text-decoration: underline; 
+            text-decoration-thickness: 3px; 
+            text-underline-offset: 4px; 
+        }
+        .card-brown a:hover, .card-charcoal a:hover { color: var(--cream); background: var(--charcoal); padding: 2px 4px; }
+
+        .quote-separator {
+            margin-top: 32px; 
+            padding-top: 24px; 
+            border-top: 4px solid var(--white); 
+        }
+        .quote-text {
+            font-family: 'Space Grotesk', sans-serif; 
+            font-size: 1.8rem; 
+            font-weight: 900; 
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+        
+        /* === PERBAIKAN BUG KOTAK PUTIH DI SINI === */
+        .quote-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin-top: 12px;
+            background-color: var(--white);
+            color: var(--charcoal) !important; /* Memaksa teks menjadi gelap agar tidak tertimpa aturan CSS card-charcoal */
+            display: inline-block;
+            padding: 4px 12px;
+            border: 2px solid var(--white);
+        }
 
         .footer {
-            text-align: center; padding: 30px 20px 40px 20px; color: var(--dark-brown);
-            border-top: 3px solid var(--charcoal);
+            text-align: center; padding: 40px 20px; color: var(--charcoal);
+            border-top: 4px solid var(--charcoal);
+            background-color: var(--white);
+            font-weight: 900;
+            text-transform: uppercase;
         }
 
         @media (max-width: 900px) {
-            .bento-container { grid-template-columns: 1fr; }
-            .span-2, .span-3 { grid-column: auto; }
+            .bento-container { grid-template-columns: 1fr; gap: 24px; }
+            .span-6, .span-3, .span-2 { grid-column: auto; } 
+            
+            .page-header h1 { font-size: 2.8rem; }
+            .page-header p { font-size: 1.1rem; }
+
+            .hamburger { display: flex; }
+            .nav-links {
+                position: absolute; top: 80px; right: 0%; 
+                background-color: var(--white); flex-direction: column;
+                width: 100%; border-top: 4px solid var(--charcoal);
+                border-bottom: 4px solid var(--charcoal);
+                display: none; 
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); }
+            .nav-links li:last-child { border-bottom: none; }
+            .nav-links a { display: block; padding: 20px; border: none;}
+            .nav-links a:hover { border-radius: 0; border: none; box-shadow: none; }
+        }
+
+        @media (max-width: 600px) {
+            .bento-card { padding: 30px; }
+            .page-header { padding-top: 60px; }
+            .quote-text { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -111,7 +218,14 @@
             <div class="logo-icon">R</div>
             E-Portofolio
         </div>
-        <ul class="nav-links">
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="profil.html">Profil</a></li>
             <li><a href="e-portofolio-1.html">Artefak</a></li>
@@ -120,52 +234,68 @@
     </nav>
 
     <header class="page-header">
-        <h1>Profil Rifqi Fausta Dianta</h1>
-        <p>Mahasiswa PPG Prajabatan Matematika dari Universitas Negeri Yogyakarta yang berkomitmen menjadi guru profesional, reflektif, dan terus belajar.</p>
+        <h1>Profil Mahasiswa</h1>
+        <p>Rifqi Fausta Dianta — Mahasiswa PPG Prajabatan Matematika Universitas Sanata Dharma yang berkomitmen menjadi pendidik profesional dan reflektif.</p>
     </header>
 
     <section class="bento-container">
-        <article class="bento-card span-2 card-purple">
+        
+        <article class="bento-card span-6 card-charcoal">
             <h3>Tentang Saya</h3>
-            <p>Saya berasal dari Yogyakarta dan sejak kecil menyukai matematika. Saya merasa bahagia ketika orang lain berhasil setelah saya ajari, jadi saya memilih menjadi guru untuk membuat ilmu yang saya miliki bermanfaat bagi orang lain.</p>
-            <p style="margin-top: 12px;">Saat ini saya sedang menjalani program PPG Prajabatan Matematika dan menyiapkan portofolio digital sebagai bukti kompetensi, refleksi, dan pengalaman pembelajaran saya.</p>
+            <p>Halo, saya <strong>Rifqi Fausta Dianta</strong>. Saya lahir di Bantul dan dibesarkan di Gunungkidul, sebuah wilayah dengan karakter alam yang unik dan masyarakat yang sangat bersahaja. Tumbuh di tengah harmoni budaya gotong royong khas daerah, sekaligus bernapas dalam ekosistem pendidikan Daerah Istimewa Yogyakarta, memberikan saya pengalaman yang kaya. Perpaduan kearifan lokal dan semangat belajar inilah yang membentuk karakter saya menjadi pribadi yang tekun, sabar, dan tidak mudah menyerah.</p>
+            
+            <p style="margin-top: 16px;">Sejak kecil, saya memiliki ketertarikan yang besar pada matematika. Inspirasi saya untuk menjadi guru bermula dari perasaan bahagia yang luar biasa ketika melihat orang lain berhasil memahami suatu materi setelah saya ajari. Tujuan utama saya adalah menjadi guru profesional agar ilmu yang saya miliki dapat bermanfaat bagi orang lain, serta membantu siswa melihat bahwa matematika itu menyenangkan dan dekat dengan kehidupan sehari-hari.</p>
+            
+            <div class="quote-separator">
+                <p class="quote-text">"Guru adalah seorang motivator dan fasilitator pembebasan, bukan diktator."</p>
+                <p class="quote-author">Tan Malaka</p>
+            </div>
         </article>
 
-        <article class="bento-card card-green">
+        <article class="bento-card span-3 card-white">
             <h3>Visi</h3>
             <p>Menjadi guru Matematika yang kreatif, inklusif, dan mampu memotivasi siswa untuk berpikir kritis, mandiri, dan melihat makna matematika dalam kehidupan sehari-hari.</p>
         </article>
 
-        <article class="bento-card">
+        <article class="bento-card span-3 card-purple">
             <h3>Misi</h3>
             <p>Menyediakan pembelajaran bermakna, mendukung siswa dengan pendekatan berpusat pada peserta didik, dan terus mengembangkan diri secara profesional.</p>
         </article>
 
-        <article class="bento-card">
+        <article class="bento-card span-2 card-green">
             <h3>Pendidikan</h3>
-            <p>S1 Pendidikan Matematika dari Universitas Negeri Yogyakarta, 2024. Saat ini saya melanjutkan studi dan praktik profesional melalui program PPG Prajabatan.</p>
+            <p>S1 Pendidikan Matematika Universitas Negeri Yogyakarta, 2024. Melanjutkan studi & praktik profesional via program PPG Prajabatan.</p>
         </article>
 
-        <article class="bento-card">
-            <h3>Kompetensi Utama</h3>
-            <p>Pengembangan media interaktif, growth mindset, adaptif dalam pembelajaran, dan kemampuan refleksi diri untuk meningkatkan praktik mengajar.</p>
+        <article class="bento-card span-2 card-white">
+            <h3>Kompetensi</h3>
+            <p>Pengembangan media interaktif, growth mindset, adaptasi pembelajaran, & refleksi diri untuk evaluasi mengajar.</p>
         </article>
 
-        <article class="bento-card span-3">
-            <h3>Kontak Saya</h3>
-            <p>Silakan hubungi saya untuk kerja sama:</p>
-            <ul style="margin-top: 16px; padding-left: 20px; color: var(--dark-brown);">
-                <li>Email: <a href="mailto:rifqia48@gmail.com"><strong>rifqia48@gmail.com</strong></a></li>
-                <li>WhatsApp: <a href="https://wa.me/6287839962270" target="_blank" rel="noreferrer"><strong>+62 878-3996-2270</strong></a></li>
-                <li>Instagram: <a href="https://instagram.com/rifqia48_" target="_blank" rel="noreferrer"><strong>@rifqia48_</strong></a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/rifqi-fausta-dianta-457130178/" target="_blank" rel="noreferrer"><strong>Rifqi Fausta Dianta</strong></a></li>
+        <article class="bento-card span-2 card-brown">
+            <h3>Kontak</h3>
+            <ul style="margin-top: 8px; padding-left: 18px; line-height: 1.6; word-break: break-word; font-weight: 700;">
+                <li><a href="mailto:rifqia48@gmail.com">rifqia48@gmail.com</a></li>
+                <li><a href="https://wa.me/6287839962270" target="_blank" rel="noreferrer">+62 878-3996-2270</a></li>
+                <li><a href="https://instagram.com/rifqia48_" target="_blank" rel="noreferrer">@rifqia48_</a></li>
+                <li><a href="https://linkedin.com/in/rifqi-fausta-dianta-457130178/" target="_blank" rel="noreferrer">LinkedIn Profil</a></li>
             </ul>
         </article>
+
     </section>
 
     <footer class="footer">
         <p>&copy; 2026 Rifqi — E-Portofolio PPG</p>
     </footer>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
