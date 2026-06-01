@@ -137,40 +137,13 @@
         /* === MASTER RESPONSIF === */
         @media (max-width: 1024px) {
             .hamburger { display: flex; position: absolute; right: 5%; top: 30px; } 
-            
-            .nav-links { 
-                position: absolute; top: 80px; left: 0; right: 0; background-color: var(--white); 
-                flex-direction: column; width: 100%; 
-                border-top: 4px solid var(--charcoal); border-bottom: 4px solid var(--charcoal); 
-                display: none; z-index: 1001; gap: 0; padding: 0; 
-            }
+            .nav-links { position: absolute; top: 80px; left: 0; right: 0; background-color: var(--white); flex-direction: column; width: 100%; border-top: 4px solid var(--charcoal); border-bottom: 4px solid var(--charcoal); display: none; z-index: 1001; gap: 0; padding: 0; }
             .nav-links.active { display: flex; }
             .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); display: block; margin: 0; padding: 0; }
             .nav-links li:last-child { border-bottom: none; }
-            
-            /* 🔥 SOLUSI NUKLIR UNTUK TINGGI KOTAK 100% SERAGAM 🔥 */
-            .nav-links a { 
-                display: flex !important;           /* Ubah jadi flexbox */
-                align-items: center !important;     /* Pusatkan teks vertikal */
-                justify-content: center !important; /* Pusatkan teks horizontal */
-                height: 65px !important;            /* KUNCI: Paksa semua kotak tingginya persis 65px */
-                padding: 0 !important;              /* Matikan padding agar tidak mengganggu tinggi */
-                border: none !important; 
-                border-radius: 0 !important; 
-                box-shadow: none !important; 
-                margin: 0 !important; 
-                width: 100%;
-            }
-            .nav-links a:hover, .nav-links a.active-page { 
-                background-color: var(--purple) !important; 
-                color: var(--white) !important; 
-                border: none !important; 
-                border-radius: 0 !important; 
-                box-shadow: none !important; 
-                margin: 0 !important; 
-            }
+            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; width: 100%; }
+            .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple) !important; color: var(--white) !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; }
 
-            /* --- (Kode lainnya di bawah ini biarkan sama sesuai file masing-masing) --- */
             .hero { flex-direction: column; text-align: center; padding: 40px 5% 60px; gap: 40px;}
             .hero-content { align-items: center; display: flex; flex-direction: column; width: 100%;}
             .hero h1 { font-size: 2.8rem; line-height: 1.25; }
@@ -189,19 +162,28 @@
             .module-item { flex-direction: column; text-align: center; padding: 20px; gap: 15px; }
             .module-info { flex-direction: column; align-items: center; gap: 10px; }
             .arrow { display: none; } 
-            
-            .bento-container { grid-template-columns: 1fr; gap: 24px; }
-            .span-6, .span-3, .span-2 { grid-column: auto; } 
-            .page-header h1 { font-size: 2.8rem; }
-            .page-header p { font-size: 1.1rem; }
-            .refleksi-grid { grid-template-columns: 1fr; }
-            .modal h2 { font-size: 1.5rem; } 
         }
 
+        /* === PERBAIKAN SMAN 6 OVERFLOW DI HP KECIL (iPhone SE) === */
         @media (max-width: 680px) {
-            .brutal-overlap-container { flex-direction: column !important; gap: 24px !important; }
-            .brutal-overlap-container > div { width: 100% !important; max-width: 340px; height: 240px !important; margin-left: 0 !important; transform: none !important; box-shadow: 8px 8px 0px var(--charcoal) !important; }
-            .brutal-overlap-container > div:hover { transform: scale(1.05) !important; }
+            /* Kurangi padding kotak hijau agar tidak muntah ke samping */
+            .sman6-container { padding: 30px 20px !important; box-shadow: 8px 8px 0px var(--charcoal) !important; }
+            .sman6-container h2 { font-size: 2rem !important; }
+            .sman6-text p { padding: 20px !important; font-size: 1rem !important; }
+
+            .brutal-overlap-container { flex-direction: column !important; gap: 24px !important; padding-right: 0 !important; }
+            
+            /* Gambar otomatis menyesuaikan layar (cair/fluid) */
+            .brutal-overlap-container > div { 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                aspect-ratio: 4/3; /* Mempertahankan bentuk foto agar tidak penyok */
+                margin-left: 0 !important; 
+                transform: none !important; 
+                box-shadow: 6px 6px 0px var(--charcoal) !important; 
+            }
+            .brutal-overlap-container > div:hover { transform: scale(1.02) !important; }
         }
 
         @media (max-width: 400px) {
@@ -230,7 +212,6 @@
         <div class="hero-content">
             <div class="pill-badge">⭐ Mahasiswa PPG Prajabatan</div>
             <h1>Halo, saya <span class="highlight">Rifqi</span><br>Calon Guru Profesional.</h1>
-            <p>Selamat datang di ruang belajar digital saya. Di sini, saya mendokumentasikan proses, jurnal refleksi, dan artefak pembelajaran selama menempuh PPL Terbimbing di Universitas Sanata Dharma.</p>
             <div class="hero-buttons">
                 <a href="#kurikulum" class="btn btn-primary">Jurnal Saya ➔</a>
                 <a href="profil.html" class="btn btn-secondary">📄 Profil Lengkap</a>
@@ -246,9 +227,8 @@
         </div>
     </section>
 
-    <!-- === SECTION: SMAN 6 YOGYAKARTA === -->
     <section style="width: 100%; max-width: 1100px; margin: 60px auto; padding: 0 5%; position: relative;">
-        <div style="background: var(--green); border: 4px solid var(--charcoal); border-radius: 24px; box-shadow: 12px 12px 0px var(--charcoal); padding: 50px 40px; display: flex; flex-direction: column; gap: 40px; position: relative; overflow: visible;">
+        <div class="sman6-container" style="background: var(--green); border: 4px solid var(--charcoal); border-radius: 24px; box-shadow: 12px 12px 0px var(--charcoal); padding: 50px 40px; display: flex; flex-direction: column; gap: 40px; position: relative; overflow: visible;">
             <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; width: 100%;">
                 <div style="width: 75px; height: 75px; background: var(--white); border: 4px solid var(--charcoal); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 4px 4px 0px var(--charcoal); flex-shrink: 0; overflow: hidden;">
                     <img src="assets/images/logo-sman6.png" alt="Logo SMAN 6" style="width: 85%; height: 85%; object-fit: contain;">
@@ -256,12 +236,12 @@
                 <h2 style="font-size: 2.8rem; color: var(--white); text-shadow: 4px 4px 0px var(--charcoal); line-height: 1;">SMAN 6 YOGYAKARTA</h2>
             </div>
             <div style="display: flex; gap: 40px; align-items: stretch; flex-wrap: wrap; width: 100%;">
-                <div style="flex: 1 1 400px; min-width: 300px; display: flex; align-items: center;">
+                <div class="sman6-text" style="flex: 1 1 300px; display: flex; align-items: center;">
                     <p style="margin: 0; font-weight: 600; line-height: 1.8; color: var(--white); font-size: 1.15rem; background: var(--charcoal); padding: 30px; border-radius: 16px; border: 3px solid var(--white); box-shadow: 8px 8px 0px var(--white); width: 100%;">
                         Sebuah perjalanan mengajar yang menantang sekaligus memuaskan. Di sini, saya menerapkan metode pembelajaran kolaboratif dan inklusif, memastikan setiap siswa mendapatkan ruang untuk mengeksplorasi potensi terbaik mereka melalui integrasi media digital interaktif.
                     </p>
                 </div>
-                <div class="brutal-overlap-container" style="flex: 1 1 500px; min-width: 300px; display: flex; align-items: center; justify-content: center; padding-right: 40px;">
+                <div class="brutal-overlap-container" style="flex: 1 1 300px; display: flex; align-items: center; justify-content: center; padding-right: 40px;">
                     <div class="zoom-photo" onclick="openImageModal(this.querySelector('img').src, 'Aktivitas Mengajar 1')" style="width: 310px; height: 230px; background: var(--white); border: 4px solid var(--charcoal); box-shadow: 10px 10px 0px var(--charcoal); transform: rotate(-3deg); position: relative; overflow: hidden; z-index: 2; flex-shrink: 0; cursor: pointer;">
                         <img src="assets/images/dokumentasi1.jpeg" alt="Dokumentasi Mengajar 1" style="width: 100%; height: 100%; object-fit: cover;">
                         <div style="position: absolute; bottom: 8px; left: 8px; background: var(--purple); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 0.65rem; font-weight: 900; padding: 4px 8px; border: 2px solid var(--charcoal); text-transform: uppercase;">FOTO BERSAMA</div>
@@ -324,7 +304,13 @@
         </div>
     </div>
 
-    <footer class="footer"><p>&copy; 2026 Rifqi — E-Portofolio PPG</p></footer>
+    <footer class="footer" style="line-height: 1.4;">
+        <p style="margin: 0 0 8px 0;">&copy; 2026 RIFQI FAUSTA DIANTA — E-PORTOFOLIO PPG</p>
+        <div style="font-size: 0.85rem; font-weight: 600; text-transform: none; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <span>📧 rifqia48@gmail.com</span>
+            <span>📱 +62 878-3996-2270</span>
+        </div>
+    </footer>
 
     <script>
         const hamburger = document.getElementById('hamburger');

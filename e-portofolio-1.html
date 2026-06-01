@@ -31,126 +31,81 @@
         }
 
         h1, h2, h3, h4 { 
-            font-family: 'Space Grotesk', sans-serif; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            margin: 0; 
-            color: var(--charcoal);
-            letter-spacing: -1px;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 900; text-transform: uppercase; 
+            margin: 0; color: var(--charcoal); letter-spacing: -1px;
         }
         
         a { text-decoration: none; color: var(--charcoal); font-weight: 700; }
 
-        /* === NAVBAR === */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 5%; background-color: var(--cream);
-            border-bottom: 4px solid var(--charcoal); 
-            position: sticky; top: 0; z-index: 1000;
-            width: 100%;
-        }
-
-        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
-        .logo-icon {
-            background-color: var(--brown); color: var(--white);
-            width: 40px; height: 40px; border-radius: 0px; 
-            border: 4px solid var(--charcoal);
-            display: flex; justify-content: center; align-items: center; 
-            font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem;
-            box-shadow: 4px 4px 0px var(--charcoal);
-        }
-
-        .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; }
-        .nav-links a {
-            padding: 8px 16px;
-            border: 3px solid transparent;
-            transition: all 0.2s ease;
-        }
-        .nav-links a:hover { 
-            background-color: var(--purple); 
-            color: var(--white); 
-            border: 3px solid var(--charcoal);
-            border-radius: 50px;
-            box-shadow: 4px 4px 0px var(--charcoal);
-        }
-
-        /* === HAMBURGER === */
+        /* === MASTER NAVBAR CSS === */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--cream); border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002;}
+        .logo-icon { background-color: var(--brown); color: var(--white); width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--charcoal); display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; box-shadow: 4px 4px 0px var(--charcoal); }
+        .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; align-items: center;}
+        .nav-links li { margin: 0; padding: 0; }
+        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; color: var(--charcoal); display: block;}
+        .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple); color: var(--white); border: 3px solid var(--charcoal); border-radius: 50px; box-shadow: 4px 4px 0px var(--charcoal); }
         .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1003; }
         .hamburger span { width: 30px; height: 4px; background-color: var(--charcoal); border-radius: 0; transition: all 0.3s ease; }
         .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-        /* === PAGE HEADER === */
-        .page-header {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 5% 40px 5%;
-            text-align: center;
-        }
+        .page-header { max-width: 1100px; margin: 0 auto; padding: 80px 5% 40px 5%; text-align: center; }
         .page-header h1 { font-size: 4rem; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
         .page-header p { 
             font-size: 1.25rem; color: var(--charcoal); font-weight: 600; 
             max-width: 800px; margin: 0 auto; line-height: 1.8;
-            border: 4px solid var(--charcoal);
-            background: var(--white);
-            padding: 20px;
-            box-shadow: 8px 8px 0px var(--charcoal);
-            border-radius: 24px;
+            border: 4px solid var(--charcoal); background: var(--white);
+            padding: 20px; box-shadow: 8px 8px 0px var(--charcoal); border-radius: 24px;
         }
 
-        /* === CONTENT === */
         .content { width: 100%; max-width: 1100px; margin: 0 auto; padding: 20px 5% 100px 5%; }
+        .section-card { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; padding: 40px; margin-bottom: 40px; box-shadow: 12px 12px 0px var(--charcoal); width: 100%; }
+        .section-card h2 { margin-bottom: 25px; font-size: 2rem; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px; }
+        .section-card p { font-size: 1.1rem; color: var(--dark-brown); font-weight: 600; margin-bottom: 20px; }
+
+        /* === KOTAK ANALISIS === */
+        .analysis-box {
+            background: var(--cream); border: 3px solid var(--charcoal); border-radius: 16px; 
+            padding: 24px; margin-bottom: 24px; box-shadow: 6px 6px 0px var(--charcoal);
+        }
+        .analysis-box h3 { font-size: 1.4rem; margin-bottom: 16px; border-bottom: 2px solid var(--charcoal); padding-bottom: 10px; }
+        .analysis-box p { font-size: 1rem; color: var(--charcoal); line-height: 1.6; font-weight: 500;}
+        .analysis-box ul { margin-top: 8px; margin-bottom: 16px; padding-left: 20px; color: var(--charcoal); font-weight: 500; line-height: 1.6;}
+        .analysis-box li { margin-bottom: 8px; }
+        .analysis-box strong { font-weight: 900; }
+
+        /* === TOMBOL BUKTI BERWARNA === */
+        .btn-evidence {
+            font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 0.85rem; text-transform: uppercase;
+            padding: 10px 16px; border-radius: 50px; border: 3px solid var(--charcoal); cursor: pointer; 
+            display: inline-flex; justify-content: center; align-items: center; transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; text-align: center;
+            box-shadow: 4px 4px 0px var(--charcoal); text-decoration: none;
+        }
+        .btn-evidence.purple { background-color: var(--purple); color: var(--white); }
+        .btn-evidence.purple:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); opacity: 0.9; }
         
-        .section-card { 
-            background: var(--white); 
-            border: 4px solid var(--charcoal); 
-            border-radius: 24px; 
-            padding: 40px; 
-            margin-bottom: 40px; 
-            box-shadow: 12px 12px 0px var(--charcoal); 
-            width: 100%;
-        }
-        .section-card h2 { margin-bottom: 25px; font-size: 2rem; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px;}
-        .section-card p { font-size: 1.1rem; color: var(--dark-brown); font-weight: 600; margin-bottom: 20px;}
+        .btn-evidence.brown { background-color: var(--brown); color: var(--white); }
+        .btn-evidence.brown:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); opacity: 0.9; }
 
-        /* === EMBED CONTAINERS (BRUTALIST STYLE) === */
         .embed-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; 
-            margin-bottom: 24px;
-            border: 4px solid var(--charcoal);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 6px 6px 0px var(--charcoal);
+            position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 24px;
+            border: 4px solid var(--charcoal); border-radius: 16px; overflow: hidden; box-shadow: 6px 6px 0px var(--charcoal);
         }
-        .embed-container iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
-        }
+        .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* === FOOTER === */
-        .footer {
-            text-align: center; padding: 40px 20px; color: var(--charcoal);
-            border-top: 4px solid var(--charcoal);
-            background-color: var(--white);
-            font-weight: 900;
-            text-transform: uppercase;
-        }
+        .footer { text-align: center; padding: 40px 20px; color: var(--charcoal); border-top: 4px solid var(--charcoal); background-color: var(--white); font-weight: 900; text-transform: uppercase; }
 
-        /* === RESPONSIVE === */
-        @media (max-width: 900px) {
+        /* === MASTER RESPONSIF === */
+        @media (max-width: 1024px) {
             .hamburger { display: flex; position: absolute; right: 5%; top: 30px; }
-            .nav-links {
-                position: absolute; top: 80px; left: 0; right: 0;
-                background-color: var(--white); flex-direction: column;
-                width: 100%; border-top: 4px solid var(--charcoal);
-                display: none; z-index: 1001;
-            }
+            .nav-links { position: absolute; top: 80px; left: 0; right: 0; background-color: var(--white); flex-direction: column; width: 100%; border-top: 4px solid var(--charcoal); border-bottom: 4px solid var(--charcoal); display: none; z-index: 1001; gap: 0; padding: 0; }
             .nav-links.active { display: flex; }
-            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); }
-            .nav-links a { display: block; padding: 20px; }
-
+            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); display: block; margin: 0; padding: 0; }
+            .nav-links li:last-child { border-bottom: none; }
+            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; width: 100%; }
+            .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple) !important; color: var(--white) !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; }
             .page-header h1 { font-size: 2.8rem; }
         }
     </style>
@@ -158,63 +113,162 @@
 <body>
 
     <nav>
-        <div class="logo">
-            <div class="logo-icon">R</div>
-            E-Portofolio
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="logo"><div class="logo-icon">R</div>E-Portofolio</div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Beranda</a></li>
             <li><a href="profil.html">Profil</a></li>
-            <li><a href="e-portofolio-1.html">Artefak</a></li>
+            <li><a href="e-portofolio-1.html" class="active-page">Artefak</a></li>
             <li><a href="e-portofolio-2.html">Refleksi</a></li>
         </ul>
     </nav>
 
     <header class="page-header">
         <h1>Artefak Pembelajaran</h1>
-        <p>Kumpulan modul ajar, Lembar Kerja Peserta Didik (LKPD), media interaktif, dan instrumen evaluasi selama PPL Terbimbing.</p>
+        <p>Kumpulan modul ajar, Lembar Kerja Peserta Didik (LKPD), analisis artefak, dan bukti penilaian otentik selama PPL Terbimbing.</p>
     </header>
 
     <main class="content">
         <section class="section-card">
             <h2>🗂️ SIKLUS 1</h2>
-            <p>Fokus: Perencanaan pembelajaran, pengenalan konsep utama, dan analisis awal.</p>
+            
+            <div class="analysis-box">
+                <h3>Analisis Artefak</h3>
+                <p style="margin-bottom: 16px;"><strong>🎯 Konteks & Tujuan:</strong> Modul ajar dan LKPD ini disusun untuk siswa kelas XI SMAN 6 Yogyakarta guna membangun pemahaman mengenai konsep data bivariat dan Diagram Pencar (Scatter Plot). Tujuan utamanya adalah agar siswa mampu memetakan variabel bebas dan terikat secara tepat tanpa tertukar, menggambar grafik secara proporsional, serta menginterpretasikan pola sebaran data.</p>
+                
+                <p style="margin-bottom: 4px;"><strong>✅ Kelebihan:</strong></p>
+                <ul>
+                    <li><strong>Media Fisik & Digital:</strong> Penggunaan kertas berpetak untuk menggambar manual sangat efektif memfasilitasi siswa berdiskusi secara dinamis dan aktif bereksplorasi menentukan variabel di dalam kelompok. Pada sesi daring, LKPD digital sukses mempertahankan tingkat keaktifan kelas, kedisiplinan berpartisipasi, dan ketepatan waktu pengumpulan tugas.</li>
+                    <li><strong>Respons Siswa:</strong> Variasi kegiatan pembelajaran terbukti mencegah kebosanan kelas, meningkatkan antusiasme, serta menumbuhkan rasa percaya diri siswa untuk tidak canggung mengajukan pertanyaan.</li>
+                    <li><strong>Apersepsi yang Kuat:</strong> Kegiatan apersepsi berjalan efektif sebagai jembatan untuk membangun pemahaman intuitif, memantik nalar kritis, dan mencegah miskonsepsi siswa.</li>
+                </ul>
+
+                <p style="margin-bottom: 4px;"><strong>⚠️ Kekurangan:</strong></p>
+                <ul>
+                    <li><strong>Manajemen Waktu:</strong> Pengelolaan alokasi waktu pada pertemuan pertama belum optimal, di mana penyampaian materi dan aktivitas inti selesai lebih cepat dari perkiraan, sehingga menuntut improvisasi kegiatan spontan dari guru.</li>
+                    <li><strong>Pelaksanaan Asesmen:</strong> Berdasarkan umpan balik Guru Pamong, pelaksanaan asesmen pada sesi daring berpotensi kurang valid, sehingga disarankan untuk ditunda dan dilaksanakan pada sesi luring.</li>
+                    <li><strong>Kesalahan Penulisan:</strong> Pada LKPD daring, terdapat kesalahan penulisan sehingga mengakibatkan kebingungan.</li>
+                </ul>
+
+                <p style="margin-bottom: 4px;"><strong>📚 Kajian Teori:</strong></p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Scaffolding (Zone of Proximal Development):</strong> Guru menerapkan <em>scaffolding</em> secara eksplisit sejak kegiatan apersepsi untuk memberikan penguatan terarah sebelum siswa berdiskusi mandiri. Hal ini selaras dengan pendekatan konstruktivisme untuk mencegah miskonsepsi dasar.</li>
+                    <li><strong>Discovery & Meaningful Learning:</strong> Praktik pengumpulan data mandiri dan pemanfaatan kertas berpetak mengakomodasi pembelajaran berbasis penemuan (<em>discovery</em>), di mana siswa difasilitasi untuk menemukan relasi kausalitas melalui eksplorasi terbimbing.</li>
+                    <li><strong>Integrasi TPACK (Technological Pedagogical Content Knowledge):</strong> Rencana tindak lanjut untuk mengintegrasikan platform digital interaktif secara lebih maksimal menunjukkan kesadaran guru dalam menyesuaikan rancangan pedagogis dengan gaya belajar siswa yang responsif terhadap teknologi.</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 30px;"><strong>🎥 Dokumentasi Pelaksanaan & RPM:</strong></p>
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/-3XixSO98yU"></iframe></div>
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/mEO9FAZNwQE"></iframe></div>
             <div class="embed-container"><iframe src="https://drive.google.com/file/d/1wzCaI2hKRO7HCh1buahIcxb68nwk2kZt/preview"></iframe></div>
+
+            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Variasi Bukti Artefak (Asesmen & Penilaian):</strong></p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="#" target="_blank" class="btn-evidence purple">✏️ Contoh Hasil Kerja Siswa</a>
+                <a href="#" target="_blank" class="btn-evidence brown">📋 Penilaian Guru Pamong / DPL</a>
+            </div>
         </section>
 
         <section class="section-card">
             <h2>🗂️ SIKLUS 2</h2>
-            <p>Fokus: Implementasi kegiatan pembelajaran dan evaluasi media digital.</p>
+            
+            <div class="analysis-box">
+                <h3>Analisis Artefak</h3>
+                <p style="margin-bottom: 16px;"><strong>🎯 Konteks & Tujuan:</strong> Modul ajar dan LKPD ini disusun untuk siswa kelas XI SMAN 6 Yogyakarta dengan topik Persamaan Regresi. Tujuan utamanya adalah agar siswa mampu menentukan persamaan garis regresi linear (ŷ = a + bx) dengan menghitung nilai komponennya, serta mampu menginterpretasikan maknanya secara logis berdasarkan fenomena nyata.</p>
+                
+                <p style="margin-bottom: 4px;"><strong>✅ Kelebihan:</strong></p>
+                <ul>
+                    <li><strong>Apersepsi Bermakna:</strong> Kegiatan apersepsi berupa <em>flashback</em> kesalahan hitung dari pertemuan sebelumnya sangat efektif menyadarkan siswa akan urgensi ketelitian tinggi dan pemahaman konsep variabel.</li>
+                    <li><strong>Kolaborasi Berbasis Teknologi:</strong> Penggunaan <em>spreadsheet</em> terbukti memantik antusiasme dan memfasilitasi pembagian peran kolaboratif yang terstruktur di dalam kelompok (ada yang menjadi operator, penghitung, dan penyusun kalimat).</li>
+                    <li><strong>Peningkatan Keterampilan Analitis:</strong> Pencapaian terbesar pada kegiatan inti adalah keberhasilan siswa menguasai keterampilan analitis tingkat tinggi, yakni menerjemahkan dan menginterpretasikan makna angka konstanta dan gradien dengan tepat.</li>
+                    <li><strong>Peningkatan Keaktifan & Fokus:</strong> Siswa terlihat jauh lebih aktif bertanya didorong oleh rasa ragu dan kehati-hatian terhadap prosedur baru. Variasi metode ini sukses membuat mereka tetap fokus dan terhindar dari rasa bosan.</li>
+                </ul>
+
+                <p style="margin-bottom: 4px;"><strong>⚠️ Kekurangan:</strong></p>
+                <ul>
+                    <li><strong>Ketergantungan Perangkat Lunak:</strong> Pembiasaan penggunaan <em>software</em> (<em>spreadsheet</em>) di kelas memunculkan ketergantungan, sehingga siswa mengalami kebingungan dan kesulitan saat dihadapkan pada asesmen manual berbasis kertas.</li>
+                    <li><strong>Kelemahan Literasi Digital:</strong> Meskipun proses perhitungan sudah dibantu formula otomatis dari <em>spreadsheet</em>, beberapa siswa masih kurang teliti sehingga tetap terjadi kesalahan saat <em>input</em> data.</li>
+                    <li><strong>Penyesuaian Strategi Evaluasi:</strong> Berdasarkan umpan balik Guru Pamong, kemampuan dasar menghitung secara manual perlu dikuatkan terlebih dahulu karena asesmen yang sesungguhnya tidak memperkenankan penggunaan kalkulator atau <em>software</em>.</li>
+                </ul>
+
+                <p style="margin-bottom: 4px;"><strong>📚 Kajian Teori:</strong></p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Problem-Based & Deep Learning:</strong> Praktik pedagogis menggunakan <em>Problem-Based Learning</em> (PBL) dan pendekatan <em>Deep Learning</em>, di mana siswa dilatih memaknai (<em>Meaningful Learning</em>) deretan angka matematis gradien dan konstanta sebagai "cerita" di balik fenomena dunia nyata.</li>
+                    <li><strong>Modifikasi Scaffolding:</strong> Sebagai tindak lanjut refleksi, tahapan pengerjaan tugas (<em>scaffolding</em>) akan dimodifikasi dengan mewajibkan siswa melakukan hitungan manual di atas kertas sebelum diizinkan menggunakan perangkat lunak, guna membangun fondasi pemahaman prosedural.</li>
+                    <li><strong>Penalaran Etis (Conscience):</strong> Pembelajaran ini juga menyentuh dimensi kesadaran etis, di mana guru membimbing siswa menyadari batasan logika dari sebuah data dan pentingnya kejujuran tanpa manipulasi dalam menerjemahkan angka.</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 30px;"><strong>🎥 Dokumentasi Pelaksanaan & RPM:</strong></p>
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/3v-cGs70_FM"></iframe></div>
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/DOBXXgQ0tl0"></iframe></div>
             <div class="embed-container"><iframe src="https://drive.google.com/file/d/11k9wxID76kIpslzvJzPDMp6MxGge0x7m/preview"></iframe></div>
+
+            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Variasi Bukti Artefak (Asesmen & Penilaian):</strong></p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="#" target="_blank" class="btn-evidence purple">✏️ Contoh Hasil Kerja Siswa</a>
+                <a href="#" target="_blank" class="btn-evidence brown">📋 Penilaian Guru Pamong / DPL</a>
+            </div>
         </section>
 
         <section class="section-card">
             <h2>🗂️ SIKLUS 3</h2>
-            <p>Fokus: Refleksi akhir, perbaikan, dan kesimpulan pembelajaran.</p>
+            
+            <div class="analysis-box">
+                <h3>Analisis Artefak</h3>
+                <p style="margin-bottom: 4px;"><strong>🎯 Konteks & Tujuan:</strong></p>
+                <ul style="margin-bottom: 16px;">
+                    <li>Modul ajar dan LKPD ini disusun untuk siswa kelas XI SMAN 6 Yogyakarta dengan fokus materi Koefisien Korelasi <i>Product Moment</i>. Tujuannya agar siswa ditargetkan mampu menghitung nilai koefisien korelasi (r) melalui algoritma manual maupun bantuan teknologi, serta mampu menginterpretasikannya untuk menilai akurasi analisis regresi linear. </li>
+                </ul>
+                
+                <p style="margin-bottom: 4px;"><strong>✅ Kelebihan:</strong></p>
+                <ul>
+                    <li><strong>Apersepsi Berkesinambungan:</strong> Kegiatan apersepsi terbukti efektif membangun pemahaman intuitif siswa dengan mengaitkan kembali contoh-contoh kontekstual yang sudah dipelajari pada siklus pertama (misalnya data penggunaan WhatsApp dan suhu vs penjualan es krim).</li>
+                    <li><strong>Antusiasme Melalui Gamifikasi:</strong> Penggunaan platform <em>Kahoot</em> untuk kuis interaktif sangat sukses menghidupkan suasana kelas. Media digital ini berhasil memicu fokus siswa dan menumbuhkan semangat kompetisi yang sehat dari awal hingga akhir.</li>
+                    <li><strong>Keterlibatan Proaktif Siswa:</strong> Penugasan awal mencari nilai korelasi terbukti sukses memicu diskusi analitis yang mendalam di dalam masing-masing kelompok. Siswa juga tampil sangat proaktif dan berani saat harus mempresentasikan temuan mereka kepada kelompok lain.</li>
+                </ul>
+
+                <p style="margin-bottom: 4px;"><strong>⚠️ Kekurangan:</strong></p>
+                <ul>
+                    <li><strong>Manajemen Metode Kooperatif:</strong> Penerapan metode diskusi <em>Two Stay Two Stray</em> (2S2S) belum berjalan mulus karena kurangnya koordinasi teknis. Ketidakjelasan alur perpindahan peran (antara siswa yang menetap dan yang bertamu) membuat suasana kelas sempat menjadi kurang kondusif.</li>
+                    <li><strong>Intensitas Latihan Mandiri:</strong> Berdasarkan catatan dan umpan balik dari Guru Pamong, intensitas atau porsi latihan soal bagi siswa masih perlu diperbanyak. Hal ini dibutuhkan agar keterampilan berhitung dan ketajaman analitis siswa semakin terasah.</li>
+                    <li><strong>Refleksi Ketergantungan Alat:</strong> Guru menyadari adanya kebutuhan untuk memperbanyak pengerjaan tugas secara manual di atas kertas dibandingkan langsung menggunakan <em>software</em>. Langkah ini diperlukan agar siswa lebih memahami esensi proses perhitungannya sekaligus melatih keterampilan motorik dan literasi.</li>
+                </ul>
+
+                <p style="margin-bottom: 4px;"><strong>📚 Kajian Teori:</strong></p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Problem-Based & Cooperative Learning:</strong> Modul ini bertumpu pada model <em>Problem-Based Learning</em> (PBL) yang dipadukan dengan metode kooperatif <em>Two Stay Two Stray</em> untuk memfasilitasi pertukaran informasi antar-kelompok.</li>
+                    <li><strong>Integrasi HOTS & Kesadaran Etis (Conscience):</strong> Asesmen interaktif dirancang untuk menstimulasi <em>Higher Order Thinking Skills</em> (HOTS), seperti analisis kritis membedakan korelasi dengan kausalitas. Pembelajaran juga menekankan dimensi kesadaran etis, di mana siswa dituntut memiliki integritas dan berani menolak manipulasi data secara logis.</li>
+                    <li><strong>Penyesuaian Strategi Pedagogis (Back to Basics):</strong> Keputusan guru untuk mengembalikan porsi hitungan manual di kertas sejalan dengan tren pedagogis di negara-negara maju (seperti Swiss), yang menilai bahwa interaksi fisik dengan buku dan kertas berdampak lebih baik bagi perkembangan kognitif siswa dibandingkan digitalisasi penuh.</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 30px;"><strong>🎥 Dokumentasi Pelaksanaan & RPM:</strong></p>
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/2sMGtxxbXZk"></iframe></div>
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/sDKc5C81IhU"></iframe></div>
             <div class="embed-container"><iframe src="https://drive.google.com/file/d/1cRyykyVprwYaNloxc8sUHseMrJZx7yyB/preview"></iframe></div>
+
+            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Variasi Bukti Artefak (Asesmen & Penilaian):</strong></p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="#" target="_blank" class="btn-evidence purple">✏️ Contoh Hasil Kerja Siswa</a>
+                <a href="#" target="_blank" class="btn-evidence brown">📋 Penilaian Guru Pamong / DPL</a>
+            </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 Rifqi — E-Portofolio PPG</p>
+    <footer class="footer" style="line-height: 1.4;">
+        <p style="margin: 0 0 8px 0;">&copy; 2026 RIFQI FAUSTA DIANTA — E-PORTOFOLIO PPG</p>
+        <div style="font-size: 0.85rem; font-weight: 600; text-transform: none; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <span>📧 rifqia48@gmail.com</span>
+            <span>📱 +62 878-3996-2270</span>
+        </div>
     </footer>
 
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
     </script>
 </body>
 </html>

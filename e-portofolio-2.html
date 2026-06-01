@@ -30,31 +30,20 @@
         h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; text-transform: uppercase; margin: 0; color: var(--charcoal); letter-spacing: -1px; }
         a { text-decoration: none; color: var(--charcoal); font-weight: 700; }
 
-        /* === NAVBAR === */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 5%; background-color: var(--cream);
-            border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%;
-        }
-        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
-        .logo-icon {
-            background-color: var(--brown); color: var(--white);
-            width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--charcoal);
-            display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif;
-            box-shadow: 4px 4px 0px var(--charcoal);
-        }
-        .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; }
-        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; }
-        .nav-links a:hover { background-color: var(--purple); color: var(--white); border: 3px solid var(--charcoal); border-radius: 50px; box-shadow: 4px 4px 0px var(--charcoal); }
-
-        /* === HAMBURGER === */
+        /* === MASTER NAVBAR CSS === */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--cream); border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002;}
+        .logo-icon { background-color: var(--brown); color: var(--white); width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--charcoal); display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; box-shadow: 4px 4px 0px var(--charcoal); }
+        .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; align-items: center;}
+        .nav-links li { margin: 0; padding: 0; }
+        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; color: var(--charcoal); display: block;}
+        .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple); color: var(--white); border: 3px solid var(--charcoal); border-radius: 50px; box-shadow: 4px 4px 0px var(--charcoal); }
         .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1003; }
         .hamburger span { width: 30px; height: 4px; background-color: var(--charcoal); border-radius: 0; transition: all 0.3s ease; }
         .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-        /* === PAGE HEADER === */
         .page-header { max-width: 1100px; margin: 0 auto; padding: 80px 5% 40px 5%; text-align: center; }
         .page-header h1 { font-size: 4rem; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
         .page-header p { 
@@ -64,75 +53,79 @@
             padding: 20px; box-shadow: 8px 8px 0px var(--charcoal); border-radius: 24px;
         }
 
-        /* === CONTENT === */
         .content { width: 100%; max-width: 1100px; margin: 0 auto; padding: 20px 5% 100px 5%; }
-        .section-card { 
-            background: var(--white); border: 4px solid var(--charcoal); 
-            border-radius: 24px; padding: 40px; margin-bottom: 40px; 
-            box-shadow: 12px 12px 0px var(--charcoal); width: 100%;
-        }
+        .section-card { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; padding: 40px; margin-bottom: 40px; box-shadow: 12px 12px 0px var(--charcoal); width: 100%; }
         .section-card h2 { margin-bottom: 20px; font-size: 2rem; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px;}
         .section-card p { margin: 0 0 16px 0; font-weight: 600; line-height: 1.8; font-size: 1.1rem; }
 
-        /* === REFLEKSI GRID === */
+        /* === GRID KELAS REFLEKSI === */
         .refleksi-grid { display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); gap: 32px; margin-bottom: 32px; }
         .grid-card {
             border: 4px solid var(--charcoal); border-radius: 24px; padding: 40px 25px;
             text-align: center; cursor: pointer; position: relative;
-            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
-            box-shadow: 12px 12px 0px var(--charcoal);
+            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; box-shadow: 12px 12px 0px var(--charcoal);
         }
         .grid-card:nth-child(1) { background: var(--purple); color: var(--white); }
         .grid-card:nth-child(2) { background: var(--green); color: var(--white); }
         .grid-card:nth-child(3) { background: var(--brown); color: var(--white); }
-        
         .grid-card:hover { transform: translate(4px, 4px); box-shadow: 8px 8px 0px var(--charcoal); }
-        .grid-card:active { transform: translate(12px, 12px); box-shadow: 0px 0px 0px var(--charcoal); }
-
         .grid-card h3 { color: var(--white); margin-bottom: 16px; font-size: 1.6rem; }
         .grid-card p { color: var(--white); margin: 0; font-weight: 600; opacity: 0.95; line-height: 1.6; }
 
-        /* === MODAL TER-FIX === */
-        .modal-overlay {
-            position: fixed; inset: 0; background: rgba(26, 26, 26, 0.85);
-            display: none; align-items: center; justify-content: center; padding: 20px; z-index: 2000;
+        /* === KOTAK ANALISIS (Untuk Filosofi & RTL) === */
+        .analysis-box {
+            background: var(--cream); border: 3px solid var(--charcoal); border-radius: 16px; 
+            padding: 24px; margin-bottom: 24px; box-shadow: 6px 6px 0px var(--charcoal);
         }
+        .analysis-box h3 { font-size: 1.4rem; margin-bottom: 16px; border-bottom: 2px solid var(--charcoal); padding-bottom: 10px; }
+        .analysis-box p { font-size: 1rem; color: var(--charcoal); line-height: 1.6; font-weight: 500;}
+        .analysis-box ul { margin-top: 8px; margin-bottom: 16px; padding-left: 20px; color: var(--charcoal); font-weight: 500; line-height: 1.6;}
+        .analysis-box li { margin-bottom: 8px; }
+        .analysis-box strong { font-weight: 900; }
+
+        /* === WARNA KHUSUS NEO-BRUTALISM UNTUK KOTAK === */
+        .analysis-box.purple { background-color: var(--purple); }
+        .analysis-box.purple p, .analysis-box.purple ul, .analysis-box.purple li, .analysis-box.purple strong { color: var(--white); }
+
+        .analysis-box.green { background-color: var(--green); }
+        .analysis-box.green p, .analysis-box.green ul, .analysis-box.green li, .analysis-box.green strong { color: var(--white); }
+
+        /* === MODAL === */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(26, 26, 26, 0.85); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 2000; }
         .modal-overlay.active { display: flex; }
-        .modal {
-            background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px;
-            max-width: 800px; width: 100%; padding: 40px; box-shadow: 16px 16px 0px var(--charcoal);
-            position: relative; max-height: 90vh; overflow-y: auto;
-        }
-        /* Tombol Close Pojok Kanan Atas */
+        .modal { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; max-width: 800px; width: 100%; padding: 40px; box-shadow: 16px 16px 0px var(--charcoal); position: relative; max-height: 90vh; overflow-y: auto; }
+        
         .close-btn {
-            position: absolute; top: 20px; right: 20px;
-            width: 45px; height: 45px; border: 4px solid var(--charcoal); border-radius: 8px;
-            background: var(--purple); color: var(--white); font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            box-shadow: 4px 4px 0px var(--charcoal); z-index: 10;
+            position: absolute; top: 20px; right: 20px; width: 45px; height: 45px; border: 4px solid var(--charcoal); border-radius: 8px;
+            background: var(--purple); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 900;
+            cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 4px 4px 0px var(--charcoal); z-index: 10;
         }
         .close-btn:hover { background: var(--green); transform: translate(4px, 4px); box-shadow: 0px 0px 0px var(--charcoal); }
-        
-        /* Judul modal diberi padding agar tidak menabrak tombol */
         .modal h2 { font-size: 2rem; margin: 0 50px 20px 0; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px; }
-        
         .modal-body p { margin-bottom: 16px; font-weight: 500; font-size: 1.1rem; line-height: 1.8; }
         
-        .footer { text-align: center; padding: 40px 20px; color: var(--charcoal); border-top: 4px solid var(--charcoal); font-weight: 900; text-transform: uppercase; }
+        .footer { text-align: center; padding: 40px 20px; color: var(--charcoal); border-top: 4px solid var(--charcoal); background-color: var(--white); font-weight: 900; text-transform: uppercase; }
 
-        @media (max-width: 900px) {
+        /* === MASTER RESPONSIF === */
+        @media (max-width: 1024px) {
             .hamburger { display: flex; position: absolute; right: 5%; top: 30px; }
-            .nav-links {
-                position: absolute; top: 80px; left: 0; right: 0; background-color: var(--white);
-                flex-direction: column; width: 100%; border-top: 4px solid var(--charcoal); border-bottom: 4px solid var(--charcoal);
-                display: none; z-index: 1001;
-            }
+            .nav-links { position: absolute; top: 80px; left: 0; right: 0; background-color: var(--white); flex-direction: column; width: 100%; border-top: 4px solid var(--charcoal); border-bottom: 4px solid var(--charcoal); display: none; z-index: 1001; gap: 0; padding: 0; }
             .nav-links.active { display: flex; }
-            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); }
-            .nav-links a { display: block; padding: 20px; }
+            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); display: block; margin: 0; padding: 0; }
+            .nav-links li:last-child { border-bottom: none; }
+            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; width: 100%; }
+            .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple) !important; color: var(--white) !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; }
             .page-header h1 { font-size: 2.8rem; }
             .refleksi-grid { grid-template-columns: 1fr; }
-            .modal h2 { font-size: 1.5rem; } /* Kecilkan judul di mobile */
+            .modal h2 { font-size: 1.5rem; } 
+        }
+
+        /* === PERBAIKAN MODAL HP SEMPIT === */
+        @media (max-width: 600px) {
+            .modal { padding: 24px 20px !important; }
+            .close-btn { top: 15px !important; right: 15px !important; width: 36px !important; height: 36px !important; font-size: 1.4rem !important; }
+            .modal h2 { margin: 0 35px 15px 0 !important; font-size: 1.3rem !important; }
+            .modal-body p { font-size: 1rem !important; }
         }
     </style>
 </head>
@@ -144,49 +137,83 @@
             <li><a href="index.html">Beranda</a></li>
             <li><a href="profil.html">Profil</a></li>
             <li><a href="e-portofolio-1.html">Artefak</a></li>
-            <li><a href="e-portofolio-2.html">Refleksi</a></li>
+            <li><a href="e-portofolio-2.html" class="active-page">Refleksi</a></li>
         </ul>
     </nav>
     <header class="page-header">
         <h1>Refleksi</h1>
         <p>Analisis mendalam, pembelajaran, dan filosofi mengajar dari pengalaman PPL Terbimbing.</p>
     </header>
+    
     <main class="content">
+
+        <!-- === BAGIAN BARU: MODEL GURU & FILOSOFI (SYARAT RUBRIK) === -->
+        <section class="section-card">
+            <h2>💡 Visi & Filosofi Pendidik</h2>
+            <!-- Ditambahkan class "purple" agar berwarna ungu dengan teks putih -->
+            <div class="analysis-box purple">
+                <p style="margin-bottom: 12px;"><strong>Filosofi Mengajar:</strong><br>
+                Mengacu pada pemikiran Ki Hajar Dewantara, saya meyakini bahwa pendidikan adalah proses menuntun segala kodrat yang ada pada anak agar mereka mencapai keselamatan dan kebahagiaan setinggi-tingginya. Oleh karena itu, filosofi mengajar saya adalah <em>"Memerdekakan Nalar, Menumbuhkan Karakter"</em>. Saya memosisikan diri sebagai fasilitator yang menyediakan ruang aman bagi siswa untuk melakukan eksplorasi, berbuat kesalahan, dan menemukan kebermaknaan matematika dalam kehidupan sehari-hari mereka, bukan sekadar bertindak sebagai diktator di ruang kelas.</p>
+
+                <p style="margin-bottom: 0;"><strong>Model Guru yang Dituju:</strong><br>
+                Melalui pengalaman PPL Terbimbing ini, saya memproyeksikan diri untuk menjadi sosok <strong>Guru Matematika yang Inklusif, Adaptif, dan Reflektif</strong>. Guru yang inklusif berarti mampu menerapkan pembelajaran berdiferensiasi sesuai kesiapan siswa. Guru yang adaptif berarti peka terhadap perkembangan zaman dengan menguasai keterampilan TPACK (<em>Technological Pedagogical Content Knowledge</em>). Sedangkan guru yang reflektif berarti memiliki <em>growth mindset</em> untuk senantiasa mengevaluasi efektivitas pembelajarannya melalui data dan umpan balik.</p>
+            </div>
+        </section>
+
+        <!-- === SIKLUS REFLEKSI (TETAP SAMA) === -->
         <section class="section-card">
             <h2>💭 Refleksi Siklus PPL</h2>
-            <p>Silahkan ketuk setiap kotak di bawah ini untuk membaca refleksi lengkap dari tiap siklus.</p>
+            <p>Silahkan ketuk setiap kotak di bawah ini untuk membaca refleksi spesifik dari pelaksanaan tiap siklus pembelajaran di kelas.</p>
         </section>
 
         <section class="refleksi-grid">
-            <article class="grid-card" data-modal="siklus1">
-                <h3>REFLEKSI SIKLUS 1</h3>
-                <p>Observasi awal kelas, hubungan siswa-guru, dan pelajaran pertama di lapangan.</p>
-            </article>
-            <article class="grid-card" data-modal="siklus2">
-                <h3>REFLEKSI SIKLUS 2</h3>
-                <p>Strategi mengelola kelas, diferensiasi, dan menjaga motivasi siswa.</p>
-            </article>
-            <article class="grid-card" data-modal="siklus3">
-                <h3>REFLEKSI SIKLUS 3</h3>
-                <p>Filosofi mengajar, growth mindset, dan rencana pembelajaran berkelanjutan.</p>
-            </article>
+            <article class="grid-card" data-modal="siklus1"><h3>REFLEKSI SIKLUS 1</h3><p>Observasi awal kelas, hubungan siswa-guru, dan pelajaran pertama di lapangan.</p></article>
+            <article class="grid-card" data-modal="siklus2"><h3>REFLEKSI SIKLUS 2</h3><p>Strategi mengelola kelas, diferensiasi, dan menjaga motivasi siswa.</p></article>
+            <article class="grid-card" data-modal="siklus3"><h3>REFLEKSI SIKLUS 3</h3><p>Filosofi mengajar, growth mindset, dan rencana pembelajaran berkelanjutan.</p></article>
         </section>
 
+        <!-- === PERBAIKAN REFLEKSI AKHIR DENGAN RTL (SYARAT RUBRIK) === -->
         <section class="section-card">
-            <h2>Refleksi Akhir Praktek Terbimbing</h2>
-            <p>Secara keseluruhan, rangkaian praktik pembelajaran terbimbing ini menunjukkan respons murid yang sangat antusias dan positif. Penggunaan berbagai media seperti kertas berpetak, LKPD digital, perangkat lunak, hingga platform Kahoot berhasil memfasilitasi partisipasi aktif dan kolaborasi dinamis antar murid. Meskipun terdapat kendala seperti manajemen waktu dan koordinasi metode Two Stay Two Stray, Guru Pamong memberikan umpan balik konstruktif untuk perbaikan manajemen kelas dan latihan soal manual. Sebagai tindak lanjut, metode mendatang akan mengintegrasikan media digital secara maksimal sekaligus mewajibkan pengerjaan tugas manual di atas kertas untuk memperkuat literasi dan pemahaman prosedural murid.</p>
+            <h2>Evaluasi Akhir & Rencana Tindak Lanjut</h2>
+            <p>Secara keseluruhan, rangkaian praktik pembelajaran terbimbing ini menunjukkan respons murid yang sangat antusias dan positif. Penggunaan berbagai media memfasilitasi partisipasi aktif dan kolaborasi dinamis antar murid. Berdasarkan pengalaman tersebut, berikut adalah evaluasi akhir saya:</p>
+            
+            <!-- Ditambahkan class "green" agar berwarna hijau stabilo dengan teks putih -->
+            <div class="analysis-box green">
+                <p><strong>✅ Kekuatan Pembelajaran:</strong></p>
+                <ul>
+                    <li>Kemampuan merancang modul ajar berdiferensiasi yang dipadukan dengan pemanfaatan media digital (Kahoot, Spreadsheet) sukses meningkatkan literasi dan motivasi ekstrinsik siswa.</li>
+                    <li>Mampu membangun apersepsi kontekstual dan iklim kelas yang aman sehingga siswa tidak canggung untuk bertanya.</li>
+                </ul>
+
+                <p><strong>⚠️ Kelemahan Pembelajaran:</strong></p>
+                <ul>
+                    <li>Manajemen alokasi waktu dan koordinasi teknis kelas masih belum optimal, terutama saat menerapkan model kooperatif yang kompleks seperti <em>Two Stay Two Stray</em>.</li>
+                    <li>Terlalu fokus pada pemanfaatan alat digital membuat porsi latihan pemecahan masalah secara manual (motorik) menjadi berkurang.</li>
+                </ul>
+
+                <p><strong>🚀 Rencana Tindak Lanjut Pengembangan Diri:</strong></p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Optimalisasi Manajemen Kelas:</strong> Berlatih menerapkan metode simulasi atau <em>ice-breaking</em> terarah untuk mengondisikan alur mobilitas siswa sebelum metode kooperatif kompleks dimulai.</li>
+                    <li><strong>Penyeimbangan Pedagogi (Back to Basics):</strong> Mewajibkan pengerjaan tugas secara manual di atas kertas sebagai <em>scaffolding</em> primer sebelum mengizinkan siswa menggunakan instrumen digital.</li>
+                    <li><strong>Pengembangan Profesional:</strong> Berkomitmen untuk terus mengikuti forum diskusi guru (seperti MGMP), melakukan <em>peer-observation</em> bersama rekan sejawat, dan merancang Penelitian Tindakan Kelas (PTK) guna meningkatkan kualitas pengajaran secara berkelanjutan.</li>
+                </ul>
+            </div>
         </section>
     </main>
 
     <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true">
+        <div class="modal" role="dialog">
             <button class="close-btn" id="closeModal" aria-label="Tutup">×</button>
             <h2 id="modalTitle"></h2>
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
-    <footer class="footer">
-        <p>&copy; 2026 Rifqi — E-Portofolio PPG</p>
+    <footer class="footer" style="line-height: 1.4;">
+        <p style="margin: 0 0 8px 0;">&copy; 2026 RIFQI FAUSTA DIANTA — E-PORTOFOLIO PPG</p>
+        <div style="font-size: 0.85rem; font-weight: 600; text-transform: none; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <span>📧 rifqia48@gmail.com</span>
+            <span>📱 +62 878-3996-2270</span>
+        </div>
     </footer>
     <script>
         const reflections = {
