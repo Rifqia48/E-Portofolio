@@ -35,16 +35,17 @@
         h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; text-transform: uppercase; margin: 0; color: var(--charcoal); letter-spacing: -1px; }
         a { text-decoration: none; color: var(--charcoal); font-weight: 700; }
 
-        /* === MASTER NAVBAR CSS === */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--cream); border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%; }
-        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002;}
-        .logo-icon { background-color: var(--brown); color: var(--white); width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--charcoal); display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; box-shadow: 4px 4px 0px var(--charcoal); }
+        /* === NAVBAR === */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--charcoal); border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002; white-space: nowrap; flex-shrink: 0; color: var(--white); }
+        .logo-icon { background-color: var(--purple); color: var(--white); width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--white); display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; box-shadow: 4px 4px 0px var(--white); }
         .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; align-items: center;}
         .nav-links li { margin: 0; padding: 0; }
-        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; color: var(--charcoal); display: block;}
-        .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple); color: var(--white); border: 3px solid var(--charcoal); border-radius: 50px; box-shadow: 4px 4px 0px var(--charcoal); }
+        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; color: var(--white); display: block;}
+        .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple); color: var(--white); border: 3px solid var(--white); border-radius: 50px; box-shadow: 4px 4px 0px var(--white); }
+        
         .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1003; }
-        .hamburger span { width: 30px; height: 4px; background-color: var(--charcoal); border-radius: 0; transition: all 0.3s ease; }
+        .hamburger span { width: 30px; height: 4px; background-color: var(--white); border-radius: 0; transition: all 0.3s ease; }
         .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
@@ -63,7 +64,6 @@
         .section-card h2 { margin-bottom: 20px; font-size: 2rem; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px;}
         .section-card p { margin: 0 0 16px 0; font-weight: 600; line-height: 1.8; font-size: 1.1rem; }
 
-        /* === GRID KELAS REFLEKSI === */
         .refleksi-grid { display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); gap: 32px; margin-bottom: 32px; }
         .grid-card {
             border: 4px solid var(--charcoal); border-radius: 24px; padding: 40px 25px;
@@ -77,7 +77,6 @@
         .grid-card h3 { color: var(--white); margin-bottom: 16px; font-size: 1.6rem; }
         .grid-card p { color: var(--white); margin: 0; font-weight: 600; opacity: 0.95; line-height: 1.6; }
 
-        /* === KOTAK ANALISIS (Untuk Filosofi & RTL) === */
         .analysis-box {
             background: var(--cream); border: 3px solid var(--charcoal); border-radius: 16px; 
             padding: 24px; margin-bottom: 24px; box-shadow: 6px 6px 0px var(--charcoal);
@@ -88,10 +87,8 @@
         .analysis-box li { margin-bottom: 8px; }
         .analysis-box strong { font-weight: 900; }
 
-        /* === WARNA KHUSUS NEO-BRUTALISM UNTUK KOTAK === */
         .analysis-box.purple { background-color: var(--purple); }
         .analysis-box.purple p, .analysis-box.purple ul, .analysis-box.purple li, .analysis-box.purple strong { color: var(--white); }
-
         .analysis-box.green { background-color: var(--green); }
         .analysis-box.green p, .analysis-box.green ul, .analysis-box.green li, .analysis-box.green strong { color: var(--white); }
 
@@ -99,7 +96,6 @@
         .modal-overlay { position: fixed; inset: 0; background: rgba(26, 26, 26, 0.85); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 2000; }
         .modal-overlay.active { display: flex; }
         .modal { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; max-width: 800px; width: 100%; padding: 40px; box-shadow: 16px 16px 0px var(--charcoal); position: relative; max-height: 90vh; overflow-y: auto; }
-        
         .close-btn {
             position: absolute; top: 20px; right: 20px; width: 45px; height: 45px; border: 4px solid var(--charcoal); border-radius: 8px;
             background: var(--purple); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 900;
@@ -109,24 +105,36 @@
         .modal h2 { font-size: 2rem; margin: 0 50px 20px 0; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px; }
         .modal-body p { margin-bottom: 16px; font-weight: 500; font-size: 1.1rem; line-height: 1.8; }
         
-        .footer { text-align: center; padding: 40px 20px; color: var(--charcoal); border-top: 4px solid var(--charcoal); background-color: var(--white); font-weight: 900; text-transform: uppercase; }
+        /* === FOOTER === */
+        .footer { text-align: center; padding: 40px 20px; color: var(--white); border-top: 4px solid var(--charcoal); background-color: var(--charcoal); font-weight: 900; text-transform: uppercase; }
 
         /* === MASTER RESPONSIF === */
         @media (max-width: 1024px) {
             .hamburger { display: flex; position: absolute; right: 5%; top: 30px; }
-            .nav-links { position: absolute; top: 80px; left: 0; right: 0; background-color: var(--white); flex-direction: column; width: 100%; border-top: 4px solid var(--charcoal); border-bottom: 4px solid var(--charcoal); display: none; z-index: 1001; gap: 0; padding: 0; }
+            
+            /* PERBAIKAN: Menempel pas di bawah header tanpa sekat kosong */
+            .nav-links { 
+                position: absolute; 
+                top: 100%; 
+                left: 0; right: 0; 
+                background-color: var(--charcoal); flex-direction: column; width: 100%; 
+                border-top: none; border-bottom: 4px solid var(--charcoal); 
+                display: none; z-index: 1001; gap: 0; padding: 0; 
+            }
             .nav-links.active { display: flex; }
-            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); display: block; margin: 0; padding: 0; }
+            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--white); display: block; margin: 0; padding: 0; }
             .nav-links li:last-child { border-bottom: none; }
-            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; width: 100%; }
+            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; margin: 0 !important; width: 100%; border:none; border-radius:0; box-shadow:none; color: var(--white);}
             .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple) !important; color: var(--white) !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; }
+            
             .page-header h1 { font-size: 2.8rem; }
             .refleksi-grid { grid-template-columns: 1fr; }
             .modal h2 { font-size: 1.5rem; } 
         }
 
-        /* === PERBAIKAN MODAL HP SEMPIT === */
         @media (max-width: 600px) {
+            .logo { font-size: 1.15rem; gap: 8px; }
+            .logo-icon { width: 32px; height: 32px; font-size: 1rem; }
             .modal { padding: 24px 20px !important; }
             .close-btn { top: 15px !important; right: 15px !important; width: 36px !important; height: 36px !important; font-size: 1.4rem !important; }
             .modal h2 { margin: 0 35px 15px 0 !important; font-size: 1.3rem !important; }
@@ -139,8 +147,7 @@
         <div class="logo"><div class="logo-icon">R</div> E-Portofolio</div>
         <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="profil.html">Profil</a></li>
+            <li><a href="index.html">Beranda & Profil</a></li>
             <li><a href="e-portofolio-1.html">Artefak</a></li>
             <li><a href="e-portofolio-2.html" class="active-page">Refleksi</a></li>
         </ul>
@@ -152,10 +159,9 @@
     
     <main class="content">
 
-        <!-- === BAGIAN BARU: MODEL GURU & FILOSOFI (SYARAT RUBRIK) === -->
+        <!-- === BAGIAN BARU: MODEL GURU & FILOSOFI === -->
         <section class="section-card">
             <h2>💡 Visi & Filosofi Pendidik</h2>
-            <!-- Ditambahkan class "purple" agar berwarna ungu dengan teks putih -->
             <div class="analysis-box purple">
                 <p style="margin-bottom: 12px;"><strong>Filosofi Mengajar:</strong><br>
                 Mengacu pada pemikiran Ki Hajar Dewantara, saya meyakini bahwa pendidikan adalah proses menuntun segala kodrat yang ada pada anak agar mereka mencapai keselamatan dan kebahagiaan setinggi-tingginya. Oleh karena itu, filosofi mengajar saya adalah <em>"Memerdekakan Nalar, Menumbuhkan Karakter"</em>. Saya memosisikan diri sebagai fasilitator yang menyediakan ruang aman bagi siswa untuk melakukan eksplorasi, berbuat kesalahan, dan menemukan kebermaknaan matematika dalam kehidupan sehari-hari mereka, bukan sekadar bertindak sebagai diktator di ruang kelas.</p>
@@ -165,7 +171,7 @@
             </div>
         </section>
 
-        <!-- === SIKLUS REFLEKSI (TETAP SAMA) === -->
+        <!-- === SIKLUS REFLEKSI === -->
         <section class="section-card">
             <h2>💭 Refleksi Siklus PPL</h2>
             <p>Silahkan ketuk setiap kotak di bawah ini untuk membaca refleksi spesifik dari pelaksanaan tiap siklus pembelajaran di kelas.</p>
@@ -177,12 +183,11 @@
             <article class="grid-card" data-modal="siklus3"><h3>REFLEKSI SIKLUS 3</h3><p>Filosofi mengajar, growth mindset, dan rencana pembelajaran berkelanjutan.</p></article>
         </section>
 
-        <!-- === PERBAIKAN REFLEKSI AKHIR DENGAN RTL (SYARAT RUBRIK) === -->
+        <!-- === REFLEKSI AKHIR DENGAN RTL === -->
         <section class="section-card">
             <h2>Evaluasi Akhir & Rencana Tindak Lanjut</h2>
             <p>Secara keseluruhan, rangkaian praktik pembelajaran terbimbing ini menunjukkan respons murid yang sangat antusias dan positif. Penggunaan berbagai media memfasilitasi partisipasi aktif dan kolaborasi dinamis antar murid. Berdasarkan pengalaman tersebut, berikut adalah evaluasi akhir saya:</p>
             
-            <!-- Ditambahkan class "green" agar berwarna hijau stabilo dengan teks putih -->
             <div class="analysis-box green">
                 <p><strong>✅ Kekuatan Pembelajaran:</strong></p>
                 <ul>
@@ -213,21 +218,23 @@
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
+    
     <footer class="footer" style="line-height: 1.4;">
-        <p style="margin: 0 0 12px 0;">&copy; 2026 RIFQI FAUSTA DIANTA — E-PORTOFOLIO PPG</p>
+        <p style="margin: 0 0 12px 0;">&copy; 2026 RIFQI FAUSTA DIANTA</p>
         <div style="font-size: 0.9rem; font-weight: 700; text-transform: none; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
-            <a href="mailto:rifqia48@gmail.com" style="color: var(--charcoal); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
+            <a href="mailto:rifqia48@gmail.com" style="color: var(--white); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
                 📧 rifqia48@gmail.com
             </a>
-            <a href="https://wa.me/6287839962270" target="_blank" rel="noreferrer" style="color: var(--charcoal); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
+            <a href="https://wa.me/6287839962270" target="_blank" rel="noreferrer" style="color: var(--white); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
                 📱 WhatsApp (+62 878-3996-2270)
             </a>
         </div>
     </footer>
+    
     <script>
         const reflections = {
             siklus1: { title: 'Refleksi Siklus 1', content: `<p>Pada pelaksanaan Siklus 1, fokus utama di awal pembelajaran adalah memberikan kegiatan apersepsi sebagai scaffolding untuk membangun pemahaman intuitif murid. Langkah ini terbukti penting untuk memantik pemikiran kritis sekaligus mencegah miskonsepsi dasar, khususnya agar murid tidak tertukar dalam menentukan variabel independen dan variabel dependen.</p><p>Dalam proses pelaksanaannya, terdapat dinamika yang menjadi pembelajaran berharga. Salah satu keberhasilan yang menonjol adalah pada pertemuan kedua yang terpaksa dialihkan secara daring, namun proses belajar tetap berjalan terkendali dan seluruh murid sukses mengumpulkan tugas tepat waktu.</p><p>Meski demikian, saya menyadari adanya kendala dalam manajemen alokasi waktu pada pertemuan pertama, di mana penyampaian materi selesai lebih cepat dari perkiraan sehingga menuntut saya untuk berimprovisasi secara spontan di kelas.</p><p>Penggunaan variasi media pembelajaran menjadi kunci tingginya partisipasi aktif di kelas. Pada pertemuan pertama, penggunaan kertas berpetak untuk menggambar diagram pencar secara manual sukses memicu diskusi dinamis di dalam kelompok. Sementara itu, pada pertemuan kedua, penggunaan LKPD digital berhasil mempertahankan fokus murid meski dalam moda daring.</p><p><strong>Pelajaran Utama & Tindak Lanjut:</strong> Berdasarkan antusiasme murid selama siklus ini, saya berencana untuk mengintegrasikan media digital secara lebih maksimal. Ke depannya, saya akan merancang penugasan berbasis platform digital interaktif agar pembelajaran menjadi lebih relevan dan menyenangkan sesuai dengan gaya belajar murid.</p>` },
-            siklus2: { title: 'Refleksi Siklus 2', content: `<p>Pada Siklus 2, kegiatan pembelajaran diawali dengan apersepsi berupa kilas balik terhadap kesalahan hitung atau input dari pertemuan sebelumnya. Melalui apersepsi ini, murid disadarkan betapa fatalnya akibat jika posisi variabel X dan Y tertukar dalam menghasilkan persamaan regresi.</p><p>Pencapaian terbesar pada siklus ini adalah keberhasilan murid dalam menguasai keterampilan analitis, di mana mereka mampu menginterpretasikan makna dari persamaan regresi dengan tepat. Namun, terdapat tantangan pada aspek keterampilan komputasi akibat pembiasaan penggunaan software (Excel/Spreadsheet) di kelas.</p><p>Penggunaan aplikasi ini ternyata memunculkan ketergantungan, sehingga murid mengalami kesulitan dan kebingungan ketika dihadapkan pada asesmen manual berbasis kertas. Evaluasi pembelajaran pada siklus ini diperkuat oleh umpan balik konstruktif dari Guru Pamong yang menyarankan agar murid dibiasakan untuk menguasai perhitungan secara manual di atas kertas terlebih dahulu sebelum menggunakan software.</p><p><strong>Pelajaran Utama & Tindak Lanjut:</strong> Berdasarkan hasil evaluasi dan umpan balik tersebut, unsur utama yang akan saya ubah adalah tahapan pengerjaan tugas (scaffolding) pada metode pembelajaran.</p>` },
+            siklus2: { title: 'Refleksi Siklus 2', content: `<p>Pada Siklus 2, kegiatan pembelajaran diawali dengan apersepsi berupa kilas balik terhadap kesalahan hitung atau input dari pertemuan sebelumnya. Melalui apersepsi ini, murid disadarkan betapa fatalnya akibat jika posisi variabel X dan Y tertukar dalam menghasilkan persamaan regresi.</p><p>Pencapaian terbesar pada siklus ini adalah keberhasilan murid dalam menguasai keterampilan analitis, di mana mereka mampu menginterpretasikan makna dari persamaan regresi dengan tepat. Namun, terdapat tantangan pada aspek keterampilan komputasi akibat pembiasaan penggunaan software (Excel/Spreadsheet) di kelas.</p><p>Penggunaan aplikasi ini ternyata memunculkan ketergantungan, sehingga murid mengalami kesulitan dan kebingungan ketika dihadapkan pada asesmen manual berbasis kertas. Evaluasi pembelajaran pada siklus ini diperkuat oleh umpan balik konstruktif dari Guru Pamong yang menyarankan agar murid dibiasakan untuk menguasai perhitungan secara manual di atas kertas terlebih dahulu sebelum menggunakan software.</p><p><strong>Pelajaran Utama & Tindak Lanjut:</strong> Berdasarkan hasil evaluasi dan umpan balik tersebut, unsur utama yang akan saya transformasikan adalah tahapan pengerjaan tugas (scaffolding) pada metode pembelajaran.</p>` },
             siklus3: { title: 'Refleksi Siklus 3', content: `<p>Pada Siklus 3, kegiatan apersepsi terbukti efektif membantu murid memahami tujuan pembelajaran. Dalam pelaksanaan kegiatan inti, terdapat dinamika keberhasilan dan tantangan yang menjadi pembelajaran berharga. Penggunaan media evaluasi digital berupa kuis interaktif Kahoot berjalan sangat efektif dalam memicu fokus dan antusiasme siswa.</p><p>Di sisi lain, penerapan metode kooperatif Two Stay Two Stray belum berjalan maksimal karena kurang terkoordinasi secara teknis pada saat alur perpindahan peran, sehingga suasana diskusi sempat menjadi kurang kondusif.</p><p>Evaluasi praktik mengajar ini dilengkapi dengan umpan balik konstruktif dari Guru Pamong yang menyoroti perlunya pengawasan dan instruksi yang lebih terstruktur dari sisi manajemen kelas, terutama saat menerapkan metode Two Stay Two Stray. Beliau juga menyarankan agar saya memperbanyak intensitas latihan soal agar keterampilan berhitung dan pemahaman analitis siswa semakin mendalam.</p><p><strong>Pelajaran Utama & Tindak Lanjut:</strong> Merespons evaluasi tersebut, saya akan memperbanyak porsi pengerjaan tugas secara manual di kertas dibandingkan langsung menggunakan software.</p>` }
         };
         const modalOverlay = document.getElementById('modalOverlay'), modalTitle = document.getElementById('modalTitle'), modalBody = document.getElementById('modalBody'), closeModal = document.getElementById('closeModal');
@@ -239,7 +246,14 @@
             });
         });
         closeModal.addEventListener('click', () => { modalOverlay.classList.remove('active'); });
-        document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });
+        
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => { 
+            hamburger.classList.toggle('active'); 
+            navLinks.classList.toggle('active'); 
+            /* JavaScript pengunci layar dihapus */
+        });
     </script>
 </body>
 </html>

@@ -22,9 +22,7 @@
             --white: #FFFFFF;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -35,200 +33,85 @@
             overflow-x: hidden; 
         }
 
-        h1, h2, h3, h4 { 
-            font-family: 'Space Grotesk', sans-serif; font-weight: 900; text-transform: uppercase; 
-            margin: 0; color: var(--charcoal); letter-spacing: -1px;
-        }
-        
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; text-transform: uppercase; margin: 0; color: var(--charcoal); letter-spacing: -1px; }
         a { text-decoration: none; color: var(--charcoal); font-weight: 700; }
 
-        /* === MASTER NAVBAR CSS === */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--cream); border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%; }
-        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002;}
-        .logo-icon { background-color: var(--brown); color: var(--white); width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--charcoal); display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; box-shadow: 4px 4px 0px var(--charcoal); }
+        /* === NAVBAR === */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--charcoal); border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002; white-space: nowrap; flex-shrink: 0; color: var(--white); }
+        .logo-icon { background-color: var(--purple); color: var(--white); width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--white); display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; box-shadow: 4px 4px 0px var(--white); }
         .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; align-items: center;}
-        .nav-links li { margin: 0; padding: 0; }
-        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; color: var(--charcoal); display: block;}
-        .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple); color: var(--white); border: 3px solid var(--charcoal); border-radius: 50px; box-shadow: 4px 4px 0px var(--charcoal); }
+        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; color: var(--white); display: block;}
+        .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple); color: var(--white); border: 3px solid var(--white); border-radius: 50px; box-shadow: 4px 4px 0px var(--white); }
         .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1003; }
-        .hamburger span { width: 30px; height: 4px; background-color: var(--charcoal); border-radius: 0; transition: all 0.3s ease; }
+        .hamburger span { width: 30px; height: 4px; background-color: var(--white); border-radius: 0; transition: all 0.3s ease; }
         .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
         /* === TOMBOL === */
-        .btn {
-            font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 1rem; text-transform: uppercase;
-            padding: 14px 28px; border-radius: 50px; border: 4px solid var(--charcoal); cursor: pointer; 
-            display: inline-flex; justify-content: center; align-items: center; transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; text-align: center;
-        }
+        .btn { font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 1rem; text-transform: uppercase; padding: 14px 28px; border-radius: 50px; border: 4px solid var(--charcoal); cursor: pointer; display: inline-flex; justify-content: center; align-items: center; transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; text-align: center; }
         .btn-primary { background-color: var(--purple); color: var(--white); box-shadow: 6px 6px 0px var(--charcoal); }
         .btn-primary:hover { transform: translate(4px, 4px); box-shadow: 2px 2px 0px var(--charcoal); color: var(--white); }
         .btn-secondary { background-color: var(--white); color: var(--charcoal); box-shadow: 6px 6px 0px var(--charcoal); }
         .btn-secondary:hover { background-color: #eee; transform: translate(4px, 4px); box-shadow: 2px 2px 0px var(--charcoal); }
 
-        /* === HERO SECTION: SCRAPBOOK & POLAROID CONCEPT === */
-        .hero { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 80px 5% 100px 5%; max-width: 1200px; margin: 0 auto; gap: 60px; position: relative; 
-        }
+        /* === HERO SECTION === */
+        .hero-geo { display: flex; justify-content: space-between; align-items: center; padding: 80px 5% 100px 5%; max-width: 1200px; margin: 0 auto; gap: 60px; position: relative; }
+        .geo-text { flex: 1; max-width: 600px; }
+        .pill-badge { display: inline-flex; align-items: center; gap: 8px; background-color: var(--white); border: 4px solid var(--charcoal); padding: 8px 20px; border-radius: 50px; font-weight: 900; font-size: 0.9rem; box-shadow: 4px 4px 0px var(--charcoal); margin-bottom: 30px; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; }
         
-        /* Kertas Catatan Tempel (Kiri) */
-        .sticky-note {
-            flex: 1; max-width: 600px;
-            background-color: #FFDE59; 
-            border: 4px solid var(--charcoal);
-            padding: 50px 40px;
-            box-shadow: 12px 12px 0px var(--charcoal);
-            transform: rotate(-2deg);
-            position: relative;
-        }
-        .sticky-note::before {
-            content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%) rotate(-3deg);
-            width: 130px; height: 35px; background-color: var(--charcoal); opacity: 0.9;
-        }
+        .geo-greeting { font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 2.2rem; display: block; margin-bottom: 5px; color: var(--charcoal); text-transform: uppercase; }
+        .geo-name { font-size: 7rem; line-height: 1; margin: 0 0 25px 0; letter-spacing: -2px; font-family: 'Space Grotesk', sans-serif; font-weight: 900; text-transform: uppercase; color: var(--charcoal); text-shadow: 8px 8px 0px var(--green); }
         
-        .pill-badge {
-            display: inline-flex; align-items: center; gap: 8px; background-color: var(--white); border: 4px solid var(--charcoal); 
-            padding: 8px 20px; border-radius: 50px; font-weight: 900; font-size: 0.9rem; box-shadow: 4px 4px 0px var(--charcoal); margin-bottom: 25px; 
-            text-transform: uppercase; font-family: 'Space Grotesk', sans-serif;
-        }
-        .sticky-note h1 { font-size: 4rem; line-height: 1.15; margin-bottom: 20px; letter-spacing: -2px; }
-        .highlight { 
-            position: relative; display: inline-block; z-index: 1; background-color: var(--white); color: var(--charcoal);
-            padding: 4px 16px; border: 4px solid var(--charcoal); transform: rotate(2deg); box-shadow: 4px 4px 0px var(--charcoal); margin: 5px 5px; line-height: 1.1;
-        }
-        .sticky-note p { 
-            color: var(--charcoal); font-size: 1.15rem; margin-bottom: 35px; font-weight: 600; line-height: 1.7; 
-        }
+        .geo-role { font-size: 1.4rem; font-family: 'Space Grotesk', sans-serif; font-weight: 900; color: var(--white); background-color: var(--purple); display: inline-block; padding: 8px 24px; border: 4px solid var(--charcoal); box-shadow: 6px 6px 0px var(--charcoal); transform: rotate(-2deg); margin-bottom: 35px; text-transform: uppercase; }
+        .geo-desc { font-size: 1.15rem; line-height: 1.7; font-weight: 600; margin-bottom: 40px; color: var(--charcoal); }
         .hero-buttons { display: flex; gap: 20px; }
-
-        /* Foto Polaroid (Kanan) - DIPERBAIKI */
-        .polaroid-wrapper { flex: 1; display: flex; justify-content: center; position: relative; }
-        .polaroid-frame {
-            background-color: var(--white); border: 4px solid var(--charcoal);
-            padding: 20px 20px 80px 20px; 
-            box-shadow: 16px 16px 0px var(--charcoal);
-            transform: rotate(4deg); position: relative; width: 100%; max-width: 380px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .polaroid-frame:hover { 
-            transform: rotate(1deg) scale(1.02); box-shadow: 12px 12px 0px var(--charcoal); 
-        }
-        .polaroid-frame::before {
-            content: ''; position: absolute; top: -20px; right: -25px; transform: rotate(45deg);
-            width: 100px; height: 35px; background-color: var(--charcoal); opacity: 0.9;
-        }
-        .polaroid-frame::after {
-            content: '📸 PPL PPG 2026'; position: absolute; bottom: 25px; left: 0; width: 100%;
-            text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--charcoal); text-transform: uppercase;
-        }
-        .polaroid-photo {
-            background-color: var(--green); border: 4px solid var(--charcoal);
-            width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative;
-        }
         
-        /* FIX FOTO: Fokus ke tengah-atas agar kepala tidak terpotong */
-        .polaroid-photo img { 
-            width: 100%; height: 100%; 
-            object-fit: cover; 
-            object-position: center top; 
-            display: block;
-        }
+        .geo-visual { flex: 1; display: flex; justify-content: center; position: relative; }
+        .geo-arch { width: 100%; max-width: 360px; height: 460px; background-color: var(--purple); border: 6px solid var(--charcoal); border-radius: 200px 200px 0 0; box-shadow: 16px 16px 0px var(--charcoal); display: flex; align-items: flex-end; justify-content: center; overflow: hidden; position: relative; z-index: 2; transition: transform 0.3s ease; }
+        .geo-arch:hover { transform: translateY(-10px); box-shadow: 16px 26px 0px var(--charcoal); }
+        .geo-arch img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; }
+        
+        .geo-float-circle { position: absolute; top: 15%; left: -10%; z-index: 3; width: 130px; height: 130px; background-color: #FFDE59; border: 4px solid var(--charcoal); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 0.9rem; box-shadow: 6px 6px 0px var(--charcoal); transform: rotate(-15deg); }
+        .geo-float-square { position: absolute; bottom: 5%; right: -5%; z-index: 3; background-color: var(--white); border: 4px solid var(--charcoal); border-radius: 0; padding: 14px 24px; font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 1.1rem; box-shadow: 6px 6px 0px var(--charcoal); transform: rotate(10deg); }
 
         /* === BENTO GRID (PROFIL) === */
+        #profil { scroll-margin-top: 120px; }
         .bento-container { max-width: 1200px; margin: 0 auto; padding: 20px 5% 100px 5%; display: grid; grid-template-columns: repeat(6, 1fr); gap: 32px; }
-        .bento-card {
-            background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; padding: 40px;
-            box-shadow: 12px 12px 0px var(--charcoal); transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
-            display: flex; flex-direction: column; justify-content: flex-start; cursor: default;
-        }
+        .bento-card { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; padding: 40px; box-shadow: 12px 12px 0px var(--charcoal); transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; display: flex; flex-direction: column; justify-content: flex-start; cursor: default; }
         .bento-card:hover { transform: translate(4px, 4px); box-shadow: 8px 8px 0px var(--charcoal); }
-
-        .span-6 { grid-column: span 6; }
-        .span-3 { grid-column: span 3; } 
-        .span-2 { grid-column: span 2; } 
-
+        .span-6 { grid-column: span 6; } .span-3 { grid-column: span 3; } .span-2 { grid-column: span 2; } 
         .card-purple { background-color: var(--purple); color: var(--white); }
         .card-green { background-color: var(--green); color: var(--white); }
         .card-brown { background-color: var(--brown); color: var(--white); }
         .card-charcoal { background-color: var(--charcoal); color: var(--white); }
-
         .bento-card h3 { font-size: 2rem; margin-bottom: 20px; }
         .bento-card p { margin: 0; font-weight: 600; line-height: 1.7; font-size: 1.05rem; }
         .card-white p { color: var(--dark-brown); }
-
-        .card-purple h3, .card-purple p, .card-purple ul,
-        .card-green h3, .card-green p, .card-green ul,
-        .card-brown h3, .card-brown p, .card-brown ul,
-        .card-charcoal h3, .card-charcoal p, .card-charcoal ul { color: var(--white); }
-        
+        .card-purple h3, .card-purple p, .card-purple ul, .card-green h3, .card-green p, .card-green ul, .card-brown h3, .card-brown p, .card-brown ul, .card-charcoal h3, .card-charcoal p, .card-charcoal ul { color: var(--white); }
         .card-brown a, .card-charcoal a, .card-purple a, .card-green a { color: var(--white); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
         .card-brown a:hover, .card-charcoal a:hover { color: var(--cream); background: var(--charcoal); padding: 2px 4px; }
-
         .quote-separator { margin-top: 32px; padding-top: 24px; border-top: 4px solid var(--white); }
         .quote-text { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 900; line-height: 1.3; text-transform: uppercase; }
-        .quote-author {
-            font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-top: 12px;
-            background-color: var(--white); color: var(--charcoal) !important; display: inline-block; padding: 4px 12px; border: 2px solid var(--white);
-        }
+        .quote-author { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-top: 12px; background-color: var(--white); color: var(--charcoal) !important; display: inline-block; padding: 4px 12px; border: 2px solid var(--white); }
 
         /* === ANIMASI TARGET PROFIL === */
-        #profil-title {
-            font-size: 3rem; border-bottom: 4px solid var(--charcoal); display: inline-block; padding-bottom: 10px;
-            transition: all 0.5s ease;
-        }
-        #profil:target #profil-title {
-            animation: highlightPulse 1.5s ease-out;
-        }
+        #profil-title { font-size: 3rem; border-bottom: 4px solid var(--charcoal); display: inline-block; padding-bottom: 10px; transition: all 0.5s ease; }
+        #profil:target #profil-title { animation: highlightPulse 1.5s ease-out; }
         @keyframes highlightPulse {
             0% { background-color: transparent; color: var(--charcoal); padding: 0px 0px; border-radius: 0px; }
             30% { background-color: var(--purple); color: var(--white); padding: 10px 30px; border-radius: 20px; border-bottom-color: transparent;}
             100% { background-color: transparent; color: var(--charcoal); padding: 0px 0px; border-radius: 0px; }
         }
 
-        /* === HOVER FOTO INTERAKTIF === */
-        .zoom-photo { transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, z-index 0s; }
+        /* === SECTION SMAN 6 === */
+        .uniform-section { padding: 40px 5% 60px 5%; width: 100%; max-width: 1200px; margin: 0 auto; }
+        .sman6-container { background: var(--green); border: 4px solid var(--charcoal); border-radius: 24px; box-shadow: 12px 12px 0px var(--charcoal); padding: 50px 40px; display: flex; flex-direction: column; align-items: center; gap: 30px; width: 100%; }
+        .zoom-photo { transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, z-index 0s; cursor: pointer; }
         .zoom-photo:hover { transform: scale(1.2) rotate(0deg) !important; box-shadow: 16px 16px 0px var(--charcoal); z-index: 10 !important; }
 
-        /* === SECTION MOCKUP & SMAN 6 === */
-        .uniform-section { padding: 40px 5% 60px 5%; width: 100%; max-width: 1200px; margin: 0 auto; }
-        
-        .sman6-container { 
-            background: var(--green); border: 4px solid var(--charcoal); border-radius: 24px; box-shadow: 12px 12px 0px var(--charcoal); 
-            padding: 50px 40px; display: flex; flex-direction: column; align-items: center; gap: 30px; width: 100%;
-        }
-
-        .mockup-container { background-color: var(--charcoal); border: 4px solid var(--charcoal); border-radius: 24px; width: 100%; box-shadow: 12px 12px 0px var(--charcoal); overflow: hidden; text-align: left; }
-        .mockup-header { background-color: #E8E5DF; border-bottom: 4px solid var(--charcoal); padding: 16px 20px; display: flex; align-items: center; gap: 10px; }
-        .dots { display: flex; gap: 8px; }
-        .dot { width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--charcoal); }
-        .dot:nth-child(1) { background-color: #ff5f56; }
-        .dot:nth-child(2) { background-color: #ffbd2e; }
-        .dot:nth-child(3) { background-color: #27c93f; }
-        .mockup-url { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700; margin-left: 10px; color: var(--charcoal); }
-        .mockup-body { padding: 50px; background-color: var(--green); }
-        .mockup-title { font-size: 2.2rem; margin-bottom: 35px; display: flex; align-items: center; gap: 12px; color: var(--white); text-shadow: 4px 4px 0px var(--charcoal); } 
-        
-        .module-list { display: flex; flex-direction: column; gap: 24px; }
-        .module-list a { display: block; text-decoration: none; }
-        .module-item {
-            background-color: var(--white); border: 4px solid var(--charcoal); border-radius: 16px; padding: 24px 30px; display: flex; align-items: center;
-            justify-content: space-between; box-shadow: 8px 8px 0px var(--charcoal); transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s; cursor: pointer;
-        }
-        .module-item:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px var(--charcoal); background-color: var(--cream); }
-        
-        .module-info { display: flex; align-items: center; gap: 24px; }
-        .module-icon { width: 65px; height: 65px; border-radius: 50%; border: 4px solid var(--charcoal); display: flex; justify-content: center; align-items: center; font-size: 1.8rem; box-shadow: 4px 4px 0px var(--charcoal); }
-        .icon-1 { background-color: var(--brown); color: white; }
-        .icon-2 { background-color: var(--purple); color: white; }
-        .icon-3 { background-color: #ffbd2e; color: var(--charcoal); }
-        .module-text h4 { font-family: 'Space Grotesk', sans-serif; margin: 0 0 5px 0; font-size: 1.3rem; color: var(--charcoal); text-transform: uppercase; }
-        .module-text p { margin: 0; font-size: 1rem; color: var(--charcoal); font-weight: 600; }
-        .arrow { font-size: 2rem; font-weight: 900; color: var(--charcoal); transition: transform 0.2s ease-out; }
-        .module-item:hover .arrow { transform: translateX(6px); }
-
-        /* === MODAL LIGHTBOX VIEW === */
+        /* === MODAL === */
         .modal-overlay { position: fixed; inset: 0; background: rgba(26, 26, 26, 0.85); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 2000; }
         .modal-overlay.active { display: flex; }
         .modal { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; max-width: 800px; width: 100%; padding: 40px; box-shadow: 16px 16px 0px var(--charcoal); position: relative; max-height: 90vh; overflow-y: auto; }
@@ -236,27 +119,37 @@
         .close-btn:hover { background: var(--green); transform: translate(4px, 4px); box-shadow: 0px 0px 0px var(--charcoal); }
         .modal h2 { font-size: 2rem; margin: 0 50px 20px 0; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px; }
 
-        .footer { text-align: center; padding: 40px 20px; color: var(--charcoal); border-top: 4px solid var(--charcoal); background-color: var(--white); font-weight: 900; text-transform: uppercase; }
+        /* === FOOTER === */
+        .footer { text-align: center; padding: 40px 20px; color: var(--white); border-top: 4px solid var(--charcoal); background-color: var(--charcoal); font-weight: 900; text-transform: uppercase; }
 
         /* === MASTER RESPONSIF === */
         @media (max-width: 1024px) {
             .hamburger { display: flex; position: absolute; right: 5%; top: 30px; } 
-            .nav-links { position: absolute; top: 80px; left: 0; right: 0; background-color: var(--white); flex-direction: column; width: 100%; border-top: 4px solid var(--charcoal); border-bottom: 4px solid var(--charcoal); display: none; z-index: 1001; gap: 0; padding: 0; }
+            
+            /* PERBAIKAN: Menempel pas di bawah header tanpa sekat kosong */
+            .nav-links { 
+                position: absolute; 
+                top: 100%; 
+                left: 0; right: 0; 
+                background-color: var(--charcoal); flex-direction: column; width: 100%; 
+                border-top: none; border-bottom: 4px solid var(--charcoal); 
+                display: none; z-index: 1001; gap: 0; padding: 0; 
+            }
             .nav-links.active { display: flex; }
-            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); display: block; margin: 0; padding: 0; }
+            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--white); display: block; margin: 0; padding: 0; }
             .nav-links li:last-child { border-bottom: none; }
-            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; width: 100%; }
+            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; margin: 0 !important; width: 100%; border:none; border-radius:0; box-shadow:none; color: var(--white); }
             .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple) !important; color: var(--white) !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; }
 
-            .hero { flex-direction: column; text-align: center; padding: 60px 5%; gap: 60px; }
-            .sticky-note { transform: rotate(0deg); padding: 40px 30px; }
-            .sticky-note::before { display: none; } 
-            .sticky-note h1 { font-size: 3rem; }
+            .hero-geo { flex-direction: column; text-align: center; gap: 60px; padding: 40px 5% 60px; }
+            .geo-name { font-size: 5rem; text-shadow: 6px 6px 0px var(--green); }
+            .geo-role { font-size: 1.2rem; }
             .hero-buttons { flex-direction: column; width: 100%; align-items: center; gap: 16px; margin: 0 auto;}
             .hero-buttons .btn { width: 100%; max-width: 320px; } 
             
-            .polaroid-frame { transform: rotate(0deg); max-width: 340px; }
-            .polaroid-frame::before { right: -15px; top: -15px; width: 80px; }
+            .geo-float-circle { top: -5%; left: 5%; width: 100px; height: 100px; font-size: 0.75rem; }
+            .geo-float-square { bottom: 5%; right: 5%; }
+            .geo-arch { height: 400px; }
 
             .bento-container { grid-template-columns: 1fr; gap: 24px; }
             .span-6, .span-3, .span-2 { grid-column: auto; } 
@@ -264,39 +157,31 @@
             .brutal-overlap-container { width: 100% !important; justify-content: center !important; margin-top: 20px; }
         }
 
-        /* === PERBAIKAN HP KECIL === */
         @media (max-width: 680px) {
-            .sticky-note h1 { font-size: 2.5rem; line-height: 1.2; }
-            .highlight { padding: 4px 10px; }
-
+            .geo-name { font-size: 3.5rem; letter-spacing: -2px; text-shadow: 4px 4px 0px var(--green); margin-bottom: 20px; }
+            .geo-greeting { font-size: 1.4rem; margin-bottom: 5px; }
             .sman6-container { padding: 30px 20px !important; box-shadow: 8px 8px 0px var(--charcoal) !important; }
             .sman6-container h2 { font-size: 2rem !important; }
             .sman6-text p { padding: 20px !important; font-size: 1rem !important; }
             .brutal-overlap-container { flex-direction: column !important; gap: 24px !important; }
             .brutal-overlap-container > div { width: 100% !important; max-width: 100% !important; height: auto !important; aspect-ratio: 4/3; margin-left: 0 !important; transform: none !important; box-shadow: 6px 6px 0px var(--charcoal) !important; }
             .brutal-overlap-container > div:hover { transform: scale(1.02) !important; }
-            
             .bento-card { padding: 30px; }
             .quote-text { font-size: 1.4rem; }
-
             .modal { padding: 24px 20px !important; }
             .close-btn { top: 15px !important; right: 15px !important; width: 36px !important; height: 36px !important; font-size: 1.4rem !important; }
             .modal h2 { margin: 0 35px 15px 0 !important; font-size: 1.3rem !important; }
-
-            .mockup-body { padding: 25px 20px; }
-            .mockup-title { font-size: 1.6rem; text-shadow: none; }
-            .module-item { flex-direction: column; text-align: center; padding: 24px; gap: 15px; }
-            .module-info { flex-direction: column; align-items: center; gap: 12px; }
-            .arrow { display: none; } 
         }
 
         @media (max-width: 400px) {
-            .sticky-note h1 { font-size: 2rem; } 
-            .highlight { padding: 2px 8px; font-size: 1.2rem; border-width: 3px; box-shadow: 4px 4px 0px var(--charcoal); }
-            .pill-badge { font-size: 0.75rem; padding: 6px 16px; margin-bottom: 15px; }
+            .logo { font-size: 1.15rem; gap: 8px; }
+            .logo-icon { width: 32px; height: 32px; font-size: 1rem; }
+            .geo-name { font-size: 2.8rem; }
+            .geo-role { font-size: 1rem; padding: 6px 16px; }
+            .pill-badge { font-size: 0.75rem; padding: 6px 16px; }
             .hero-buttons .btn { font-size: 0.9rem; padding: 12px 20px; max-width: 280px; }
-            .polaroid-frame { max-width: 260px; padding: 15px 15px 60px 15px; }
-            .polaroid-frame::after { font-size: 1rem; bottom: 20px; }
+            .geo-arch { height: 320px; border-radius: 150px 150px 0 0; }
+            .geo-float-circle { width: 80px; height: 80px; font-size: 0.65rem; top: -10%; left: 0%;}
         }
     </style>
 </head>
@@ -312,31 +197,37 @@
         </ul>
     </nav>
 
-    <section class="hero">
-        <div class="sticky-note">
+    <!-- === HERO SECTION === -->
+    <section class="hero-geo">
+        <div class="geo-text">
             <div class="pill-badge">
                 <span style="color: var(--purple); font-size: 1.2rem;">✦</span> Mahasiswa PPG Prajabatan
             </div>
             
-            <h1>Halo, saya <span class="highlight">Rifqi</span><br>Calon Guru Profesional.</h1>
+            <span class="geo-greeting">HALO, SAYA</span>
+            <h1 class="geo-name">RIFQI</h1>
             
-            <p>Selamat datang di ruang belajar digital saya. Di sini, saya mendokumentasikan proses, jurnal refleksi, dan artefak pembelajaran selama menempuh PPL Terbimbing di Universitas Sanata Dharma.</p>
+            <div class="geo-role">CALON GURU PROFESIONAL</div>
+            
+            <p class="geo-desc">Selamat datang di ruang belajar digital saya. Di sini, saya mendokumentasikan proses, jurnal refleksi, dan artefak pembelajaran selama menempuh PPL Terbimbing di Universitas Sanata Dharma.</p>
             
             <div class="hero-buttons">
-                <a href="#kurikulum" class="btn btn-primary">Jurnal Saya ➔</a>
+                <a href="e-portofolio-1.html" class="btn btn-primary">Lihat Artefak ➔</a>
                 <a href="#profil" class="btn btn-secondary">📄 Profil Lengkap</a>
             </div>
         </div>
 
-        <div class="polaroid-wrapper">
-            <div class="polaroid-frame">
-                <div class="polaroid-photo">
-                    <img src="assets/images/foto-anda.png" alt="Foto Rifqi">
-                </div>
+        <div class="geo-visual">
+            <div class="geo-float-circle">MATEMATIKA<br>'26</div>
+            <div class="geo-float-square">🎓 USD</div>
+            
+            <div class="geo-arch">
+                <img src="assets/images/foto-anda.png" alt="Foto Rifqi">
             </div>
         </div>
     </section>
 
+    <!-- === SECTION PROFIL === -->
     <section id="profil" style="width: 100%; max-width: 1200px; margin: 20px auto 0; padding: 0 5%; text-align: center;">
         <h2 id="profil-title">PROFIL SAYA</h2>
     </section>
@@ -380,6 +271,7 @@
         </article>
     </section>
 
+    <!-- === SECTION SMAN 6 === -->
     <section class="uniform-section">
         <div class="sman6-container">
             <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; width: 100%;">
@@ -408,47 +300,6 @@
         </div>
     </section>
 
-    <section id="kurikulum" class="uniform-section" style="padding-top: 0px;">
-        <div class="mockup-container">
-            <div class="mockup-header">
-                <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-                <div class="mockup-url">E - Portofolio PPG - Rifqi</div>
-            </div>
-            <div class="mockup-body">
-                <h3 class="mockup-title">📑 PPL PROFESSIONAL JOURNEY</h3>
-                <div class="module-list">
-                    <a href="#profil">
-                        <div class="module-item">
-                            <div class="module-info">
-                                <div class="module-icon icon-1">👤</div>
-                                <div class="module-text"><h4>Bagian 1: Profil & Filosofi</h4><p>Profil Lengkap Saya</p></div>
-                            </div>
-                            <div class="arrow">➔</div>
-                        </div>
-                    </a>
-                    <a href="e-portofolio-1.html">
-                        <div class="module-item">
-                            <div class="module-info">
-                                <div class="module-icon icon-2">📊</div>
-                                <div class="module-text"><h4>Bagian 2: Artefak PPL</h4><p>Dokumentasi PPL</p></div>
-                            </div>
-                            <div class="arrow">➔</div>
-                        </div>
-                    </a>
-                    <a href="e-portofolio-2.html">
-                        <div class="module-item">
-                            <div class="module-info">
-                                <div class="module-icon icon-3">🧠</div>
-                                <div class="module-text"><h4>Bagian 3: Jurnal Refleksi</h4><p>Refleksi, Evaluasi, & Rencana Aksi</p></div>
-                            </div>
-                            <div class="arrow">➔</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
         <div class="modal" role="dialog">
             <button class="close-btn" id="closeModal" aria-label="Tutup">×</button>
@@ -457,13 +308,14 @@
         </div>
     </div>
 
+    <!-- === FOOTER === -->
     <footer class="footer" style="line-height: 1.4;">
-        <p style="margin: 0 0 12px 0;">&copy; 2026 RIFQI FAUSTA DIANTA — E-PORTOFOLIO PPG</p>
+        <p style="margin: 0 0 12px 0;">&copy; 2026 RIFQI FAUSTA DIANTA</p>
         <div style="font-size: 0.9rem; font-weight: 700; text-transform: none; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
-            <a href="mailto:rifqia48@gmail.com" style="color: var(--charcoal); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
+            <a href="mailto:rifqia48@gmail.com" style="color: var(--white); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
                 📧 rifqia48@gmail.com
             </a>
-            <a href="https://wa.me/6287839962270" target="_blank" rel="noreferrer" style="color: var(--charcoal); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
+            <a href="https://wa.me/6287839962270" target="_blank" rel="noreferrer" style="color: var(--white); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
                 📱 WhatsApp (+62 878-3996-2270)
             </a>
         </div>
@@ -472,7 +324,11 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
+        hamburger.addEventListener('click', () => { 
+            hamburger.classList.toggle('active'); 
+            navLinks.classList.toggle('active'); 
+            /* JavaScript pengunci layar dihapus karena menu tidak lagi full-screen */
+        });
 
         function openImageModal(imageSrc, titleText) {
             const modalOverlay = document.getElementById('modalOverlay');

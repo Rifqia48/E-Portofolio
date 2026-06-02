@@ -25,93 +25,81 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--cream);
-            
-            /* === SUNTIKAN NEO-BRUTALISM: BACKGROUND SIMBOL MATEMATIKA === */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 160 160'%3E%3Cg fill='%2348369E' fill-opacity='0.25' font-family='Space Grotesk, Arial, sans-serif' font-size='26' font-weight='900'%3E%3Ctext x='15' y='35' transform='rotate(-15 15 35)'%3Eπ%3C/text%3E%3Ctext x='80' y='70' transform='rotate(10 80 70)'%3E∑%3C/text%3E%3Ctext x='130' y='30' transform='rotate(-5 130 30)'%3E∫%3C/text%3E%3Ctext x='30' y='110' transform='rotate(20 30 110)'%3E∞%3C/text%3E%3Ctext x='110' y='130' transform='rotate(-20 110 130)'%3E√%3C/text%3E%3Ctext x='70' y='145' transform='rotate(5 70 145)'%3E±%3C/text%3E%3C/g%3E%3C/svg%3E");
-            /* ========================================================== */
-            
             color: var(--charcoal);
             margin: 0; padding: 0; line-height: 1.6;
             overflow-x: hidden; 
         }
 
-        h1, h2, h3, h4 { 
-            font-family: 'Space Grotesk', sans-serif; font-weight: 900; text-transform: uppercase; 
-            margin: 0; color: var(--charcoal); letter-spacing: -1px;
-        }
-        
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; text-transform: uppercase; margin: 0; color: var(--charcoal); letter-spacing: -1px; }
         a { text-decoration: none; color: var(--charcoal); font-weight: 700; }
 
-        /* === MASTER NAVBAR CSS === */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--cream); border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%; }
-        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002;}
-        .logo-icon { background-color: var(--brown); color: var(--white); width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--charcoal); display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; box-shadow: 4px 4px 0px var(--charcoal); }
+        /* === NAVBAR === */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--charcoal); border-bottom: 4px solid var(--charcoal); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; z-index: 1002; white-space: nowrap; flex-shrink: 0; color: var(--white); }
+        .logo-icon { background-color: var(--purple); color: var(--white); width: 40px; height: 40px; border-radius: 0px; border: 4px solid var(--white); display: flex; justify-content: center; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; box-shadow: 4px 4px 0px var(--white); }
         .nav-links { display: flex; gap: 30px; font-weight: 700; list-style: none; padding: 0; margin: 0; text-transform: uppercase; font-size: 0.9rem; align-items: center;}
-        .nav-links li { margin: 0; padding: 0; }
-        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; color: var(--charcoal); display: block;}
-        .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple); color: var(--white); border: 3px solid var(--charcoal); border-radius: 50px; box-shadow: 4px 4px 0px var(--charcoal); }
+        .nav-links a { padding: 8px 16px; border: 3px solid transparent; transition: all 0.2s ease; color: var(--white); display: block;}
+        .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple); color: var(--white); border: 3px solid var(--white); border-radius: 50px; box-shadow: 4px 4px 0px var(--white); }
+        
         .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1003; }
-        .hamburger span { width: 30px; height: 4px; background-color: var(--charcoal); border-radius: 0; transition: all 0.3s ease; }
+        .hamburger span { width: 30px; height: 4px; background-color: var(--white); border-radius: 0; transition: all 0.3s ease; }
         .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
         .page-header { max-width: 1100px; margin: 0 auto; padding: 80px 5% 40px 5%; text-align: center; }
         .page-header h1 { font-size: 4rem; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
-        .page-header p { 
-            font-size: 1.25rem; color: var(--charcoal); font-weight: 600; 
-            max-width: 800px; margin: 0 auto; line-height: 1.8;
-            border: 4px solid var(--charcoal); background: var(--white);
-            padding: 20px; box-shadow: 8px 8px 0px var(--charcoal); border-radius: 24px;
-        }
+        .page-header p { font-size: 1.25rem; color: var(--charcoal); font-weight: 600; max-width: 800px; margin: 0 auto; line-height: 1.8; border: 4px solid var(--charcoal); background: var(--white); padding: 20px; box-shadow: 8px 8px 0px var(--charcoal); border-radius: 24px; }
 
         .content { width: 100%; max-width: 1100px; margin: 0 auto; padding: 20px 5% 100px 5%; }
         .section-card { background: var(--white); border: 4px solid var(--charcoal); border-radius: 24px; padding: 40px; margin-bottom: 40px; box-shadow: 12px 12px 0px var(--charcoal); width: 100%; }
         .section-card h2 { margin-bottom: 25px; font-size: 2rem; border-bottom: 4px solid var(--charcoal); padding-bottom: 15px; }
         .section-card p { font-size: 1.1rem; color: var(--dark-brown); font-weight: 600; margin-bottom: 20px; }
 
-        /* === KOTAK ANALISIS === */
-        .analysis-box {
-            background: var(--cream); border: 3px solid var(--charcoal); border-radius: 16px; 
-            padding: 24px; margin-bottom: 24px; box-shadow: 6px 6px 0px var(--charcoal);
-        }
+        .analysis-box { background: var(--cream); border: 3px solid var(--charcoal); border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: 6px 6px 0px var(--charcoal); }
         .analysis-box h3 { font-size: 1.4rem; margin-bottom: 16px; border-bottom: 2px solid var(--charcoal); padding-bottom: 10px; }
         .analysis-box p { font-size: 1rem; color: var(--charcoal); line-height: 1.6; font-weight: 500;}
         .analysis-box ul { margin-top: 8px; margin-bottom: 16px; padding-left: 20px; color: var(--charcoal); font-weight: 500; line-height: 1.6;}
         .analysis-box li { margin-bottom: 8px; }
         .analysis-box strong { font-weight: 900; }
 
-        /* === TOMBOL BUKTI BERWARNA === */
-        .btn-evidence {
-            font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 0.85rem; text-transform: uppercase;
-            padding: 10px 16px; border-radius: 50px; border: 3px solid var(--charcoal); cursor: pointer; 
-            display: inline-flex; justify-content: center; align-items: center; transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; text-align: center;
-            box-shadow: 4px 4px 0px var(--charcoal); text-decoration: none;
-        }
+        .btn-evidence { font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 0.85rem; text-transform: uppercase; padding: 10px 16px; border-radius: 50px; border: 3px solid var(--charcoal); cursor: pointer; display: inline-flex; justify-content: center; align-items: center; transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; text-align: center; box-shadow: 4px 4px 0px var(--charcoal); text-decoration: none; }
         .btn-evidence.purple { background-color: var(--purple); color: var(--white); }
         .btn-evidence.purple:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); opacity: 0.9; }
-        
         .btn-evidence.brown { background-color: var(--brown); color: var(--white); }
         .btn-evidence.brown:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); opacity: 0.9; }
 
-        .embed-container {
-            position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 24px;
-            border: 4px solid var(--charcoal); border-radius: 16px; overflow: hidden; box-shadow: 6px 6px 0px var(--charcoal);
-        }
+        .embed-container { position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 24px; border: 4px solid var(--charcoal); border-radius: 16px; overflow: hidden; box-shadow: 6px 6px 0px var(--charcoal); }
         .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .footer { text-align: center; padding: 40px 20px; color: var(--charcoal); border-top: 4px solid var(--charcoal); background-color: var(--white); font-weight: 900; text-transform: uppercase; }
+        /* === FOOTER === */
+        .footer { text-align: center; padding: 40px 20px; color: var(--white); border-top: 4px solid var(--charcoal); background-color: var(--charcoal); font-weight: 900; text-transform: uppercase; }
 
         /* === MASTER RESPONSIF === */
         @media (max-width: 1024px) {
-            .hamburger { display: flex; position: absolute; right: 5%; top: 30px; }
-            .nav-links { position: absolute; top: 80px; left: 0; right: 0; background-color: var(--white); flex-direction: column; width: 100%; border-top: 4px solid var(--charcoal); border-bottom: 4px solid var(--charcoal); display: none; z-index: 1001; gap: 0; padding: 0; }
+            .hamburger { display: flex; position: absolute; right: 5%; top: 30px; } 
+            
+            /* PERBAIKAN: Menempel pas di bawah header tanpa sekat kosong */
+            .nav-links { 
+                position: absolute; 
+                top: 100%; 
+                left: 0; right: 0; 
+                background-color: var(--charcoal); flex-direction: column; width: 100%; 
+                border-top: none; border-bottom: 4px solid var(--charcoal); 
+                display: none; z-index: 1001; gap: 0; padding: 0; 
+            }
             .nav-links.active { display: flex; }
-            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--charcoal); display: block; margin: 0; padding: 0; }
+            .nav-links li { text-align: center; width: 100%; border-bottom: 2px solid var(--white); display: block; margin: 0; padding: 0; }
             .nav-links li:last-child { border-bottom: none; }
-            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; width: 100%; }
+            .nav-links a { display: flex !important; align-items: center !important; justify-content: center !important; height: 65px !important; padding: 0 !important; margin: 0 !important; width: 100%; border:none; border-radius:0; box-shadow:none; color: var(--white); }
             .nav-links a:hover, .nav-links a.active-page { background-color: var(--purple) !important; color: var(--white) !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; }
+            
             .page-header h1 { font-size: 2.8rem; }
+        }
+        @media (max-width: 400px) {
+            .logo { font-size: 1.15rem; gap: 8px; }
+            .logo-icon { width: 32px; height: 32px; font-size: 1rem; }
         }
     </style>
 </head>
@@ -121,8 +109,7 @@
         <div class="logo"><div class="logo-icon">R</div>E-Portofolio</div>
         <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="profil.html">Profil</a></li>
+            <li><a href="index.html">Beranda & Profil</a></li>
             <li><a href="e-portofolio-1.html" class="active-page">Artefak</a></li>
             <li><a href="e-portofolio-2.html">Refleksi</a></li>
         </ul>
@@ -263,12 +250,12 @@
     </main>
 
     <footer class="footer" style="line-height: 1.4;">
-        <p style="margin: 0 0 12px 0;">&copy; 2026 RIFQI FAUSTA DIANTA — E-PORTOFOLIO PPG</p>
+        <p style="margin: 0 0 12px 0;">&copy; 2026 RIFQI FAUSTA DIANTA</p>
         <div style="font-size: 0.9rem; font-weight: 700; text-transform: none; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
-            <a href="mailto:rifqia48@gmail.com" style="color: var(--charcoal); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
+            <a href="mailto:rifqia48@gmail.com" style="color: var(--white); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
                 📧 rifqia48@gmail.com
             </a>
-            <a href="https://wa.me/6287839962270" target="_blank" rel="noreferrer" style="color: var(--charcoal); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
+            <a href="https://wa.me/6287839962270" target="_blank" rel="noreferrer" style="color: var(--white); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
                 📱 WhatsApp (+62 878-3996-2270)
             </a>
         </div>
@@ -277,7 +264,11 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
+        hamburger.addEventListener('click', () => { 
+            hamburger.classList.toggle('active'); 
+            navLinks.classList.toggle('active'); 
+            /* JavaScript pengunci layar dihapus */
+        });
     </script>
 </body>
 </html>
