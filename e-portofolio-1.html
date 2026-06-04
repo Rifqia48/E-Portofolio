@@ -64,11 +64,16 @@
         .analysis-box li { margin-bottom: 8px; }
         .analysis-box strong { font-weight: 900; }
 
-        .btn-evidence { font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 0.85rem; text-transform: uppercase; padding: 10px 16px; border-radius: 50px; border: 3px solid var(--charcoal); cursor: pointer; display: inline-flex; justify-content: center; align-items: center; transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; text-align: center; box-shadow: 4px 4px 0px var(--charcoal); text-decoration: none; }
-        .btn-evidence.purple { background-color: var(--purple); color: var(--white); }
-        .btn-evidence.purple:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); opacity: 0.9; }
-        .btn-evidence.brown { background-color: var(--brown); color: var(--white); }
-        .btn-evidence.brown:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); opacity: 0.9; }
+        /* === PERBAIKAN TOMBOL BUKTI === */
+        /* Karena hanya ada 1 tombol, kita buat padding lebih mantap dan langsung ber-style ungu */
+        .btn-evidence { 
+            font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 0.9rem; text-transform: uppercase; 
+            padding: 12px 24px; border-radius: 50px; border: 3px solid var(--charcoal); cursor: pointer; 
+            display: inline-flex; justify-content: center; align-items: center; transition: transform 0.15s ease-out, box-shadow 0.15s ease-out; text-align: center; 
+            box-shadow: 4px 4px 0px var(--charcoal); text-decoration: none;
+            background-color: var(--purple); color: var(--white);
+        }
+        .btn-evidence:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--charcoal); opacity: 0.9; color: var(--white); }
 
         .embed-container { position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: 24px; border: 4px solid var(--charcoal); border-radius: 16px; overflow: hidden; box-shadow: 6px 6px 0px var(--charcoal); }
         .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
@@ -79,12 +84,8 @@
         /* === MASTER RESPONSIF === */
         @media (max-width: 1024px) {
             .hamburger { display: flex; position: absolute; right: 5%; top: 30px; } 
-            
-            /* PERBAIKAN: Menempel pas di bawah header tanpa sekat kosong */
             .nav-links { 
-                position: absolute; 
-                top: 100%; 
-                left: 0; right: 0; 
+                position: absolute; top: 100%; left: 0; right: 0; 
                 background-color: var(--charcoal); flex-direction: column; width: 100%; 
                 border-top: none; border-bottom: 4px solid var(--charcoal); 
                 display: none; z-index: 1001; gap: 0; padding: 0; 
@@ -117,7 +118,7 @@
 
     <header class="page-header">
         <h1>Artefak Pembelajaran</h1>
-        <p>Kumpulan modul ajar, Lembar Kerja Peserta Didik (LKPD), analisis artefak, dan bukti penilaian otentik selama PPL Terbimbing.</p>
+        <p>Kumpulan modul ajar, Lembar Kerja Peserta Didik (LKPD), analisis artefak, dan bukti hasil kerja siswa selama PPL Terbimbing.</p>
     </header>
 
     <main class="content">
@@ -155,10 +156,10 @@
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/mEO9FAZNwQE"></iframe></div>
             <div class="embed-container"><iframe src="https://drive.google.com/file/d/1wzCaI2hKRO7HCh1buahIcxb68nwk2kZt/preview"></iframe></div>
 
-            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Variasi Bukti Artefak (Asesmen & Penilaian):</strong></p>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="#" target="_blank" class="btn-evidence purple">✏️ Contoh Hasil Kerja Siswa</a>
-                <a href="#" target="_blank" class="btn-evidence brown">📋 Penilaian Guru Pamong / DPL</a>
+            <!-- PERBAIKAN: Tombol sendirian dengan label disesuaikan -->
+            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Bukti Artefak Pembelajaran:</strong></p>
+            <div>
+                <a href="#" target="_blank" class="btn-evidence">✏️ Contoh Hasil Kerja Siswa</a>
             </div>
         </section>
 
@@ -197,10 +198,10 @@
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/DOBXXgQ0tl0"></iframe></div>
             <div class="embed-container"><iframe src="https://drive.google.com/file/d/11k9wxID76kIpslzvJzPDMp6MxGge0x7m/preview"></iframe></div>
 
-            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Variasi Bukti Artefak (Asesmen & Penilaian):</strong></p>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="#" target="_blank" class="btn-evidence purple">✏️ Contoh Hasil Kerja Siswa</a>
-                <a href="#" target="_blank" class="btn-evidence brown">📋 Penilaian Guru Pamong / DPL</a>
+            <!-- PERBAIKAN: Tombol sendirian dengan label disesuaikan -->
+            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Bukti Artefak Pembelajaran:</strong></p>
+            <div>
+                <a href="https://drive.google.com/drive/folders/1GxQZfFK-JzomMHCsqmP1wEUxgg5zOEv7?usp=sharing" target="_blank" class="btn-evidence">✏️ Contoh Hasil Kerja Siswa</a>
             </div>
         </section>
 
@@ -241,16 +242,16 @@
             <div class="embed-container"><iframe src="https://www.youtube.com/embed/sDKc5C81IhU"></iframe></div>
             <div class="embed-container"><iframe src="https://drive.google.com/file/d/1cRyykyVprwYaNloxc8sUHseMrJZx7yyB/preview"></iframe></div>
 
-            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Variasi Bukti Artefak (Asesmen & Penilaian):</strong></p>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="#" target="_blank" class="btn-evidence purple">✏️ Contoh Hasil Kerja Siswa</a>
-                <a href="#" target="_blank" class="btn-evidence brown">📋 Penilaian Guru Pamong / DPL</a>
+            <!-- PERBAIKAN: Tombol sendirian dengan label disesuaikan -->
+            <p style="margin-top: 30px; margin-bottom: 12px;"><strong>📄 Bukti Artefak Pembelajaran:</strong></p>
+            <div>
+                <a href="#" target="_blank" class="btn-evidence">✏️ Contoh Hasil Kerja Siswa</a>
             </div>
         </section>
     </main>
 
     <footer class="footer" style="line-height: 1.4;">
-        <p style="margin: 0 0 12px 0;">&copy; 2026 RIFQI FAUSTA DIANTA</p>
+        <p style="margin: 0 0 12px 0;">&copy; 2026 RIFQI FAUSTA DIANTA — E-PORTOFOLIO PPG</p>
         <div style="font-size: 0.9rem; font-weight: 700; text-transform: none; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
             <a href="mailto:rifqia48@gmail.com" style="color: var(--white); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px;">
                 📧 rifqia48@gmail.com
@@ -267,7 +268,6 @@
         hamburger.addEventListener('click', () => { 
             hamburger.classList.toggle('active'); 
             navLinks.classList.toggle('active'); 
-            /* JavaScript pengunci layar dihapus */
         });
     </script>
 </body>
